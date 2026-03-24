@@ -47,7 +47,7 @@ definePageMeta({
     </div>
 
     <template v-if="isDocsPage && page?.body?.toc?.links?.length" #toc>
-      <ContentToc :links="page.body.toc.links" :title="t('docs.toc')" highlight />
+      <UContentToc :links="page.body.toc.links" :title="t('docs.toc')" highlight />
     </template>
   </NuxtLayout>
 </template>

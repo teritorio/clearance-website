@@ -32,7 +32,7 @@ const docsNavigation = computed(() => {
       <div class="flex gap-8 py-8">
         <aside class="hidden lg:block w-64 shrink-0">
           <nav class="sticky top-20">
-            <ContentNavigation
+            <UContentNavigation
               v-if="docsNavigation.length"
               :navigation="docsNavigation"
               highlight
