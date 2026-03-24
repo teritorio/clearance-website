@@ -9,13 +9,13 @@ Bienvenue dans la documentation de Clearance. Vous trouverez ici toutes les info
 
 ## Pour commencer
 
-- [Vue d'ensemble](./overview) — Qu'est-ce que Clearance et pourquoi il existe
-- [Fonctionnement](./how-it-works) — LoCha, analyse sémantique, flux de validation
-- [Règles de validation](./rules) — Référence complète des règles
+- [Vue d'ensemble](/fr/docs/overview) — Qu'est-ce que Clearance et pourquoi il existe
+- [Fonctionnement](/fr/docs/how-it-works) — LoCha, analyse sémantique, flux de validation
+- [Règles de validation](/fr/docs/rules) — Référence complète des règles
 
 ## Aller plus loin
 
-- [Intégration](./integration) — Sorties standards, proxy Overpass API
-- [Déploiement](./deployment) — SaaS vs auto-hébergé, modèle économique
-- [Références](./references) — Cas d'usage et clients
-- [Feuille de route](./roadmap) — Développements futurs
+- [Intégration](/fr/docs/integration) — Sorties standards, proxy Overpass API
+- [Déploiement](/fr/docs/deployment) — SaaS vs auto-hébergé, modèle économique
+- [Références](/fr/docs/references) — Cas d'usage et clients
+- [Feuille de route](/fr/docs/roadmap) — Développements futurs
