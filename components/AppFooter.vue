@@ -29,7 +29,9 @@ const footerColumns = computed(() => [
 <template>
   <UFooter>
     <template #top>
-      <UFooterColumns :columns="footerColumns" />
+      <UContainer>
+        <UFooterColumns :columns="footerColumns" />
+      </UContainer>
     </template>
     <template #left>
       <p class="text-sm text-muted">
