@@ -16,10 +16,29 @@ const { data: navigation } = await useAsyncData(
   { watch: [locale] },
 )
 
+const docsPathPattern = /\/docs\/?$/
+
 const docsNavigation = computed(() => {
   if (!navigation.value)
     return []
-  const docsSection = navigation.value.find(n => n.path?.includes('/docs'))
+
+  // Recursively find the docs section in the navigation tree
+  // (it's nested under the locale root node, not at the top level)
+  type NavItems = typeof navigation.value
+  type NavItem = NavItems[number]
+  function findDocsNode(items: NavItems): NavItem | undefined {
+    for (const item of items) {
+      if (item.path && docsPathPattern.test(item.path))
+        return item
+      if (item.children) {
+        const found = findDocsNode(item.children)
+        if (found)
+          return found
+      }
+    }
+  }
+
+  const docsSection = findDocsNode(navigation.value)
   return docsSection?.children || []
 })
 </script>
