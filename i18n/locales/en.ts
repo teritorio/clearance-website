@@ -28,4 +28,8 @@ export default defineI18nLocale(async () => ({
   docs: {
     toc: 'On this page',
   },
+  page: {
+    empty: 'This page has no content yet.',
+    notFound: 'Page not found',
+  },
 }))

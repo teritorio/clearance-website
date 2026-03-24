@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 const head = useLocaleHead({ seo: true })
 useHead({
@@ -11,7 +11,7 @@ useHead({
 const collectionName = computed(() => `content_${locale.value}` as const)
 
 const { data: navigation } = await useAsyncData(
-  `docs-nav-${locale.value}`,
+  'docs-navigation',
   () => queryCollectionNavigation(collectionName.value),
   { watch: [locale] },
 )
@@ -52,12 +52,6 @@ const docsNavigation = computed(() => {
       </div>
     </UContainer>
 
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
-        </p>
-      </template>
-    </UFooter>
+    <AppFooter />
   </div>
 </template>

@@ -35,14 +35,14 @@ definePageMeta({
       <ContentRenderer :value="page">
         <template #empty>
           <p class="text-muted">
-            This page has no content yet.
+            {{ t('page.empty') }}
           </p>
         </template>
       </ContentRenderer>
     </div>
     <div v-else class="py-16 text-center">
       <p class="text-muted">
-        Page not found
+        {{ t('page.notFound') }}
       </p>
     </div>
 

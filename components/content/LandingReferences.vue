@@ -9,17 +9,7 @@ defineProps<{
 <template>
   <section class="py-16 sm:py-24 bg-muted/50">
     <UContainer>
-      <div v-if="title" class="mx-auto max-w-2xl text-center">
-        <p v-if="headline" class="text-sm font-semibold text-primary">
-          {{ headline }}
-        </p>
-        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          {{ title }}
-        </h2>
-        <p v-if="description" class="mt-4 text-lg text-muted">
-          {{ description }}
-        </p>
-      </div>
+      <LandingSectionHeader :headline="headline" :title="title" :description="description" />
       <div class="mt-12">
         <ContentSlot />
       </div>

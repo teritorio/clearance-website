@@ -8,18 +8,8 @@ const props = defineProps<{
   secondaryTo?: string
 }>()
 
-const localePath = useLocalePath()
-
-function resolveTo(path?: string) {
-  if (!path)
-    return undefined
-  if (path.startsWith('http'))
-    return path
-  return localePath(path)
-}
-
-const resolvedPrimaryTo = computed(() => resolveTo(props.primaryTo))
-const resolvedSecondaryTo = computed(() => resolveTo(props.secondaryTo))
+const resolvedPrimaryTo = useLocaleTo(computed(() => props.primaryTo))
+const resolvedSecondaryTo = useLocaleTo(computed(() => props.secondaryTo))
 </script>
 
 <template>

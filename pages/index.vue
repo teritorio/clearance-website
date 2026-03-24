@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 
 const collectionName = computed(() => `content_${locale.value}` as const)
 
@@ -22,7 +22,7 @@ useHead({
     <ContentRenderer :value="page">
       <template #empty>
         <p class="text-muted">
-          This page has no content yet.
+          {{ t('page.empty') }}
         </p>
       </template>
     </ContentRenderer>
