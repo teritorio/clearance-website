@@ -15,8 +15,8 @@ defineProps<{
     <h3 class="text-lg font-semibold">
       {{ title }}
     </h3>
-    <p class="mt-2 text-sm text-muted">
+    <div class="mt-2 text-sm text-muted">
       <MDCSlot :use="$slots.default" />
-    </p>
+    </div>
   </div>
 </template>
