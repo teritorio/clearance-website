@@ -1,0 +1,61 @@
+<script setup lang="ts">
+const props = defineProps<{
+  showHome?: boolean
+}>()
+const { t, locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
+
+const navItems = computed(() => {
+  const items = []
+  if (props.showHome) {
+    items.push({
+      label: t('nav.home'),
+      icon: 'i-lucide-home',
+      to: localePath('/'),
+    })
+  }
+  items.push(
+    {
+      label: t('nav.docs'),
+      icon: 'i-lucide-book-open',
+      to: localePath('/docs'),
+    },
+    {
+      label: t('nav.contact'),
+      icon: 'i-lucide-mail',
+      to: localePath('/contact'),
+    },
+    {
+      label: t('nav.github'),
+      icon: 'i-lucide-github',
+      to: 'https://github.com/teritorio/clearance',
+      target: '_blank',
+    },
+  )
+  return items
+})
+
+const localeItems = computed(() =>
+  (locales.value as Array<{ code: string, name: string }>).map(l => ({
+    label: l.name,
+    to: switchLocalePath(l.code as typeof locale.value),
+  })),
+)
+</script>
+
+<template>
+  <UHeader :title="t('nav.home')" :to="localePath('/')">
+    <template #right>
+      <UNavigationMenu :items="navItems" />
+      <UDropdownMenu :items="localeItems">
+        <UButton
+          variant="ghost"
+          icon="i-lucide-languages"
+          :label="locale.toUpperCase()"
+          :aria-label="t('nav.changeLanguage')"
+        />
+      </UDropdownMenu>
+    </template>
+  </UHeader>
+</template>

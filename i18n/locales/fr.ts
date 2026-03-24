@@ -1,14 +1,35 @@
 export default defineI18nLocale(async () => ({
   nav: {
-    home: 'Accueil',
+    home: 'Clearance',
+    docs: 'Documentation',
+    contact: 'Contact',
+    github: 'GitHub',
     changeLanguage: 'Changer de langue',
   },
-  hero: {
-    title: 'Clearance',
-    subtitle: 'Portail qualité pour les données OpenStreetMap',
-    viewOnGithub: 'Voir sur GitHub',
-  },
   footer: {
+    product: 'Produit',
+    resources: 'Ressources',
+    company: 'Entreprise',
     copyright: '© {year} Teritorio. Open source sous licence MIT.',
+  },
+  contact: {
+    title: 'Contactez-nous',
+    description: 'Une question sur Clearance ? Besoin d\'une démo ou d\'un accompagnement ? Écrivez-nous.',
+    name: 'Nom',
+    email: 'Email',
+    organization: 'Organisation',
+    message: 'Message',
+    send: 'Envoyer',
+    namePlaceholder: 'Votre nom',
+    emailPlaceholder: 'votre{\'@\'}email.com',
+    organizationPlaceholder: 'Votre organisation',
+    messagePlaceholder: 'Décrivez votre projet ou votre question...',
+  },
+  docs: {
+    toc: 'Sur cette page',
+  },
+  page: {
+    empty: 'Cette page n\'a pas encore de contenu.',
+    notFound: 'Page introuvable',
   },
 }))
