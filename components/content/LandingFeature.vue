@@ -14,7 +14,7 @@ defineProps<{
       {{ title }}
     </h3>
     <p class="mt-2 text-sm text-muted">
-      <ContentSlot />
+      <MDCSlot :use="$slots.default" />
     </p>
   </div>
 </template>

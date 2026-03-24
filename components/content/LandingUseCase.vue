@@ -7,6 +7,6 @@ defineProps<{
 
 <template>
   <LandingFeature :icon="icon" :title="title">
-    <ContentSlot />
+    <MDCSlot :use="$slots.default" />
   </LandingFeature>
 </template>
