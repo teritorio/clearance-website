@@ -45,7 +45,13 @@ const localeItems = computed(() =>
 </script>
 
 <template>
-  <UHeader :title="t('nav.home')" :to="localePath('/')">
+  <UHeader :to="localePath('/')">
+    <template #title>
+      <div class="flex items-center gap-2">
+        <img src="/logo.svg" alt="" width="28" height="28">
+        <span>{{ t('nav.home') }}</span>
+      </div>
+    </template>
     <template #right>
       <UNavigationMenu :items="navItems" />
       <UDropdownMenu :items="localeItems">
