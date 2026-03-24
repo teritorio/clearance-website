@@ -1,9 +1,9 @@
 export default defineNuxtConfig({
   modules: [
+    '@nuxt/content',
     '@nuxt/ui',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    '@nuxt/content',
     '@nuxt/image',
   ],
 
