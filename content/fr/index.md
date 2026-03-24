@@ -11,7 +11,7 @@ description: "Clearance s'intercale entre OpenStreetMap et vos applications comm
 primaryLabel: Voir sur GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Demander une démo
-secondaryTo: /fr/contact
+secondaryTo: /contact
 ---
 ::
 
@@ -155,8 +155,8 @@ Des collectivités territoriales françaises, des opérateurs de transport et de
 title: Prêt à sécuriser vos données OSM ?
 description: Découvrez comment Clearance peut s'intégrer dans votre infrastructure.
 primaryLabel: Documentation
-primaryTo: /fr/docs
+primaryTo: /docs
 secondaryLabel: Nous contacter
-secondaryTo: /fr/contact
+secondaryTo: /contact
 ---
 ::

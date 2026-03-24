@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   title: string
   description?: string
   primaryLabel?: string
@@ -7,6 +7,19 @@ defineProps<{
   secondaryLabel?: string
   secondaryTo?: string
 }>()
+
+const localePath = useLocalePath()
+
+function resolveTo(path?: string) {
+  if (!path)
+    return undefined
+  if (path.startsWith('http'))
+    return path
+  return localePath(path)
+}
+
+const resolvedPrimaryTo = computed(() => resolveTo(props.primaryTo))
+const resolvedSecondaryTo = computed(() => resolveTo(props.secondaryTo))
 </script>
 
 <template>
@@ -21,15 +34,15 @@ defineProps<{
         </p>
         <div class="mt-8 flex items-center justify-center gap-x-4">
           <UButton
-            v-if="primaryLabel && primaryTo"
-            :to="primaryTo"
+            v-if="primaryLabel && resolvedPrimaryTo"
+            :to="resolvedPrimaryTo"
             size="xl"
           >
             {{ primaryLabel }}
           </UButton>
           <UButton
-            v-if="secondaryLabel && secondaryTo"
-            :to="secondaryTo"
+            v-if="secondaryLabel && resolvedSecondaryTo"
+            :to="resolvedSecondaryTo"
             size="xl"
             variant="outline"
           >

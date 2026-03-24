@@ -19,6 +19,12 @@ useHead({
 
 <template>
   <div v-if="page">
-    <ContentRenderer :value="page" />
+    <ContentRenderer :value="page">
+      <template #empty>
+        <p class="text-muted">
+          This page has no content yet.
+        </p>
+      </template>
+    </ContentRenderer>
   </div>
 </template>

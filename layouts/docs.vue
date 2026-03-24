@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { t, locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
-const localePath = useLocalePath()
+const { t, locale } = useI18n()
 
 const head = useLocaleHead({ seo: true })
 useHead({
@@ -24,49 +22,11 @@ const docsNavigation = computed(() => {
   const docsSection = navigation.value.find(n => n.path?.includes('/docs'))
   return docsSection?.children || []
 })
-
-const navItems = computed(() => [
-  {
-    label: t('nav.home'),
-    icon: 'i-lucide-home',
-    to: localePath('/'),
-  },
-  {
-    label: t('nav.docs'),
-    icon: 'i-lucide-book-open',
-    to: localePath('/docs'),
-  },
-  {
-    label: t('nav.github'),
-    icon: 'i-lucide-github',
-    to: 'https://github.com/teritorio/clearance',
-    target: '_blank',
-  },
-])
-
-const localeItems = computed(() =>
-  (locales.value as Array<{ code: string, name: string }>).map(l => ({
-    label: l.name,
-    to: switchLocalePath(l.code as typeof locale.value),
-  })),
-)
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <UHeader :title="t('nav.home')" :to="localePath('/')">
-      <template #right>
-        <UNavigationMenu :items="navItems" />
-        <UDropdownMenu :items="localeItems">
-          <UButton
-            variant="ghost"
-            icon="i-lucide-languages"
-            :label="locale.toUpperCase()"
-            :aria-label="t('nav.changeLanguage')"
-          />
-        </UDropdownMenu>
-      </template>
-    </UHeader>
+    <AppHeader show-home />
 
     <UContainer class="flex-1">
       <div class="flex gap-8 py-8">

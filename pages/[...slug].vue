@@ -10,7 +10,7 @@ const path = computed(() => {
 })
 
 const { data: page } = await useAsyncData(
-  `page-${path.value}`,
+  'page-content',
   () => queryCollection(collectionName.value).path(path.value).first(),
   { watch: [locale, path] },
 )
@@ -32,7 +32,13 @@ definePageMeta({
 <template>
   <NuxtLayout :name="isDocsPage ? 'docs' : 'default'">
     <div v-if="page" class="prose dark:prose-invert max-w-none">
-      <ContentRenderer :value="page" />
+      <ContentRenderer :value="page">
+        <template #empty>
+          <p class="text-muted">
+            This page has no content yet.
+          </p>
+        </template>
+      </ContentRenderer>
     </div>
     <div v-else class="py-16 text-center">
       <p class="text-muted">

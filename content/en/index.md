@@ -11,7 +11,7 @@ description: "Clearance sits between OpenStreetMap and your applications as an i
 primaryLabel: View on GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Request a demo
-secondaryTo: /en/contact
+secondaryTo: /contact
 ---
 ::
 
@@ -155,8 +155,8 @@ French local authorities, transport operators, and tourism offices use Clearance
 title: Ready to secure your OSM data?
 description: Discover how Clearance can integrate into your infrastructure.
 primaryLabel: Documentation
-primaryTo: /en/docs
+primaryTo: /docs
 secondaryLabel: Contact us
-secondaryTo: /en/contact
+secondaryTo: /contact
 ---
 ::
