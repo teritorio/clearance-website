@@ -33,10 +33,8 @@ const footerColumns = computed(() => [
         <UFooterColumns :columns="footerColumns" />
       </UContainer>
     </template>
-    <template #left>
-      <p class="text-sm text-muted">
-        {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
-      </p>
-    </template>
+    <p class="text-sm text-muted">
+      {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
+    </p>
   </UFooter>
 </template>
