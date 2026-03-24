@@ -1,0 +1,42 @@
+<script setup lang="ts">
+defineProps<{
+  title: string
+  description?: string
+  primaryLabel?: string
+  primaryTo?: string
+  secondaryLabel?: string
+  secondaryTo?: string
+}>()
+</script>
+
+<template>
+  <section class="py-16 sm:py-24">
+    <UContainer>
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+          {{ title }}
+        </h2>
+        <p v-if="description" class="mt-4 text-lg text-muted">
+          {{ description }}
+        </p>
+        <div class="mt-8 flex items-center justify-center gap-x-4">
+          <UButton
+            v-if="primaryLabel && primaryTo"
+            :to="primaryTo"
+            size="xl"
+          >
+            {{ primaryLabel }}
+          </UButton>
+          <UButton
+            v-if="secondaryLabel && secondaryTo"
+            :to="secondaryTo"
+            size="xl"
+            variant="outline"
+          >
+            {{ secondaryLabel }}
+          </UButton>
+        </div>
+      </div>
+    </UContainer>
+  </section>
+</template>

@@ -10,16 +10,31 @@ useHead({
   meta: () => [...(head.value.meta || [])],
 })
 
+const collectionName = computed(() => `content_${locale.value}` as const)
+
+const { data: navigation } = await useAsyncData(
+  `docs-nav-${locale.value}`,
+  () => queryCollectionNavigation(collectionName.value),
+  { watch: [locale] },
+)
+
+const docsNavigation = computed(() => {
+  if (!navigation.value)
+    return []
+  const docsSection = navigation.value.find(n => n.path?.includes('/docs'))
+  return docsSection?.children || []
+})
+
 const navItems = computed(() => [
+  {
+    label: t('nav.home'),
+    icon: 'i-lucide-home',
+    to: localePath('/'),
+  },
   {
     label: t('nav.docs'),
     icon: 'i-lucide-book-open',
     to: localePath('/docs'),
-  },
-  {
-    label: t('nav.contact'),
-    icon: 'i-lucide-mail',
-    to: localePath('/contact'),
   },
   {
     label: t('nav.github'),
@@ -35,29 +50,6 @@ const localeItems = computed(() =>
     to: switchLocalePath(l.code as typeof locale.value),
   })),
 )
-
-const footerColumns = computed(() => [
-  {
-    label: t('footer.product'),
-    children: [
-      { label: t('nav.docs'), to: localePath('/docs') },
-      { label: t('nav.contact'), to: localePath('/contact') },
-    ],
-  },
-  {
-    label: t('footer.resources'),
-    children: [
-      { label: 'GitHub', to: 'https://github.com/teritorio/clearance', target: '_blank' },
-      { label: 'OpenStreetMap', to: 'https://www.openstreetmap.org', target: '_blank' },
-    ],
-  },
-  {
-    label: t('footer.company'),
-    children: [
-      { label: 'Teritorio', to: 'https://teritorio.fr', target: '_blank' },
-    ],
-  },
-])
 </script>
 
 <template>
@@ -76,14 +68,31 @@ const footerColumns = computed(() => [
       </template>
     </UHeader>
 
-    <main class="flex-1">
-      <slot />
-    </main>
+    <UContainer class="flex-1">
+      <div class="flex gap-8 py-8">
+        <aside class="hidden lg:block w-64 shrink-0">
+          <nav class="sticky top-20">
+            <ContentNavigation
+              v-if="docsNavigation.length"
+              :navigation="docsNavigation"
+              highlight
+            />
+          </nav>
+        </aside>
+
+        <main class="min-w-0 flex-1">
+          <slot />
+        </main>
+
+        <aside class="hidden xl:block w-56 shrink-0">
+          <div class="sticky top-20">
+            <slot name="toc" />
+          </div>
+        </aside>
+      </div>
+    </UContainer>
 
     <UFooter>
-      <template #top>
-        <UFooterColumns :columns="footerColumns" />
-      </template>
       <template #left>
         <p class="text-sm text-muted">
           {{ t('footer.copyright', { year: new Date().getFullYear() }) }}

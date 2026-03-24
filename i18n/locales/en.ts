@@ -1,14 +1,31 @@
 export default defineI18nLocale(async () => ({
   nav: {
-    home: 'Home',
+    home: 'Clearance',
+    docs: 'Documentation',
+    contact: 'Contact',
+    github: 'GitHub',
     changeLanguage: 'Change language',
   },
-  hero: {
-    title: 'Clearance',
-    subtitle: 'Quality gate for OpenStreetMap data',
-    viewOnGithub: 'View on GitHub',
-  },
   footer: {
+    product: 'Product',
+    resources: 'Resources',
+    company: 'Company',
     copyright: '© {year} Teritorio. Open source under MIT License.',
+  },
+  contact: {
+    title: 'Contact us',
+    description: 'Have a question about Clearance? Need a demo or support? Write to us.',
+    name: 'Name',
+    email: 'Email',
+    organization: 'Organization',
+    message: 'Message',
+    send: 'Send',
+    namePlaceholder: 'Your name',
+    emailPlaceholder: 'your{\'@\'}email.com',
+    organizationPlaceholder: 'Your organization',
+    messagePlaceholder: 'Describe your project or question...',
+  },
+  docs: {
+    toc: 'On this page',
   },
 }))
