@@ -37,6 +37,26 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
 
+  routeRules: {
+    '/en/docs': { redirect: '/en/docs/getting-started/overview' },
+    '/fr/docs': { redirect: '/fr/docs/getting-started/overview' },
+    '/es/docs': { redirect: '/es/docs/getting-started/overview' },
+  },
+
+  nitro: {
+    prerender: {
+      routes: ['fr', 'en', 'es'].flatMap(locale => [
+        `/${locale}/docs/getting-started/overview`,
+        `/${locale}/docs/getting-started/how-it-works`,
+        `/${locale}/docs/getting-started/rules`,
+        `/${locale}/docs/going-further/integration`,
+        `/${locale}/docs/going-further/deployment`,
+        `/${locale}/docs/going-further/references`,
+        `/${locale}/docs/going-further/roadmap`,
+      ]),
+    },
+  },
+
   compatibilityDate: '2025-03-24',
   devtools: { enabled: true },
 })
