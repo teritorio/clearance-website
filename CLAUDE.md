@@ -1,0 +1,33 @@
+# CLAUDE.md
+
+## Project Overview
+
+Clearance Website — marketing/presentational site for Clearance, an open-source quality gate for OpenStreetMap data.
+
+## Tech Stack
+
+- **Framework**: Nuxt 4 (SSG via `nuxi generate`)
+- **UI**: Nuxt UI v4 (Tailwind CSS v4)
+- **Content**: Nuxt Content v3 (Markdown-driven, SQLite-backed)
+- **SEO**: @nuxtjs/seo meta-module
+- **Package Manager**: pnpm
+- **Node**: v22+ (required for Nuxt Content v3 native SQLite)
+
+## Commands
+
+- `pnpm dev` — Start development server
+- `pnpm generate` — Build static site
+- `pnpm lint:fix` — Lint and auto-fix
+- `pnpm typecheck` — TypeScript checks
+- `pnpm test:run` — Run tests once
+
+## Conventions
+
+- ESLint: `@antfu/eslint-config`
+- Commits: conventional commits enforced by commitlint
+- Git hooks: simple-git-hooks + lint-staged
+
+## Git Commits
+
+- Never include "Co-Authored-By: Claude" or any mention of Claude AI in commit messages.
+- All commits must be authored by the current git user.
