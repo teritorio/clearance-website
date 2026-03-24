@@ -11,7 +11,7 @@ defineProps<{
     <UContainer>
       <LandingSectionHeader :headline="headline" :title="title" :description="description" />
       <div class="mt-12">
-        <ContentSlot />
+        <MDCSlot :use="$slots.default" />
       </div>
     </UContainer>
   </section>
