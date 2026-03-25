@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const hyphenPattern = /-/g
-const firstCharPattern = /^\w/
-
 const { t, locale } = useI18n()
 const route = useRoute()
 
@@ -21,6 +18,25 @@ const { data: page } = await useAsyncData(
 
 const isDocsPage = computed(() => path.value.includes('/docs'))
 
+const sectionSlug = computed(() => {
+  const parts = slug.value
+  return isDocsPage.value && parts.length >= 3 ? parts[1] : undefined
+})
+
+const { data: docsIndex } = await useAsyncData(
+  `breadcrumb-docs-${locale.value}`,
+  () => queryCollection(collectionName.value).path(`/${locale.value}/docs`).first(),
+  { watch: [locale] },
+)
+
+const { data: sectionIndex } = await useAsyncData(
+  `breadcrumb-section-${locale.value}-${sectionSlug.value}`,
+  () => sectionSlug.value
+    ? queryCollection(collectionName.value).path(`/${locale.value}/docs/${sectionSlug.value}`).first()
+    : Promise.resolve(null),
+  { watch: [locale] },
+)
+
 useHead({
   title: () => page.value?.title,
   meta: [
@@ -37,11 +53,9 @@ useSchemaOrg([
       if (isDocsPage.value) {
         const parts = slug.value
         if (parts.length >= 2)
-          items.push({ name: 'Docs', item: `/${locale.value}/docs` })
-        if (parts.length >= 3 && parts[1]) {
-          const section = parts[1]
-          items.push({ name: section.replace(hyphenPattern, ' ').replace(firstCharPattern, c => c.toUpperCase()), item: `/${locale.value}/docs/${section}` })
-        }
+          items.push({ name: docsIndex.value?.title || t('nav.docs'), item: `/${locale.value}/docs` })
+        if (parts.length >= 3 && sectionIndex.value?.title)
+          items.push({ name: sectionIndex.value.title, item: `/${locale.value}/docs/${parts[1]}` })
         if (page.value?.title)
           items.push({ name: page.value.title, item: `/${locale.value}/${parts.join('/')}` })
       }
