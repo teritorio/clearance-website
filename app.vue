@@ -6,9 +6,6 @@ const uiLocales: Record<string, typeof en> = { en, fr, es }
 const { locale } = useI18n()
 const route = useRoute()
 const uiLocale = computed(() => uiLocales[locale.value] || en)
-
-const colorMode = useColorMode()
-colorMode.preference = 'light'
 </script>
 
 <template>
