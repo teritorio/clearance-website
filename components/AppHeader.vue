@@ -48,7 +48,7 @@ const localeItems = computed(() =>
   <UHeader :to="localePath('/')">
     <template #title>
       <div class="flex items-center gap-2">
-        <img src="/logo.svg" alt="" width="28" height="28">
+        <img src="/logo.svg" alt="Clearance" width="28" height="28">
         <span>{{ t('nav.home') }}</span>
       </div>
     </template>
