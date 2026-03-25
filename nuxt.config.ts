@@ -46,9 +46,14 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['fr', 'en', 'es'].flatMap(locale => [
+        `/${locale}`,
+        `/${locale}/contact`,
+        `/${locale}/docs`,
+        `/${locale}/docs/getting-started`,
         `/${locale}/docs/getting-started/overview`,
         `/${locale}/docs/getting-started/how-it-works`,
         `/${locale}/docs/getting-started/rules`,
+        `/${locale}/docs/going-further`,
         `/${locale}/docs/going-further/integration`,
         `/${locale}/docs/going-further/deployment`,
         `/${locale}/docs/going-further/references`,
