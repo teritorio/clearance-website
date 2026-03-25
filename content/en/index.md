@@ -7,7 +7,7 @@ description: "Take control of the quality of the OpenStreetMap data you use or r
 ---
 headline: Open source quality gate
 title: Take control of your OpenStreetMap data quality
-description: "Using OpenStreetMap in a critical context? An error can block an emergency route, distort a calculation, or engage your liability. Clearance sits between OpenStreetMap and your applications as an intelligent quality filter. Compliant changes pass automatically. Suspicious ones are held for review."
+description: "Using OpenStreetMap in a critical context? An error can block an emergency route, distort a calculation, or engage your liability. Clearance helps you prevent that."
 primaryLabel: View on GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Request a demo
@@ -19,7 +19,7 @@ secondaryTo: /contact
 ---
 headline: Features
 title: Everything you need to secure your OSM data
-description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are made directly in OSM at the source."
+description: "A complete quality assurance pipeline between OpenStreetMap and your applications. Clearance never modifies OpenStreetMap: problematic data is simply held, and corrections are made directly in OSM at the source."
 ---
 
   ::landing-feature
@@ -137,6 +137,14 @@ description: "These situations are common when OSM data is used in an operationa
   title: Facility not yet operational
   ---
   Adding a public facility that is not yet operational can lead to premature public use.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-link-2-off
+  title: Reference deleted
+  ---
+  Deleting a reference can break joins with a business database and cause malfunctions.
   ::
 
 ::

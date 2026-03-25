@@ -7,7 +7,7 @@ description: "Maîtrisez la qualité des données OpenStreetMap que vous utilise
 ---
 headline: Portail qualité open source
 title: Maîtrisez la qualité de vos données OpenStreetMap
-description: "Vous utilisez OpenStreetMap dans un contexte critique ? Une erreur peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance s'intercale entre OpenStreetMap et vos applications comme un filtre qualité intelligent. Les modifications conformes passent automatiquement. Les changements suspects sont retenus pour vérification."
+description: "Vous utilisez OpenStreetMap dans un contexte critique ? Une erreur peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance vous aide à vous en prémunir."
 primaryLabel: Voir sur GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Demander une démo
@@ -19,7 +19,7 @@ secondaryTo: /contact
 ---
 headline: Fonctionnalités
 title: Tout ce qu'il faut pour sécuriser vos données OSM
-description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont mises en attente, et les corrections sont apportées directement dans OSM, à la source."
+description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications. Clearance ne modifie jamais OpenStreetMap : les données problématiques sont mises en attente, et les corrections sont apportées directement dans OSM, à la source."
 ---
 
   ::landing-feature
@@ -137,6 +137,14 @@ description: "Ces situations sont courantes lorsque les données OSM sont utilis
   title: Équipement pas encore opérationnel
   ---
   L'ajout d'un équipement public pas encore opérationnel peut générer un usage prématuré par le public.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-link-2-off
+  title: Référence supprimée
+  ---
+  La suppression d'une référence peut rompre les jointures avec une base métier et provoquer des dysfonctionnements.
   ::
 
 ::
