@@ -29,6 +29,7 @@ function onSubmit() {
     `Name: ${form.name}\nOrganization: ${form.organization}\nEmail: ${form.email}\n\n${form.message}`,
   )
   window.location.href = `mailto:contact@teritorio.fr?subject=${subject}&body=${body}`
+  Object.assign(form, { name: '', email: '', organization: '', message: '' })
 }
 </script>
 
