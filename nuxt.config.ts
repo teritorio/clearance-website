@@ -9,11 +9,32 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  app: {
+    head: {
+      link: [
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
+      ],
+      meta: [
+        { name: 'theme-color', content: '#ffbb00' },
+        { property: 'og:image', content: 'https://clearance.teritorio.xyz/og-image.png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:image:alt', content: 'Clearance — Quality filter for OpenStreetMap data' },
+        { name: 'twitter:image', content: 'https://clearance.teritorio.xyz/og-image.png' },
+      ],
+    },
+  },
+
   site: {
     url: 'https://clearance.teritorio.xyz',
     name: 'Clearance',
     description: 'Open source quality filter for OpenStreetMap data — filter, validate, and secure your OSM data pipeline.',
     defaultLocale: 'fr',
+  },
+
+  ogImage: {
+    enabled: false,
   },
 
   i18n: {
