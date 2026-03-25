@@ -12,6 +12,7 @@ const path = computed(() => {
 const { data: page } = await useAsyncData(
   `slug-${route.path}`,
   () => queryCollection(collectionName.value).path(path.value).first(),
+  { watch: [locale] },
 )
 
 const isDocsPage = computed(() => path.value.includes('/docs'))
