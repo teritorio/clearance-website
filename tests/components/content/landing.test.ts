@@ -1,0 +1,403 @@
+import { mountSuspended } from '@nuxt/test-utils/runtime'
+import { describe, expect, it } from 'vitest'
+import { h } from 'vue'
+import LandingCta from '~/components/content/LandingCta.vue'
+import LandingFeature from '~/components/content/LandingFeature.vue'
+import LandingFeatures from '~/components/content/LandingFeatures.vue'
+import LandingHero from '~/components/content/LandingHero.vue'
+import LandingReferences from '~/components/content/LandingReferences.vue'
+import LandingSectionHeader from '~/components/content/LandingSectionHeader.vue'
+import LandingStep from '~/components/content/LandingStep.vue'
+import LandingSteps from '~/components/content/LandingSteps.vue'
+import LandingUseCase from '~/components/content/LandingUseCase.vue'
+import LandingUseCases from '~/components/content/LandingUseCases.vue'
+
+describe('landingSectionHeader', () => {
+  it('renders headline, title, and description', async () => {
+    const component = await mountSuspended(LandingSectionHeader, {
+      props: {
+        headline: 'My Headline',
+        title: 'My Title',
+        description: 'My Description',
+      },
+    })
+    expect(component.text()).toContain('My Headline')
+    expect(component.text()).toContain('My Title')
+    expect(component.text()).toContain('My Description')
+  })
+
+  it('hides when no title is provided', async () => {
+    const component = await mountSuspended(LandingSectionHeader, {
+      props: {
+        headline: 'My Headline',
+      },
+    })
+    expect(component.html()).not.toContain('My Headline')
+  })
+
+  it('hides headline when not provided', async () => {
+    const component = await mountSuspended(LandingSectionHeader, {
+      props: {
+        title: 'My Title',
+      },
+    })
+    expect(component.text()).toContain('My Title')
+    expect(component.text()).not.toContain('My Headline')
+  })
+
+  it('hides description when not provided', async () => {
+    const component = await mountSuspended(LandingSectionHeader, {
+      props: {
+        title: 'My Title',
+      },
+    })
+    expect(component.text()).toContain('My Title')
+    expect(component.html()).not.toContain('text-muted')
+  })
+})
+
+describe('landingHero', () => {
+  it('renders title and description', async () => {
+    const component = await mountSuspended(LandingHero, {
+      props: {
+        title: 'Hero Title',
+        description: 'Hero Description',
+      },
+    })
+    expect(component.text()).toContain('Hero Title')
+    expect(component.text()).toContain('Hero Description')
+  })
+
+  it('renders headline when provided', async () => {
+    const component = await mountSuspended(LandingHero, {
+      props: {
+        headline: 'Hero Headline',
+        title: 'Hero Title',
+        description: 'Hero Description',
+      },
+    })
+    expect(component.text()).toContain('Hero Headline')
+  })
+
+  it('hides buttons when no label or to', async () => {
+    const component = await mountSuspended(LandingHero, {
+      props: {
+        title: 'Hero Title',
+        description: 'Hero Description',
+      },
+    })
+    expect(component.findAll('a[role="button"], button').filter(b => b.text() !== '')).toHaveLength(0)
+  })
+
+  it('renders primary button with locale-resolved path', async () => {
+    const component = await mountSuspended(LandingHero, {
+      props: {
+        title: 'Hero Title',
+        description: 'Hero Description',
+        primaryLabel: 'Get Started',
+        primaryTo: '/docs',
+      },
+    })
+    expect(component.text()).toContain('Get Started')
+  })
+
+  it('renders secondary button', async () => {
+    const component = await mountSuspended(LandingHero, {
+      props: {
+        title: 'Hero Title',
+        description: 'Hero Description',
+        secondaryLabel: 'Learn More',
+        secondaryTo: '/about',
+      },
+    })
+    expect(component.text()).toContain('Learn More')
+  })
+
+  it('preserves external URLs', async () => {
+    const component = await mountSuspended(LandingHero, {
+      props: {
+        title: 'Hero Title',
+        description: 'Hero Description',
+        primaryLabel: 'GitHub',
+        primaryTo: 'https://github.com/teritorio/clearance',
+      },
+    })
+    const link = component.find('a[href="https://github.com/teritorio/clearance"]')
+    expect(link.exists()).toBe(true)
+  })
+})
+
+describe('landingCta', () => {
+  it('renders title', async () => {
+    const component = await mountSuspended(LandingCta, {
+      props: {
+        title: 'CTA Title',
+      },
+    })
+    expect(component.text()).toContain('CTA Title')
+  })
+
+  it('renders description when provided', async () => {
+    const component = await mountSuspended(LandingCta, {
+      props: {
+        title: 'CTA Title',
+        description: 'CTA Description',
+      },
+    })
+    expect(component.text()).toContain('CTA Description')
+  })
+
+  it('hides description when not provided', async () => {
+    const component = await mountSuspended(LandingCta, {
+      props: {
+        title: 'CTA Title',
+      },
+    })
+    expect(component.html()).not.toContain('CTA Description')
+  })
+
+  it('renders primary and secondary buttons', async () => {
+    const component = await mountSuspended(LandingCta, {
+      props: {
+        title: 'CTA Title',
+        primaryLabel: 'Primary',
+        primaryTo: '/start',
+        secondaryLabel: 'Secondary',
+        secondaryTo: '/learn',
+      },
+    })
+    expect(component.text()).toContain('Primary')
+    expect(component.text()).toContain('Secondary')
+  })
+
+  it('hides buttons when no label', async () => {
+    const component = await mountSuspended(LandingCta, {
+      props: {
+        title: 'CTA Title',
+      },
+    })
+    expect(component.findAll('a[role="button"], button').filter(b => b.text() !== '')).toHaveLength(0)
+  })
+})
+
+describe('landingFeature', () => {
+  it('renders title', async () => {
+    const component = await mountSuspended(LandingFeature, {
+      props: {
+        title: 'Feature Title',
+      },
+    })
+    expect(component.text()).toContain('Feature Title')
+  })
+
+  it('renders icon when provided', async () => {
+    const component = await mountSuspended(LandingFeature, {
+      props: {
+        icon: 'i-lucide-check',
+        title: 'Feature Title',
+      },
+    })
+    expect(component.html()).toContain('i-lucide:check')
+  })
+
+  it('hides icon container when not provided', async () => {
+    const component = await mountSuspended(LandingFeature, {
+      props: {
+        title: 'Feature Title',
+      },
+    })
+    expect(component.html()).not.toContain('iconify')
+  })
+
+  it('renders slot content', async () => {
+    const component = await mountSuspended(LandingFeature, {
+      props: {
+        title: 'Feature Title',
+      },
+      slots: {
+        default: () => h('span', 'Slot Content'),
+      },
+    })
+    expect(component.text()).toContain('Slot Content')
+  })
+})
+
+describe('landingFeatures', () => {
+  it('renders section header props', async () => {
+    const component = await mountSuspended(LandingFeatures, {
+      props: {
+        headline: 'Features Headline',
+        title: 'Features Title',
+        description: 'Features Description',
+      },
+    })
+    expect(component.text()).toContain('Features Headline')
+    expect(component.text()).toContain('Features Title')
+    expect(component.text()).toContain('Features Description')
+  })
+
+  it('renders slot children', async () => {
+    const component = await mountSuspended(LandingFeatures, {
+      props: {
+        title: 'Features Title',
+      },
+      slots: {
+        default: () => h('div', 'Child Content'),
+      },
+    })
+    expect(component.text()).toContain('Child Content')
+  })
+})
+
+describe('landingStep', () => {
+  it('renders number when provided', async () => {
+    const component = await mountSuspended(LandingStep, {
+      props: {
+        number: '1',
+        title: 'Step Title',
+      },
+    })
+    expect(component.text()).toContain('1')
+    expect(component.text()).toContain('Step Title')
+  })
+
+  it('renders icon when no number', async () => {
+    const component = await mountSuspended(LandingStep, {
+      props: {
+        icon: 'i-lucide-rocket',
+        title: 'Step Title',
+      },
+    })
+    expect(component.html()).toContain('i-lucide:rocket')
+  })
+
+  it('prefers number over icon', async () => {
+    const component = await mountSuspended(LandingStep, {
+      props: {
+        number: '2',
+        icon: 'i-lucide-rocket',
+        title: 'Step Title',
+      },
+    })
+    expect(component.text()).toContain('2')
+    expect(component.html()).not.toContain('i-lucide:rocket')
+  })
+
+  it('renders slot content', async () => {
+    const component = await mountSuspended(LandingStep, {
+      props: {
+        title: 'Step Title',
+      },
+      slots: {
+        default: () => h('span', 'Step details'),
+      },
+    })
+    expect(component.text()).toContain('Step details')
+  })
+})
+
+describe('landingSteps', () => {
+  it('renders section header props', async () => {
+    const component = await mountSuspended(LandingSteps, {
+      props: {
+        headline: 'Steps Headline',
+        title: 'Steps Title',
+        description: 'Steps Description',
+      },
+    })
+    expect(component.text()).toContain('Steps Headline')
+    expect(component.text()).toContain('Steps Title')
+    expect(component.text()).toContain('Steps Description')
+  })
+
+  it('renders slot children', async () => {
+    const component = await mountSuspended(LandingSteps, {
+      props: {
+        title: 'Steps Title',
+      },
+      slots: {
+        default: () => h('div', 'Step Child'),
+      },
+    })
+    expect(component.text()).toContain('Step Child')
+  })
+})
+
+describe('landingUseCase', () => {
+  it('renders icon and title via LandingFeature', async () => {
+    const component = await mountSuspended(LandingUseCase, {
+      props: {
+        icon: 'i-lucide-map',
+        title: 'Use Case Title',
+      },
+    })
+    expect(component.text()).toContain('Use Case Title')
+    expect(component.html()).toContain('i-lucide:map')
+  })
+
+  it('renders slot content', async () => {
+    const component = await mountSuspended(LandingUseCase, {
+      props: {
+        title: 'Use Case Title',
+      },
+      slots: {
+        default: () => h('span', 'Use case description'),
+      },
+    })
+    expect(component.text()).toContain('Use case description')
+  })
+})
+
+describe('landingUseCases', () => {
+  it('renders section header via LandingFeatures', async () => {
+    const component = await mountSuspended(LandingUseCases, {
+      props: {
+        headline: 'UseCases Headline',
+        title: 'UseCases Title',
+        description: 'UseCases Description',
+      },
+    })
+    expect(component.text()).toContain('UseCases Headline')
+    expect(component.text()).toContain('UseCases Title')
+    expect(component.text()).toContain('UseCases Description')
+  })
+
+  it('renders slot children', async () => {
+    const component = await mountSuspended(LandingUseCases, {
+      props: {
+        title: 'UseCases Title',
+      },
+      slots: {
+        default: () => h('div', 'UseCase Child'),
+      },
+    })
+    expect(component.text()).toContain('UseCase Child')
+  })
+})
+
+describe('landingReferences', () => {
+  it('renders section header props', async () => {
+    const component = await mountSuspended(LandingReferences, {
+      props: {
+        headline: 'References Headline',
+        title: 'References Title',
+        description: 'References Description',
+      },
+    })
+    expect(component.text()).toContain('References Headline')
+    expect(component.text()).toContain('References Title')
+    expect(component.text()).toContain('References Description')
+  })
+
+  it('renders slot content', async () => {
+    const component = await mountSuspended(LandingReferences, {
+      props: {
+        title: 'References Title',
+      },
+      slots: {
+        default: () => h('span', 'Reference content'),
+      },
+    })
+    expect(component.text()).toContain('Reference content')
+  })
+})
