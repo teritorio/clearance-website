@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const hyphenPattern = /-/g
+const firstCharPattern = /^\w/
+
 const { t, locale } = useI18n()
 const route = useRoute()
 
@@ -24,6 +27,28 @@ useHead({
     { name: 'description', content: () => page.value?.description },
   ],
 })
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: computed(() => {
+      const items: Array<{ name: string, item: string }> = [
+        { name: 'Clearance', item: `/${locale.value}` },
+      ]
+      if (isDocsPage.value) {
+        const parts = slug.value
+        if (parts.length >= 2)
+          items.push({ name: 'Docs', item: `/${locale.value}/docs` })
+        if (parts.length >= 3 && parts[1]) {
+          const section = parts[1]
+          items.push({ name: section.replace(hyphenPattern, ' ').replace(firstCharPattern, c => c.toUpperCase()), item: `/${locale.value}/docs/${section}` })
+        }
+        if (page.value?.title)
+          items.push({ name: page.value.title, item: `/${locale.value}/${parts.join('/')}` })
+      }
+      return items
+    }),
+  }),
+])
 
 definePageMeta({
   layout: false,

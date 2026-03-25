@@ -58,6 +58,25 @@ function onSubmit() {
         </ul>
       </div>
 
+      <div class="mt-8 rounded-lg border border-muted/20 bg-muted/5 p-6">
+        <h2 class="text-lg font-semibold">
+          {{ t('contact.whyTitle') }}
+        </h2>
+        <ul class="mt-3 space-y-1 text-sm text-muted list-disc list-inside">
+          <li>{{ t('contact.whyItem1') }}</li>
+          <li>{{ t('contact.whyItem2') }}</li>
+          <li>{{ t('contact.whyItem3') }}</li>
+          <li>{{ t('contact.whyItem4') }}</li>
+        </ul>
+        <p class="mt-3 text-sm text-muted">
+          <i18n-t keypath="contact.openSource" tag="span">
+            <template #link>
+              <a href="https://github.com/teritorio/clearance" target="_blank" class="text-primary underline">{{ t('contact.github') }}</a>
+            </template>
+          </i18n-t>
+        </p>
+      </div>
+
       <form class="mt-8 space-y-6" @submit.prevent="onSubmit">
         <UFormField :label="t('contact.name')">
           <UInput
