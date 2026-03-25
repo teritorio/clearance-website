@@ -1,11 +1,11 @@
 ---
-title: "Clearance - Portal de calidad para datos de OpenStreetMap"
+title: "Clearance - Filtro de calidad para datos de OpenStreetMap"
 description: "Controle la calidad de los datos de OpenStreetMap que utiliza o redistribuye. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
 ---
 
 ::landing-hero
 ---
-headline: Portal de calidad open source
+headline: Filtro de calidad open source
 title: Controle la calidad de sus datos OpenStreetMap
 description: "¿Utiliza OpenStreetMap en un contexto crítico? Un error puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance le ayuda a prevenirlo."
 primaryLabel: Ver en GitHub
@@ -25,7 +25,7 @@ description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetM
   ::landing-feature
   ---
   icon: i-lucide-shield-check
-  title: Portal de calidad
+  title: Filtro de calidad
   ---
   Integra automáticamente los cambios conformes mientras retiene las modificaciones sospechosas para revisión humana.
   ::

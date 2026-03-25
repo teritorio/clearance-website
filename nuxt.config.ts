@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://clearance.teritorio.xyz',
     name: 'Clearance',
-    description: 'Open source quality gate for OpenStreetMap data — filter, validate, and secure your OSM data pipeline.',
+    description: 'Open source quality filter for OpenStreetMap data — filter, validate, and secure your OSM data pipeline.',
     defaultLocale: 'fr',
   },
 
