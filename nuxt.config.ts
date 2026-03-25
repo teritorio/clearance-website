@@ -20,7 +20,6 @@ export default defineNuxtConfig({
         { property: 'og:image', content: 'https://clearance.teritorio.xyz/og-image.png' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
-        { property: 'og:image:alt', content: 'Clearance — Quality filter for OpenStreetMap data' },
         { name: 'twitter:image', content: 'https://clearance.teritorio.xyz/og-image.png' },
       ],
     },
@@ -29,7 +28,6 @@ export default defineNuxtConfig({
   site: {
     url: 'https://clearance.teritorio.xyz',
     name: 'Clearance',
-    description: 'Open source quality filter for OpenStreetMap data — filter, validate, and secure your OSM data pipeline.',
     defaultLocale: 'fr',
   },
 
