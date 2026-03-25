@@ -4,13 +4,14 @@ const route = useRoute()
 
 const collectionName = computed(() => `content_${locale.value}` as const)
 
+const slug = computed(() => (route.params.slug as string[]) || [])
+
 const path = computed(() => {
-  const slug = (route.params.slug as string[]) || []
-  return `/${locale.value}/${slug.join('/')}`
+  return `/${locale.value}/${slug.value.join('/')}`
 })
 
 const { data: page } = await useAsyncData(
-  `slug-${route.path}`,
+  `slug-${locale.value}-${slug.value.join('/')}`,
   () => queryCollection(collectionName.value).path(path.value).first(),
   { watch: [locale] },
 )
