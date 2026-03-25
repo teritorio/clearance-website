@@ -30,6 +30,13 @@ export default defineI18nLocale(async () => ({
     emailPlaceholder: 'your{\'@\'}email.com',
     organizationPlaceholder: 'Your organization',
     messagePlaceholder: 'Describe your project or question...',
+    whyTitle: 'Why contact us?',
+    whyItem1: 'Get a personalized assessment of your OpenStreetMap data quality needs',
+    whyItem2: 'Discuss deployment options: managed SaaS or self-hosted',
+    whyItem3: 'Learn how Clearance integrates with your existing infrastructure',
+    whyItem4: 'Explore custom validation rules for your specific use case',
+    openSource: 'Clearance is open source (AGPL-3.0). You can explore the code and documentation on {link}.',
+    github: 'GitHub',
   },
   docs: {
     toc: 'On this page',
