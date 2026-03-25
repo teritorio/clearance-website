@@ -39,4 +39,15 @@ describe('appHeader', () => {
     const html = component.html()
     expect(html).toContain('i-lucide:home')
   })
+
+  it('renders locale dropdown trigger with language icon', async () => {
+    const component = await mountSuspended(AppHeader)
+    // The dropdown trigger has the languages icon and current locale code
+    const localeButton = component.find('button[aria-label="Change language"]')
+    expect(localeButton.exists()).toBe(true)
+    expect(localeButton.html()).toContain('i-lucide:languages')
+    // Dropdown items are teleported and only visible on interaction,
+    // but the trigger correctly shows current locale
+    expect(localeButton.text()).toContain('EN')
+  })
 })

@@ -1,8 +1,23 @@
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import ContactPage from '~/pages/contact.vue'
 
 describe('contact page', () => {
+  let originalLocation: Location
+
+  beforeEach(() => {
+    originalLocation = window.location
+  })
+
+  afterEach(() => {
+    // Restore window.location to prevent cross-test pollution
+    Object.defineProperty(window, 'location', {
+      value: originalLocation,
+      writable: true,
+      configurable: true,
+    })
+  })
+
   it('renders the contact form with all fields', async () => {
     const component = await mountSuspended(ContactPage, {
       route: '/fr/contact',
@@ -19,26 +34,31 @@ describe('contact page', () => {
     const component = await mountSuspended(ContactPage, {
       route: '/fr/contact',
     })
-    const inputs = component.findAll('input')
-    const textareas = component.findAll('textarea')
 
-    // Find by placeholder or model - name and email inputs are required
-    const requiredInputs = inputs.filter(i => i.attributes('required') !== undefined)
-    expect(requiredInputs.length).toBeGreaterThanOrEqual(2)
+    // Target fields by type/placeholder rather than index
+    const emailInput = component.find('input[type="email"]')
+    expect(emailInput.attributes('required')).toBeDefined()
+
+    // Name input: text input with the name placeholder
+    const textInputs = component.findAll('input:not([type="email"])')
+    const nameInput = textInputs.find(i => i.attributes('placeholder')?.includes('nom') || i.attributes('placeholder')?.includes('name'))
+    expect(nameInput?.attributes('required')).toBeDefined()
 
     // Message textarea is required
-    const requiredTextareas = textareas.filter(t => t.attributes('required') !== undefined)
-    expect(requiredTextareas.length).toBeGreaterThanOrEqual(1)
+    const textarea = component.find('textarea')
+    expect(textarea.attributes('required')).toBeDefined()
   })
 
   it('organization field is not required', async () => {
     const component = await mountSuspended(ContactPage, {
       route: '/fr/contact',
     })
+
+    // Organization input: find by placeholder
     const inputs = component.findAll('input')
-    // Organization is the third input (after name and email) and should not be required
-    const optionalInputs = inputs.filter(i => i.attributes('required') === undefined)
-    expect(optionalInputs.length).toBeGreaterThanOrEqual(1)
+    const orgInput = inputs.find(i => i.attributes('placeholder')?.includes('organisation') || i.attributes('placeholder')?.includes('organization'))
+    expect(orgInput).toBeDefined()
+    expect(orgInput!.attributes('required')).toBeUndefined()
   })
 
   it('renders i18n labels', async () => {
@@ -57,16 +77,11 @@ describe('contact page', () => {
       route: '/fr/contact',
     })
 
-    // Mock window.location.href
-    const hrefSpy = vi.spyOn(window, 'location', 'get').mockReturnValue({
-      ...window.location,
-      href: '',
-    } as Location)
-
+    // Mock window.location with proper cleanup via afterEach
     let capturedHref = ''
     Object.defineProperty(window, 'location', {
       value: {
-        ...window.location,
+        ...originalLocation,
         get href() { return capturedHref },
         set href(val: string) { capturedHref = val },
       },
@@ -74,13 +89,16 @@ describe('contact page', () => {
       configurable: true,
     })
 
-    // Fill form fields
-    const inputs = component.findAll('input')
+    // Fill form fields by targeting specific inputs
+    const emailInput = component.find('input[type="email"]')
     const textarea = component.find('textarea')
+    const textInputs = component.findAll('input:not([type="email"])')
+    const nameInput = textInputs.find(i => i.attributes('placeholder')?.includes('nom') || i.attributes('placeholder')?.includes('name'))
+    const orgInput = textInputs.find(i => i.attributes('placeholder')?.includes('organisation') || i.attributes('placeholder')?.includes('organization'))
 
-    await inputs[0].setValue('John Doe')
-    await inputs[1].setValue('john@example.com')
-    await inputs[2].setValue('ACME Corp')
+    await nameInput!.setValue('John Doe')
+    await emailInput.setValue('john@example.com')
+    await orgInput!.setValue('ACME Corp')
     await textarea.setValue('Hello, I need help.')
 
     // Submit
@@ -90,8 +108,6 @@ describe('contact page', () => {
     expect(capturedHref).toContain('subject=')
     expect(capturedHref).toContain('John%20Doe')
     expect(capturedHref).toContain('body=')
-
-    hrefSpy.mockRestore()
   })
 
   it('resets form after submission', async () => {
@@ -99,27 +115,28 @@ describe('contact page', () => {
       route: '/fr/contact',
     })
 
-    // Prevent actual navigation
+    // Mock window.location with proper cleanup via afterEach
     Object.defineProperty(window, 'location', {
-      value: { ...window.location, href: '' },
+      value: { ...originalLocation, href: '' },
       writable: true,
       configurable: true,
     })
 
-    const inputs = component.findAll('input')
+    const emailInput = component.find('input[type="email"]')
     const textarea = component.find('textarea')
+    const textInputs = component.findAll('input:not([type="email"])')
+    const nameInput = textInputs.find(i => i.attributes('placeholder')?.includes('nom') || i.attributes('placeholder')?.includes('name'))
 
-    await inputs[0].setValue('John Doe')
-    await inputs[1].setValue('john@example.com')
+    await nameInput!.setValue('John Doe')
+    await emailInput.setValue('john@example.com')
     await textarea.setValue('Hello')
 
     await component.find('form').trigger('submit')
     await component.vm.$nextTick()
 
     // After submission, the reactive form should be reset
-    // Check the component's internal state via the DOM
-    expect((inputs[0].element as HTMLInputElement).value).toBe('')
-    expect((inputs[1].element as HTMLInputElement).value).toBe('')
+    expect((nameInput!.element as HTMLInputElement).value).toBe('')
+    expect((emailInput.element as HTMLInputElement).value).toBe('')
     expect((textarea.element as HTMLTextAreaElement).value).toBe('')
   })
 })

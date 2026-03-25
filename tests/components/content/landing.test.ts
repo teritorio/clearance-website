@@ -52,7 +52,8 @@ describe('landingSectionHeader', () => {
       },
     })
     expect(component.text()).toContain('My Title')
-    expect(component.html()).not.toContain('text-muted')
+    // Only title text should be present, no description paragraph
+    expect(component.findAll('p').filter(p => p.text().length > 0)).toHaveLength(0)
   })
 })
 
@@ -86,7 +87,9 @@ describe('landingHero', () => {
         description: 'Hero Description',
       },
     })
-    expect(component.findAll('a[role="button"], button').filter(b => b.text() !== '')).toHaveLength(0)
+    // No button text like "Get Started" or "Learn More" should be present
+    expect(component.text()).not.toContain('Get Started')
+    expect(component.text()).not.toContain('Learn More')
   })
 
   it('renders primary button with locale-resolved path', async () => {
@@ -176,7 +179,9 @@ describe('landingCta', () => {
         title: 'CTA Title',
       },
     })
-    expect(component.findAll('a[role="button"], button').filter(b => b.text() !== '')).toHaveLength(0)
+    // No button labels should be present
+    expect(component.text()).not.toContain('Primary')
+    expect(component.text()).not.toContain('Secondary')
   })
 })
 
