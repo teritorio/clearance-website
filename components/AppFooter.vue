@@ -15,6 +15,7 @@ const footerColumns = computed(() => [
     children: [
       { label: 'GitHub', to: 'https://github.com/teritorio/clearance', target: '_blank' },
       { label: 'OpenStreetMap', to: 'https://www.openstreetmap.org', target: '_blank' },
+      { label: 'NLNet', to: 'https://nlnet.nl/project/Clearance/', target: '_blank' },
     ],
   },
   {
@@ -27,14 +28,26 @@ const footerColumns = computed(() => [
 </script>
 
 <template>
-  <UFooter>
+  <UFooter :ui="{ top: 'border-b border-default' }">
     <template #top>
       <UContainer>
-        <UFooterColumns :columns="footerColumns" />
+        <UFooterColumns :columns="footerColumns" :ui="{ root: 'block!', left: 'hidden!', center: 'grid! grid-cols-3! gap-8' }" />
       </UContainer>
     </template>
-    <p class="text-sm text-muted">
-      {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
-    </p>
+    <template #left>
+      <p class="text-sm text-muted">
+        {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
+      </p>
+    </template>
+    <template #right>
+      <UButton
+        to="https://github.com/teritorio/clearance"
+        target="_blank"
+        icon="i-lucide-github"
+        variant="ghost"
+        color="neutral"
+        aria-label="GitHub"
+      />
+    </template>
   </UFooter>
 </template>
