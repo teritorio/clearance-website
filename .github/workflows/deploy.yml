@@ -30,10 +30,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - uses: actions/configure-pages@v5
+
       - name: Generate static site
         run: pnpm generate
-
-      - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
