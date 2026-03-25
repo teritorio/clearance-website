@@ -1,6 +1,13 @@
+import type { VueWrapper } from '@vue/test-utils'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import ContactPage from '~/pages/contact.vue'
+
+function findInputByPlaceholder(component: VueWrapper, ...keywords: string[]) {
+  return component.findAll('input').find(
+    i => keywords.some(k => i.attributes('placeholder')?.toLowerCase().includes(k)),
+  )
+}
 
 describe('contact page', () => {
   let originalLocation: Location
@@ -35,16 +42,12 @@ describe('contact page', () => {
       route: '/fr/contact',
     })
 
-    // Target fields by type/placeholder rather than index
     const emailInput = component.find('input[type="email"]')
     expect(emailInput.attributes('required')).toBeDefined()
 
-    // Name input: text input with the name placeholder
-    const textInputs = component.findAll('input:not([type="email"])')
-    const nameInput = textInputs.find(i => i.attributes('placeholder')?.includes('nom') || i.attributes('placeholder')?.includes('name'))
+    const nameInput = findInputByPlaceholder(component, 'nom', 'name')
     expect(nameInput?.attributes('required')).toBeDefined()
 
-    // Message textarea is required
     const textarea = component.find('textarea')
     expect(textarea.attributes('required')).toBeDefined()
   })
@@ -54,9 +57,7 @@ describe('contact page', () => {
       route: '/fr/contact',
     })
 
-    // Organization input: find by placeholder
-    const inputs = component.findAll('input')
-    const orgInput = inputs.find(i => i.attributes('placeholder')?.includes('organisation') || i.attributes('placeholder')?.includes('organization'))
+    const orgInput = findInputByPlaceholder(component, 'organisation', 'organization')
     expect(orgInput).toBeDefined()
     expect(orgInput!.attributes('required')).toBeUndefined()
   })
@@ -89,19 +90,17 @@ describe('contact page', () => {
       configurable: true,
     })
 
-    // Fill form fields by targeting specific inputs
+    // Fill form fields
+    const nameInput = findInputByPlaceholder(component, 'nom', 'name')
     const emailInput = component.find('input[type="email"]')
+    const orgInput = findInputByPlaceholder(component, 'organisation', 'organization')
     const textarea = component.find('textarea')
-    const textInputs = component.findAll('input:not([type="email"])')
-    const nameInput = textInputs.find(i => i.attributes('placeholder')?.includes('nom') || i.attributes('placeholder')?.includes('name'))
-    const orgInput = textInputs.find(i => i.attributes('placeholder')?.includes('organisation') || i.attributes('placeholder')?.includes('organization'))
 
     await nameInput!.setValue('John Doe')
     await emailInput.setValue('john@example.com')
     await orgInput!.setValue('ACME Corp')
     await textarea.setValue('Hello, I need help.')
 
-    // Submit
     await component.find('form').trigger('submit')
 
     expect(capturedHref).toContain('mailto:contact@teritorio.fr')
@@ -122,10 +121,9 @@ describe('contact page', () => {
       configurable: true,
     })
 
+    const nameInput = findInputByPlaceholder(component, 'nom', 'name')
     const emailInput = component.find('input[type="email"]')
     const textarea = component.find('textarea')
-    const textInputs = component.findAll('input:not([type="email"])')
-    const nameInput = textInputs.find(i => i.attributes('placeholder')?.includes('nom') || i.attributes('placeholder')?.includes('name'))
 
     await nameInput!.setValue('John Doe')
     await emailInput.setValue('john@example.com')

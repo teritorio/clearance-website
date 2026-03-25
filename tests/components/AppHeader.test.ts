@@ -3,10 +3,11 @@ import { describe, expect, it } from 'vitest'
 import AppHeader from '~/components/AppHeader.vue'
 
 describe('appHeader', () => {
-  it('renders locale dropdown with current locale code', async () => {
+  it('renders locale dropdown trigger with language icon and current locale', async () => {
     const component = await mountSuspended(AppHeader)
-    const localeButton = component.find('button[aria-label]')
+    const localeButton = component.find('button[aria-label="Change language"]')
     expect(localeButton.exists()).toBe(true)
+    expect(localeButton.html()).toContain('i-lucide:languages')
     // Test environment defaults to en locale
     expect(localeButton.text()).toContain('EN')
   })
@@ -38,16 +39,5 @@ describe('appHeader', () => {
     })
     const html = component.html()
     expect(html).toContain('i-lucide:home')
-  })
-
-  it('renders locale dropdown trigger with language icon', async () => {
-    const component = await mountSuspended(AppHeader)
-    // The dropdown trigger has the languages icon and current locale code
-    const localeButton = component.find('button[aria-label="Change language"]')
-    expect(localeButton.exists()).toBe(true)
-    expect(localeButton.html()).toContain('i-lucide:languages')
-    // Dropdown items are teleported and only visible on interaction,
-    // but the trigger correctly shows current locale
-    expect(localeButton.text()).toContain('EN')
   })
 })
