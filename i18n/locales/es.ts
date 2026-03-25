@@ -41,6 +41,10 @@ export default defineI18nLocale(async () => ({
   docs: {
     toc: 'En esta página',
   },
+  seo: {
+    description: 'Filtro de calidad open source para datos OpenStreetMap — filtre, valide y asegure su pipeline de datos OSM.',
+    ogImageAlt: 'Clearance — Filtro de calidad para datos OpenStreetMap',
+  },
   page: {
     empty: 'Esta página aún no tiene contenido.',
     notFound: 'Página no encontrada',
