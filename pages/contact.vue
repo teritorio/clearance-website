@@ -43,6 +43,21 @@ function onSubmit() {
         {{ t('contact.description') }}
       </p>
 
+      <div class="mt-8 rounded-lg border border-primary/20 bg-primary/5 p-6">
+        <h2 class="text-lg font-semibold">
+          {{ t('contact.demoTitle') }}
+        </h2>
+        <p class="mt-2 text-sm text-muted">
+          {{ t('contact.demoDescription') }}
+        </p>
+        <ul class="mt-3 space-y-1 text-sm text-muted list-disc list-inside">
+          <li>{{ t('contact.demoItem1') }}</li>
+          <li>{{ t('contact.demoItem2') }}</li>
+          <li>{{ t('contact.demoItem3') }}</li>
+          <li>{{ t('contact.demoItem4') }}</li>
+        </ul>
+      </div>
+
       <form class="mt-8 space-y-6" @submit.prevent="onSubmit">
         <UFormField :label="t('contact.name')">
           <UInput

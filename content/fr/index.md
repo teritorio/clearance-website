@@ -1,13 +1,13 @@
 ---
 title: "Clearance - Portail qualité pour les données OpenStreetMap"
-description: "Maîtrisez la qualité des données OpenStreetMap que vous utilisez. Clearance filtre automatiquement les modifications conformes et retient les changements suspects pour vérification."
+description: "Maîtrisez la qualité des données OpenStreetMap que vous utilisez ou rediffusez. Clearance filtre automatiquement les modifications conformes et retient les changements suspects pour vérification."
 ---
 
 ::landing-hero
 ---
 headline: Portail qualité open source
 title: Maîtrisez la qualité de vos données OpenStreetMap
-description: "Clearance s'intercale entre OpenStreetMap et vos applications comme un filtre qualité intelligent. Les modifications conformes passent automatiquement. Les changements suspects sont retenus pour vérification."
+description: "Vous utilisez OpenStreetMap dans un contexte critique ? Une erreur peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance s'intercale entre OpenStreetMap et vos applications comme un filtre qualité intelligent. Les modifications conformes passent automatiquement. Les changements suspects sont retenus pour vérification."
 primaryLabel: Voir sur GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Demander une démo
@@ -19,7 +19,7 @@ secondaryTo: /contact
 ---
 headline: Fonctionnalités
 title: Tout ce qu'il faut pour sécuriser vos données OSM
-description: Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications.
+description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont mises en attente, et les corrections sont apportées directement dans OSM, à la source."
 ---
 
   ::landing-feature
@@ -57,9 +57,9 @@ description: Un pipeline complet d'assurance qualité entre OpenStreetMap et vos
   ::landing-feature
   ---
   icon: i-lucide-database
-  title: Sorties standardisées
+  title: Proxy qualité
   ---
-  Produit des fichiers de différences OSM standards et propose un proxy Overpass API transparent pour vos applications.
+  Utilise en entrée comme en sortie les formats standard de l'écosystème OpenStreetMap. Continuez à utiliser vos outils avec un meilleur niveau de confiance.
   ::
 
   ::landing-feature
@@ -94,7 +94,7 @@ description: Clearance s'intègre dans votre flux de réplication OpenStreetMap 
   title: Filtrage
   number: "2"
   ---
-  Les modifications sont évaluées par les règles de validation. Les changements conformes passent, les suspects sont retenus.
+  Les modifications conformes sont intégrées automatiquement et immédiatement. Les modifications sensibles sont mises en attente pour vérification.
   ::
 
   ::landing-step
@@ -103,7 +103,40 @@ description: Clearance s'intègre dans votre flux de réplication OpenStreetMap 
   title: Validation
   number: "3"
   ---
-  Un opérateur humain vérifie les changements retenus via l'interface web et les accepte ou les rejette.
+  Un opérateur vérifie les changements retenus et, si nécessaire, corrige dans OSM. Au prochain contrôle, les modifications conformes passeront le filtre.
+  ::
+
+::
+
+::landing-use-cases
+---
+headline: Exemples concrets
+title: Des règles adaptées à votre métier
+description: "Ces situations sont courantes lorsque les données OSM sont utilisées dans un contexte opérationnel."
+---
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-heart-pulse
+  title: Défibrillateur déplacé
+  ---
+  Un déplacement d'un défibrillateur pourrait engager votre responsabilité si l'information diffusée est erronée.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-route
+  title: Réseau routier modifié
+  ---
+  La modification d'un segment de réseau routier peut perturber un calculateur d'itinéraire utilisé par vos services.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-construction
+  title: Équipement pas encore opérationnel
+  ---
+  L'ajout d'un équipement public pas encore opérationnel peut générer un usage prématuré par le public.
   ::
 
 ::
@@ -144,19 +177,21 @@ description: Toute organisation qui dépend de données OpenStreetMap de qualit�
 ::landing-references
 ---
 headline: Références
-title: Ils nous font confiance
-description: Clearance est déjà utilisé en production par des collectivités et des opérateurs.
+title: Plus de 40 organisations nous font confiance
+description: Clearance est déjà utilisé en production par des collectivités, des opérateurs et des institutions.
 ---
-Des collectivités territoriales françaises, des opérateurs de transport et des offices de tourisme utilisent Clearance pour sécuriser leurs données OpenStreetMap au quotidien.
+**SNCF Réseau** (chemin de fer français) s'assure du maintien des informations liées aux voies et à la signalisation. La **Sécurité civile de Navarre** (Espagne) garantit la qualité des données de voirie et d'adressage utilisées pour le calcul d'itinéraire des interventions de secours. **30 agences départementales et offices de tourisme** (France hexagonale et outre-mers) contrôlent la qualité sur de nombreuses thématiques : équipements de loisirs, santé, commerces alimentaires.
+
+[Voir un exemple de projet (Landes)](https://clearance.teritorio.xyz/france_landes_poi/changes_logs){target="_blank"}
 ::
 
 ::landing-cta
 ---
-title: Prêt à sécuriser vos données OSM ?
-description: Découvrez comment Clearance peut s'intégrer dans votre infrastructure.
-primaryLabel: Documentation
-primaryTo: /docs
-secondaryLabel: Nous contacter
-secondaryTo: /contact
+title: Demander une démonstration
+description: "Lors d'une démonstration, nous échangeons sur votre contexte et vos besoins, vous présentons le fonctionnement de Clearance, illustrons des cas d'usage concrets et partageons notre feuille de route."
+primaryLabel: Nous contacter
+primaryTo: /contact
+secondaryLabel: Documentation
+secondaryTo: /docs
 ---
 ::
