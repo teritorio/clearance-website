@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Clearance Website — marketing/presentational site for Clearance, an open-source quality gate for OpenStreetMap data.
+Clearance Website — marketing/presentational site for Clearance, an open-source quality filter for OpenStreetMap data.
 
 ## Tech Stack
 

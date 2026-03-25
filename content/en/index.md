@@ -1,11 +1,11 @@
 ---
-title: "Clearance - Quality Gate for OpenStreetMap Data"
+title: "Clearance - Quality Filter for OpenStreetMap Data"
 description: "Take control of the quality of the OpenStreetMap data you use or redistribute. Clearance automatically passes compliant changes and holds suspicious ones for review."
 ---
 
 ::landing-hero
 ---
-headline: Open source quality gate
+headline: Open source quality filter
 title: Take control of your OpenStreetMap data quality
 description: "Using OpenStreetMap in a critical context? An error can block an emergency route, distort a calculation, or engage your liability. Clearance helps you prevent that."
 primaryLabel: View on GitHub
@@ -25,7 +25,7 @@ description: "A complete quality assurance pipeline between OpenStreetMap and yo
   ::landing-feature
   ---
   icon: i-lucide-shield-check
-  title: Quality gate
+  title: Quality filter
   ---
   Automatically integrates compliant changes while holding suspicious modifications for human review.
   ::
