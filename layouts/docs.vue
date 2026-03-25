@@ -39,7 +39,10 @@ const docsNavigation = computed(() => {
   }
 
   const docsSection = findDocsNode(navigation.value)
-  return docsSection?.children || []
+  return (docsSection?.children || []).map(section => ({
+    ...section,
+    children: section.children?.filter(child => child.path !== section.path),
+  }))
 })
 </script>
 
