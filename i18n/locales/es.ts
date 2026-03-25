@@ -1,0 +1,41 @@
+export default defineI18nLocale(async () => ({
+  nav: {
+    home: 'Clearance',
+    docs: 'Documentación',
+    contact: 'Contacto',
+    github: 'GitHub',
+    changeLanguage: 'Cambiar idioma',
+  },
+  footer: {
+    product: 'Producto',
+    resources: 'Recursos',
+    company: 'Empresa',
+    copyright: '© {year} Teritorio. Software libre bajo licencia AGPL-3.0.',
+  },
+  contact: {
+    title: 'Contáctenos',
+    description: '¿Tiene alguna pregunta sobre Clearance? ¿Necesita una demo o asistencia? Escríbanos.',
+    demoTitle: 'Solicitar una demostración',
+    demoDescription: 'Durante una demostración, nos tomamos el tiempo para:',
+    demoItem1: 'intercambiar sobre su contexto y necesidades',
+    demoItem2: 'presentar los conceptos y el funcionamiento de Clearance',
+    demoItem3: 'ilustrar casos de uso concretos',
+    demoItem4: 'compartir nuestra hoja de ruta',
+    name: 'Nombre',
+    email: 'Correo electrónico',
+    organization: 'Organización',
+    message: 'Mensaje',
+    send: 'Enviar',
+    namePlaceholder: 'Su nombre',
+    emailPlaceholder: 'su{\'@\'}correo.com',
+    organizationPlaceholder: 'Su organización',
+    messagePlaceholder: 'Describa su proyecto o pregunta...',
+  },
+  docs: {
+    toc: 'En esta página',
+  },
+  page: {
+    empty: 'Esta página aún no tiene contenido.',
+    notFound: 'Página no encontrada',
+  },
+}))

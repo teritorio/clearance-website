@@ -1,0 +1,41 @@
+export default defineI18nLocale(async () => ({
+  nav: {
+    home: 'Clearance',
+    docs: 'Documentation',
+    contact: 'Contact',
+    github: 'GitHub',
+    changeLanguage: 'Change language',
+  },
+  footer: {
+    product: 'Product',
+    resources: 'Resources',
+    company: 'Company',
+    copyright: '© {year} Teritorio. Free software under AGPL-3.0 License.',
+  },
+  contact: {
+    title: 'Contact us',
+    description: 'Have a question about Clearance? Need a demo or support? Write to us.',
+    demoTitle: 'Request a demonstration',
+    demoDescription: 'During a demonstration, we take the time to:',
+    demoItem1: 'discuss your context and needs',
+    demoItem2: 'present the concepts and how Clearance works',
+    demoItem3: 'illustrate concrete use cases',
+    demoItem4: 'share our roadmap',
+    name: 'Name',
+    email: 'Email',
+    organization: 'Organization',
+    message: 'Message',
+    send: 'Send',
+    namePlaceholder: 'Your name',
+    emailPlaceholder: 'your{\'@\'}email.com',
+    organizationPlaceholder: 'Your organization',
+    messagePlaceholder: 'Describe your project or question...',
+  },
+  docs: {
+    toc: 'On this page',
+  },
+  page: {
+    empty: 'This page has no content yet.',
+    notFound: 'Page not found',
+  },
+}))
