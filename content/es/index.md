@@ -133,74 +133,65 @@ description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetM
 
 ::landing-use-cases
 ---
-headline: Ejemplos concretos
-title: Reglas adaptadas a su actividad
-description: "Estas situaciones son frecuentes cuando los datos OSM se utilizan en un contexto operativo."
+headline: Casos de uso
+title: ¿Para quién es Clearance?
+description: "Clearance está diseñado para organizaciones que utilizan regularmente los datos de OpenStreetMap con exigencias de calidad."
 ---
 
   ::landing-use-case
   ---
-  icon: i-lucide-heart-pulse
-  title: Desfibrilador desplazado
-  ---
-  El desplazamiento de un desfibrilador podría comprometer su responsabilidad si la información difundida es errónea.
-  ::
-
-  ::landing-use-case
-  ---
-  icon: i-lucide-route
-  title: Red vial modificada
+  icon: i-lucide-bus
+  title: Operadores de movilidad y transporte
   ---
   La modificación de un segmento de red vial puede perturbar un calculador de rutas utilizado por sus servicios.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-construction
-  title: Equipamiento no operativo
+  icon: i-lucide-shield-alert
+  title: Servicios de emergencia y seguridad
   ---
-  La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
+  El desplazamiento de un desfibrilador podría comprometer su responsabilidad si la información difundida es errónea.
   ::
-
-  ::landing-use-case
-  ---
-  icon: i-lucide-link-2-off
-  title: Referencia eliminada
-  ---
-  La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
-  ::
-
-::
-
-::landing-use-cases
----
-headline: Casos de uso
-title: ¿Para quién es Clearance?
-description: Cualquier organización que replique datos OpenStreetMap en un contexto operativo.
----
 
   ::landing-use-case
   ---
   icon: i-lucide-map
   title: Administraciones locales
   ---
-  Asegure la fiabilidad de los datos cartográficos utilizados en sus servicios públicos digitales.
+  La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-bus
-  title: Operadores de transporte
+  icon: i-lucide-tree-pine
+  title: Gestores de parques naturales
   ---
-  Garantice la calidad de los datos de paradas y redes para sus aplicaciones de viajeros.
+  La eliminación o modificación de un sendero señalizado puede poner en peligro a los excursionistas que siguen sus rutas.
   ::
 
   ::landing-use-case
   ---
   icon: i-lucide-landmark
-  title: Oficinas de turismo
+  title: Organismos de gestión de destinos
   ---
-  Mantenga puntos de interés actualizados y fiables para sus visitantes.
+  Un punto de interés turístico mal referenciado puede degradar la experiencia de los visitantes de su territorio.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-database
+  title: Plataformas territoriales de datos abiertos
+  ---
+  La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-layers
+  title: Desarrolladores de aplicaciones cartográficas
+  ---
+  Datos fuente inconsistentes pueden generar anomalías de visualización o navegación en su aplicación.
   ::
 
 ::
