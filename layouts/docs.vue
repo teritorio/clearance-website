@@ -48,7 +48,7 @@ const docsNavigation = computed(() => {
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <AppHeader show-home />
+    <AppHeader />
 
     <UContainer class="flex-1">
       <div class="flex gap-8 py-8">
