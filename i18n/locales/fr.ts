@@ -30,6 +30,9 @@ export default defineI18nLocale(async () => ({
     emailPlaceholder: 'votre{\'@\'}email.com',
     organizationPlaceholder: 'Votre organisation',
     messagePlaceholder: 'Décrivez votre projet ou votre question...',
+    fallback: 'Vous pouvez également nous contacter via {link}.',
+    fallbackLink: 'notre site web',
+    fallbackUrl: 'https://www.teritorio.fr/fr/contact/',
   },
   docs: {
     toc: 'Sur cette page',

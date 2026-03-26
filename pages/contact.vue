@@ -100,6 +100,21 @@ function onSubmit() {
           {{ t('contact.send') }}
         </UButton>
       </form>
+
+      <p class="mt-4 text-sm text-muted">
+        <i18n-t keypath="contact.fallback" tag="span">
+          <template #link>
+            <NuxtLink
+              :to="t('contact.fallbackUrl')"
+              external
+              target="_blank"
+              class="text-primary underline"
+            >
+              {{ t('contact.fallbackLink') }}
+            </NuxtLink>
+          </template>
+        </i18n-t>
+      </p>
     </div>
   </UContainer>
 </template>
