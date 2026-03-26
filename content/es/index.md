@@ -7,7 +7,7 @@ description: "Controle la calidad de su flujo de replicación OpenStreetMap. Cle
 ---
 headline: Filtro de calidad para la replicación OSM
 title: Controle la calidad de su replicación OpenStreetMap
-description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance filtra su flujo de replicación antes de que llegue a sus sistemas."
+description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
 primaryLabel: Ver en GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Solicitar una demo

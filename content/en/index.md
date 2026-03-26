@@ -7,7 +7,7 @@ description: "Control the quality of your OpenStreetMap replication feed. Cleara
 ---
 headline: Quality filter for OSM replication
 title: Control the quality of your OpenStreetMap replication
-description: "Replicating OpenStreetMap data in a critical context? An unreviewed change can block an emergency route, distort a calculation, or engage your liability. Clearance filters your replication feed before it reaches your systems."
+description: "Replicating OpenStreetMap data in a critical context? An unreviewed change can block an emergency route, distort a calculation, or engage your liability. Clearance is open source software that filters your replication feed before it reaches your systems."
 primaryLabel: View on GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Request a demo
