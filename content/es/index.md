@@ -74,14 +74,14 @@ description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos s
 
 ::
 
-::landing-features
+::landing-practice
 ---
 headline: En la práctica
 title: Todo lo necesario para asegurar su replicación OSM
 description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones, mientras continúa contribuyendo al bien común OpenStreetMap."
 ---
 
-  ::landing-feature
+  ::landing-practice-item
   ---
   icon: i-lucide-map-pin
   title: Territorio y colaboración
@@ -89,7 +89,7 @@ description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetM
   Defina proyectos territoriales y temáticos en los que su equipo colabore para monitorear y mantener la calidad de los datos.
   ::
 
-  ::landing-feature
+  ::landing-practice-item
   ---
   icon: i-lucide-list-checks
   title: Reglas adaptadas a su actividad
@@ -97,36 +97,12 @@ description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetM
   Aplique controles adaptados a su necesidad: desplazamientos, eliminaciones, adiciones prematuras, rupturas de uniones y más.
   ::
 
-  ::landing-feature
+  ::landing-practice-item
   ---
   icon: i-lucide-database
   title: Proxy de calidad
   ---
   Utiliza los formatos estándar del ecosistema OpenStreetMap tanto de entrada como de salida. Siga usando sus herramientas con mayor confianza en los datos.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-shield-check
-  title: Filtro de calidad
-  ---
-  Integra automáticamente los cambios conformes mientras retiene las modificaciones sospechosas para revisión humana.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-scan-search
-  title: Análisis semántico
-  ---
-  Verifica la coherencia de los tags OSM y detecta cambios potencialmente problemáticos antes de que lleguen a sus sistemas.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-code-2
-  title: Software libre
-  ---
-  Clearance es software libre bajo licencia AGPL-3.0. Despliéguelo en su infraestructura u opte por nuestra oferta SaaS.
   ::
 
 ::

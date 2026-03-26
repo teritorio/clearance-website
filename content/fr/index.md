@@ -74,14 +74,14 @@ description: "Clearance ne modifie jamais OpenStreetMap. Les données problémat
 
 ::
 
-::landing-features
+::landing-practice
 ---
 headline: En pratique
 title: Tout ce qu'il faut pour sécuriser votre réplication OSM
 description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications, tout en continuant à contribuer au commun OpenStreetMap."
 ---
 
-  ::landing-feature
+  ::landing-practice-item
   ---
   icon: i-lucide-map-pin
   title: Territoire et collaboration
@@ -89,7 +89,7 @@ description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vo
   Définissez des projets territoriaux et thématiques sur lesquels votre équipe collabore pour suivre et maintenir la qualité des données.
   ::
 
-  ::landing-feature
+  ::landing-practice-item
   ---
   icon: i-lucide-list-checks
   title: Règles adaptées à votre métier
@@ -97,36 +97,12 @@ description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vo
   Appliquez des contrôles adaptés à votre besoin : déplacements, suppressions, ajouts prématurés, ruptures de jointures et bien plus.
   ::
 
-  ::landing-feature
+  ::landing-practice-item
   ---
   icon: i-lucide-database
   title: Proxy qualité
   ---
   Utilise en entrée comme en sortie les formats standard de l'écosystème OpenStreetMap. Continuez à utiliser vos outils avec un meilleur niveau de confiance.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-shield-check
-  title: Filtre qualité
-  ---
-  Intègre automatiquement les modifications conformes tout en retenant les changements suspects pour vérification humaine.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-scan-search
-  title: Analyse sémantique
-  ---
-  Vérifie la cohérence des tags OSM et détecte les modifications potentiellement problématiques avant qu'elles n'atteignent vos systèmes.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-code-2
-  title: Logiciel libre
-  ---
-  Clearance est un logiciel libre sous licence AGPL-3.0. Déployez-le sur votre infrastructure ou optez pour notre offre SaaS.
   ::
 
 ::
