@@ -28,6 +28,25 @@ export default defineNuxtConfig({
     url: 'https://clearance.teritorio.xyz',
     name: 'Clearance',
     defaultLocale: 'fr',
+    trailingSlash: false,
+  },
+
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'Teritorio',
+      url: 'https://teritorio.fr',
+      logo: 'https://www.teritorio.fr/wp-content/themes/teritorio/assets/images/favicon/favicon-194x194.png',
+    },
+  },
+
+  sitemap: {
+    autoLastmod: true,
+  },
+
+  linkChecker: {
+    runOnBuild: true,
+    failOnError: true,
   },
 
   ogImage: {
