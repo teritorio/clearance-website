@@ -3,11 +3,20 @@ import { describe, expect, it } from 'vitest'
 import SlugPage from '~/pages/[...slug].vue'
 
 describe('slug page', () => {
-  it('does not show home icon in navigation on docs pages', async () => {
+  it('applies docs layout for docs paths', async () => {
     const component = await mountSuspended(SlugPage, {
       route: '/fr/docs/getting-started/overview',
     })
-    expect(component.html()).not.toContain('i-lucide:home')
+    // Docs layout wraps content in a sidebar layout with <aside> elements
+    expect(component.find('aside').exists()).toBe(true)
+  })
+
+  it('applies default layout for non-docs paths', async () => {
+    const component = await mountSuspended(SlugPage, {
+      route: '/fr/about',
+    })
+    // Default layout has no sidebar
+    expect(component.find('aside').exists()).toBe(false)
   })
 
   it('renders not found message when no page data', async () => {
