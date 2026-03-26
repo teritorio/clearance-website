@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-zinc-50">
     <UContainer>
       <LandingSectionHeader :headline="headline" :title="title" :description="description" />
       <div class="mt-12 grid gap-8 sm:grid-cols-3">
