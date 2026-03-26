@@ -133,74 +133,65 @@ description: "A complete quality assurance pipeline between OpenStreetMap and yo
 
 ::landing-use-cases
 ---
-headline: Concrete examples
-title: Rules adapted to your business
-description: "These situations are common when OSM data is used in an operational context."
+headline: Use cases
+title: Who is Clearance for?
+description: "Clearance is designed for organizations that regularly use OpenStreetMap data with quality requirements."
 ---
 
   ::landing-use-case
   ---
-  icon: i-lucide-heart-pulse
-  title: Defibrillator moved
-  ---
-  A defibrillator relocation could engage your liability if the published information is incorrect.
-  ::
-
-  ::landing-use-case
-  ---
-  icon: i-lucide-route
-  title: Road network modified
+  icon: i-lucide-bus
+  title: Mobility and transport operators
   ---
   A road segment modification can disrupt a route calculator used by your services.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-construction
-  title: Facility not yet operational
+  icon: i-lucide-shield-alert
+  title: Emergency and security services
   ---
-  Adding a public facility that is not yet operational can lead to premature public use.
+  A defibrillator relocation could engage your liability if the published information is incorrect.
   ::
-
-  ::landing-use-case
-  ---
-  icon: i-lucide-link-2-off
-  title: Reference deleted
-  ---
-  Deleting a reference can break joins with a business database and cause malfunctions.
-  ::
-
-::
-
-::landing-use-cases
----
-headline: Use cases
-title: Who is Clearance for?
-description: Any organization that replicates OpenStreetMap data in an operational context.
----
 
   ::landing-use-case
   ---
   icon: i-lucide-map
   title: Local authorities
   ---
-  Ensure the reliability of map data used in your digital public services.
+  Adding a public facility that is not yet operational can lead to premature public use.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-bus
-  title: Transport operators
+  icon: i-lucide-tree-pine
+  title: Natural park managers
   ---
-  Guarantee the quality of stop and network data for your passenger applications.
+  The removal or modification of a marked trail can endanger hikers following your routes.
   ::
 
   ::landing-use-case
   ---
   icon: i-lucide-landmark
-  title: Tourism offices
+  title: Destination management organizations
   ---
-  Maintain up-to-date and reliable points of interest for your visitors.
+  A poorly referenced tourist point of interest can degrade the experience of visitors to your territory.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-database
+  title: Territorial open data platforms
+  ---
+  Deleting a reference can break joins with a business database and cause malfunctions.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-layers
+  title: Mapping application developers
+  ---
+  Inconsistent source data can cause display or navigation anomalies in your application.
   ::
 
 ::
