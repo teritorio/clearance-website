@@ -35,9 +35,24 @@ const footerColumns = computed(() => [
       </UContainer>
     </template>
     <template #left>
-      <p class="text-sm text-muted">
-        {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
-      </p>
+      <div class="flex items-center gap-2">
+        <img src="/teritorio-icon.svg" alt="Teritorio" class="size-5">
+        <i18n-t keypath="footer.copyright" tag="p" class="text-sm text-muted">
+          <template #year>
+            {{ new Date().getFullYear() }}
+          </template>
+          <template #teritorio>
+            <NuxtLink to="https://teritorio.fr" target="_blank" class="text-muted hover:text-default">
+              Teritorio
+            </NuxtLink>
+          </template>
+          <template #license>
+            <NuxtLink to="https://github.com/teritorio/clearance/blob/dev/LICENSE" target="_blank" class="text-muted hover:text-default">
+              {{ t('footer.licenseLabel') }}
+            </NuxtLink>
+          </template>
+        </i18n-t>
+      </div>
     </template>
     <template #right>
       <UButton
