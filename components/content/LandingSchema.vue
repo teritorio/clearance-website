@@ -9,124 +9,169 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex items-center justify-center rounded-2xl border border-zinc-200 bg-white p-6">
+  <div class="mx-auto max-w-3xl">
     <svg
-      viewBox="0 0 480 520"
-      class="mx-auto block w-full"
+      viewBox="0 0 560 155"
+      class="block w-full"
       role="img"
       :aria-label="`${changesLabel} → ${osmLabel} → ${clearanceLabel} → ${extractLabel}`"
     >
       <defs>
-        <linearGradient id="line-grad-1" gradientUnits="userSpaceOnUse" x1="290" y1="76" x2="290" y2="134">
-          <stop offset="0%" stop-color="#fde68a" />
-          <stop offset="100%" stop-color="#f59e0b" />
-        </linearGradient>
-        <linearGradient id="line-grad-2" gradientUnits="userSpaceOnUse" x1="290" y1="216" x2="290" y2="274">
+        <!-- Main flow gradient: sweeps left-to-right across entire SVG -->
+        <linearGradient
+          id="main-flow-grad"
+          gradientUnits="userSpaceOnUse"
+          x1="0"
+          y1="0"
+          x2="200"
+          y2="0"
+          spreadMethod="pad"
+        >
           <stop offset="0%" stop-color="#f59e0b" />
-          <stop offset="100%" stop-color="#d97706" />
+          <stop offset="60%" stop-color="#fbbf24" />
+          <stop offset="100%" stop-color="#d4d4d8" />
+          <animateTransform
+            attributeName="gradientTransform"
+            type="translate"
+            values="-200 0;600 0;600 0;-200 0;-200 0"
+            keyTimes="0;0.55;0.80;0.81;1"
+            dur="7s"
+            repeatCount="indefinite"
+          />
         </linearGradient>
-        <linearGradient id="line-grad-3" gradientUnits="userSpaceOnUse" x1="290" y1="356" x2="290" y2="414">
-          <stop offset="0%" stop-color="#d97706" />
-          <stop offset="100%" stop-color="#b45309" />
+
+        <!-- Feedback flow gradient: sweeps right-to-left along the arc -->
+        <linearGradient
+          id="feedback-flow-grad"
+          gradientUnits="userSpaceOnUse"
+          x1="350"
+          y1="0"
+          x2="150"
+          y2="0"
+          spreadMethod="pad"
+        >
+          <stop offset="0%" stop-color="#f59e0b" />
+          <stop offset="60%" stop-color="#fbbf24" />
+          <stop offset="100%" stop-color="#d4d4d8" />
+          <animateTransform
+            attributeName="gradientTransform"
+            type="translate"
+            values="0 0;0 0;-250 0;-250 0;0 0;0 0"
+            keyTimes="0;0.36;0.72;0.80;0.81;1"
+            dur="7s"
+            repeatCount="indefinite"
+          />
         </linearGradient>
-        <marker id="schema-arrow" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="7" orient="auto">
-          <polygon points="0 0, 10 3.5, 0 7" fill="#fcd34d" />
+
+        <!-- Arrow marker for feedback -->
+        <marker
+          id="schema-arrow"
+          viewBox="0 0 10 7"
+          refX="10"
+          refY="3.5"
+          markerWidth="8"
+          markerHeight="7"
+          orient="auto"
+        >
+          <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24" />
         </marker>
       </defs>
 
-      <!-- Connection lines (vertical, gradient, animated) -->
-      <line x1="290" y1="76" x2="290" y2="134" stroke="url(#line-grad-1)" stroke-width="2" class="flow-down" stroke-dasharray="6 4" />
-      <line x1="290" y1="216" x2="290" y2="274" stroke="url(#line-grad-2)" stroke-width="2" class="flow-down" stroke-dasharray="6 4" />
-      <line x1="290" y1="356" x2="290" y2="414" stroke="url(#line-grad-3)" stroke-width="2" class="flow-down" stroke-dasharray="6 4" />
-
-      <!-- Feedback loop (curved, left side, animated upward) -->
+      <!-- Layer 1: Grey base lines -->
+      <!-- Main horizontal line -->
+      <line x1="42" y1="70" x2="518" y2="70" stroke="#d4d4d8" stroke-width="2" />
+      <!-- Grey circle borders -->
+      <circle cx="70" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
+      <circle cx="210" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
+      <circle cx="350" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2.5" />
+      <circle cx="490" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
+      <!-- Grey feedback arc -->
       <path
-        d="M 254,310 C 170,300 170,180 256,170"
+        d="M 346,44 C 330,12 230,12 214,44"
         fill="none"
-        stroke="#fcd34d"
+        stroke="#d4d4d8"
         stroke-width="2"
-        stroke-dasharray="6 4"
-        marker-end="url(#schema-arrow)"
-        class="flow-up"
       />
 
-      <!-- Feedback label with white background for readability -->
-      <rect x="12" y="231" :width="feedbackLabel ? feedbackLabel.length * 7.5 + 12 : 150" height="22" rx="4" fill="white" fill-opacity="0.85" />
-      <text x="18" y="248" fill="#71717a" font-size="13" font-style="italic" font-family="system-ui, sans-serif">
+      <!-- Layer 2: Animated amber overlay -->
+      <!-- Main horizontal line -->
+      <line x1="42" y1="70" x2="518" y2="70" stroke="url(#main-flow-grad)" stroke-width="2" />
+      <!-- Amber circle borders -->
+      <circle cx="70" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
+      <circle cx="210" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
+      <circle cx="350" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2.5" />
+      <circle cx="490" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
+      <!-- Amber feedback arc -->
+      <path
+        d="M 346,44 C 330,12 230,12 214,44"
+        fill="none"
+        stroke="url(#feedback-flow-grad)"
+        stroke-width="2"
+        marker-end="url(#schema-arrow)"
+      />
+
+      <!-- Layer 3: White circle fills (hide line inside nodes) -->
+      <circle cx="70" cy="70" r="27" fill="white" />
+      <circle cx="210" cy="70" r="27" fill="white" />
+      <circle cx="350" cy="70" r="27" fill="#fffbeb" />
+      <circle cx="490" cy="70" r="27" fill="white" />
+
+      <!-- Layer 4: Inner decorative circles -->
+      <circle cx="70" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+      <circle cx="210" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+      <circle cx="350" cy="70" r="22" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
+      <circle cx="490" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+
+      <!-- Layer 5: Node icons -->
+      <!-- Changes: wavy line -->
+      <g transform="translate(70, 70)">
+        <path d="M -11,0 Q -6,-7 -1,0 Q 4,7 9,0 Q 14,-7 19,0" fill="none" stroke="#3f3f46" stroke-width="2.2" stroke-linecap="round" transform="translate(-4, 0)" />
+      </g>
+
+      <!-- OSM: database cylinder -->
+      <g transform="translate(210, 70)">
+        <ellipse cx="0" cy="-6" rx="10" ry="4" fill="none" stroke="#3f3f46" stroke-width="1.8" />
+        <path d="M -10,-6 L -10,6 C -10,10 10,10 10,6 L 10,-6" fill="none" stroke="#3f3f46" stroke-width="1.8" />
+      </g>
+
+      <!-- Clearance: funnel -->
+      <g transform="translate(350, 70)">
+        <path d="M -10,-9 L 10,-9 L 2,1 L 2,10 L -2,10 L -2,1 Z" fill="none" stroke="#3f3f46" stroke-width="1.8" stroke-linejoin="round" />
+      </g>
+
+      <!-- Extract: database + check -->
+      <g transform="translate(490, 70)">
+        <ellipse cx="-2" cy="-5" rx="8" ry="3.5" fill="none" stroke="#3f3f46" stroke-width="1.8" />
+        <path d="M -10,-5 L -10,5 C -10,8.5 6,8.5 6,5 L 6,-5" fill="none" stroke="#3f3f46" stroke-width="1.8" />
+        <path d="M 5,-1 L 8,3 L 14,-5" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      <!-- Layer 6: Feedback label -->
+      <text
+        x="280"
+        y="18"
+        text-anchor="middle"
+        fill="#a1a1aa"
+        font-size="9.5"
+        font-style="italic"
+        font-family="system-ui, sans-serif"
+      >
         {{ feedbackLabel }}
       </text>
 
-      <!-- Node: Changes -->
-      <g transform="translate(290, 40)">
-        <circle r="34" fill="white" stroke="#e4e4e7" stroke-width="2" />
-        <circle r="28" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-        <path d="M -14,0 Q -8,-9 -2,0 Q 4,9 10,0 Q 16,-9 22,0" fill="none" stroke="#3f3f46" stroke-width="2.5" stroke-linecap="round" transform="translate(-4, 0)" />
-      </g>
-      <text x="290" y="90" text-anchor="middle" fill="#3f3f46" font-size="14" font-weight="500" font-family="system-ui, sans-serif">
+      <!-- Layer 7: Node labels (TresJS-style small captions) -->
+      <text x="70" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
         {{ changesLabel }}
       </text>
-
-      <!-- Node: OpenStreetMap -->
-      <g transform="translate(290, 170)">
-        <circle r="34" fill="white" stroke="#e4e4e7" stroke-width="2" />
-        <circle r="28" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-        <ellipse cx="0" cy="-8" rx="12" ry="5" fill="none" stroke="#3f3f46" stroke-width="2" />
-        <path d="M -12,-8 L -12,8 C -12,13 12,13 12,8 L 12,-8" fill="none" stroke="#3f3f46" stroke-width="2" />
-      </g>
-      <text x="290" y="220" text-anchor="middle" fill="#3f3f46" font-size="14" font-weight="500" font-family="system-ui, sans-serif">
+      <text x="210" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
         {{ osmLabel }}
       </text>
-
-      <!-- Node: Clearance (highlighted) -->
-      <g transform="translate(290, 310)">
-        <circle r="36" fill="white" stroke="#f59e0b" stroke-width="2.5" />
-        <circle r="29" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
-        <path d="M -12,-11 L 12,-11 L 3,2 L 3,13 L -3,13 L -3,2 Z" fill="none" stroke="#3f3f46" stroke-width="2" stroke-linejoin="round" />
-      </g>
-      <text x="290" y="362" text-anchor="middle" fill="#18181b" font-size="15" font-weight="600" font-family="system-ui, sans-serif">
+      <text x="350" y="115" text-anchor="middle" fill="#71717a" font-size="11" font-weight="600" font-family="system-ui, sans-serif">
         {{ clearanceLabel }}
       </text>
-
-      <!-- Node: Extract -->
-      <g transform="translate(290, 450)">
-        <circle r="34" fill="white" stroke="#e4e4e7" stroke-width="2" />
-        <circle r="28" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-        <ellipse cx="-2" cy="-7" rx="10" ry="4" fill="none" stroke="#3f3f46" stroke-width="2" />
-        <path d="M -12,-7 L -12,6 C -12,10 8,10 8,6 L 8,-7" fill="none" stroke="#3f3f46" stroke-width="2" />
-        <path d="M 7,0 L 11,5 L 18,-4" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-      </g>
-      <text x="290" y="500" text-anchor="middle" fill="#3f3f46" font-size="14" font-weight="500" font-family="system-ui, sans-serif">
+      <text x="490" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
         {{ extractLabel }}
       </text>
     </svg>
   </div>
 </template>
-
-<style scoped>
-.flow-down {
-  animation: dash-down 1.5s linear infinite;
-}
-
-.flow-up {
-  animation: dash-up 2s linear infinite;
-}
-
-@keyframes dash-down {
-  to {
-    stroke-dashoffset: -20;
-  }
-}
-
-@keyframes dash-up {
-  to {
-    stroke-dashoffset: 20;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .flow-down,
-  .flow-up {
-    animation: none;
-  }
-}
-</style>
