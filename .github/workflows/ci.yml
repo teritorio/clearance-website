@@ -46,6 +46,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # No NUXT_APP_BASE_URL here — Lighthouse audits the site at root,
+      # unlike deploy.yml which prefixes /clearance-website/ for GitHub Pages.
       - name: Generate static site
         run: pnpm generate
 
