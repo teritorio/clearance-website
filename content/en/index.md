@@ -19,72 +19,30 @@ secondaryTo: /contact
 ---
 headline: The problem
 title: How can you reuse OpenStreetMap data with confidence?
----
-OpenStreetMap is constantly evolving. Every day, millions of changes are made by a global community: volunteers, public institutions, and businesses. This dynamism is a strength, but when this data becomes critical for a service, how do you ensure its quality? Traditional replication tools don't include a quality filter — they operate on data that has already been replicated, or at the cost of blocking replication entirely.
-::
-
-::landing-features
----
-headline: Features
-title: Everything you need to secure your OSM replication
-description: "A complete quality assurance pipeline between OpenStreetMap and your applications. Clearance never modifies OpenStreetMap: problematic data is simply held, and corrections are made directly in OSM at the source."
+description: "When OpenStreetMap data becomes critical for a service, a question arises: how do you ensure its quality?"
 ---
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-shield-check
-  title: Quality filter
+  icon: i-lucide-refresh-cw
   ---
-  Automatically integrates compliant changes while holding suspicious modifications for human review.
+  OpenStreetMap is constantly evolving. Every day, millions of changes are made by a global community of contributors: volunteers, public institutions, and businesses. This dynamism is a strength, but how do you prevent errors — most often unintentional — from affecting your services?
   ::
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-git-merge
-  title: Smart grouping (LoCha)
+  icon: i-lucide-alert-triangle
   ---
-  Groups related changes into coherent geographic clusters for relevant, contextualized review.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-scan-search
-  title: Semantic analysis
-  ---
-  Checks OSM tag consistency and detects potentially problematic changes before they reach your systems.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-list-checks
-  title: Validation rules
-  ---
-  Seven rule categories covering delays, deletions, duplicates, geometry, network, tags, and user lists.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-database
-  title: Quality proxy
-  ---
-  Uses standard OpenStreetMap ecosystem formats for input and output. Continue using your tools with greater data confidence.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-cloud-cog
-  title: SaaS or self-hosted
-  ---
-  Available as a managed service by Teritorio or as a self-hosted deployment on your infrastructure.
+  Traditional OSM replication tools don't include a quality filter. They operate on data that has already been replicated, or at the cost of blocking replication entirely.
   ::
 
 ::
 
 ::landing-steps
 ---
-headline: How it works
-title: Three steps to reliable data
-description: Clearance integrates into your existing OpenStreetMap replication flow.
+headline: The solution
+title: "Clearance: an OSM replication tool with a built-in quality filter"
+description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are made directly in OSM at the source."
 ---
 
   ::landing-step
@@ -102,7 +60,7 @@ description: Clearance integrates into your existing OpenStreetMap replication f
   title: Filtering
   number: "2"
   ---
-  Compliant changes are integrated automatically and immediately. Sensitive modifications are held for review.
+  Compliant changes are integrated automatically and immediately. Sensitive modifications are held for review and, if needed, correction in OSM.
   ::
 
   ::landing-step
@@ -111,7 +69,64 @@ description: Clearance integrates into your existing OpenStreetMap replication f
   title: Validation
   number: "3"
   ---
-  An operator reviews held changes and, if needed, corrects in OSM. On the next check, compliant modifications will pass the filter.
+  On the next check, if everything is compliant, modifications will pass the filter and be integrated into your local copy. You get an up-to-date version, reliable and adapted to your quality requirements.
+  ::
+
+::
+
+::landing-features
+---
+headline: In practice
+title: Everything you need to secure your OSM replication
+description: "A complete quality assurance pipeline between OpenStreetMap and your applications, while continuing to contribute to the OpenStreetMap commons."
+---
+
+  ::landing-feature
+  ---
+  icon: i-lucide-map-pin
+  title: Territory and collaboration
+  ---
+  Define territorial and thematic projects on which your team collaborates to monitor and maintain data quality.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-list-checks
+  title: Rules adapted to your business
+  ---
+  Apply controls tailored to your needs: relocations, deletions, premature additions, broken joins, and more.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-database
+  title: Quality proxy
+  ---
+  Uses standard OpenStreetMap ecosystem formats for input and output. Continue using your tools with greater data confidence.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-shield-check
+  title: Quality filter
+  ---
+  Automatically integrates compliant changes while holding suspicious modifications for human review.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-scan-search
+  title: Semantic analysis
+  ---
+  Checks OSM tag consistency and detects potentially problematic changes before they reach your systems.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-code-2
+  title: Open source
+  ---
+  Clearance is open source software under the AGPL-3.0 license. Deploy it on your infrastructure or opt for our SaaS offering.
   ::
 
 ::

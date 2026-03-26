@@ -19,72 +19,30 @@ secondaryTo: /contact
 ---
 headline: El problema
 title: ¿Cómo reutilizar los datos de OpenStreetMap con confianza?
----
-OpenStreetMap evoluciona constantemente. Cada día, millones de modificaciones son realizadas por una comunidad global: voluntarios, instituciones públicas y empresas. Este dinamismo es una fortaleza, pero cuando estos datos se vuelven críticos para un servicio, ¿cómo garantizar su calidad? Las herramientas clásicas de replicación no incluyen un filtro de calidad — actúan sobre datos ya replicados, o al precio de bloquear la replicación por completo.
-::
-
-::landing-features
----
-headline: Funcionalidades
-title: Todo lo necesario para asegurar su replicación OSM
-description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones. Clearance nunca modifica OpenStreetMap: los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
+description: "Cuando los datos de OpenStreetMap se vuelven críticos para un servicio, surge una pregunta: ¿cómo garantizar su calidad?"
 ---
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-shield-check
-  title: Filtro de calidad
+  icon: i-lucide-refresh-cw
   ---
-  Integra automáticamente los cambios conformes mientras retiene las modificaciones sospechosas para revisión humana.
+  OpenStreetMap evoluciona constantemente. Cada día, millones de modificaciones son realizadas por una comunidad global de contribuidores: voluntarios, instituciones públicas y empresas. Este dinamismo es una fortaleza, pero ¿cómo evitar que errores, la mayoría involuntarios, afecten sus servicios?
   ::
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-git-merge
-  title: Agrupación inteligente (LoCha)
+  icon: i-lucide-alert-triangle
   ---
-  Agrupa los cambios relacionados en clusters geográficos coherentes para una revisión pertinente y contextualizada.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-scan-search
-  title: Análisis semántico
-  ---
-  Verifica la coherencia de los tags OSM y detecta cambios potencialmente problemáticos antes de que lleguen a sus sistemas.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-list-checks
-  title: Reglas de validación
-  ---
-  Siete categorías de reglas que cubren retrasos, eliminaciones, duplicados, geometría, red, tags y listas de usuarios.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-database
-  title: Proxy de calidad
-  ---
-  Utiliza los formatos estándar del ecosistema OpenStreetMap tanto de entrada como de salida. Siga usando sus herramientas con mayor confianza en los datos.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-cloud-cog
-  title: SaaS o autoalojado
-  ---
-  Disponible como servicio gestionado por Teritorio o como despliegue autónomo en su infraestructura.
+  Las herramientas clásicas de replicación de datos OSM no incluyen un filtro de calidad. Actúan sobre datos ya replicados, o al precio de bloquear la replicación por completo.
   ::
 
 ::
 
 ::landing-steps
 ---
-headline: Cómo funciona
-title: Tres pasos hacia datos fiables
-description: Clearance se integra en su flujo de replicación OpenStreetMap existente.
+headline: La solución
+title: "Clearance: una herramienta de replicación OSM con filtro de calidad integrado"
+description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
 ---
 
   ::landing-step
@@ -102,7 +60,7 @@ description: Clearance se integra en su flujo de replicación OpenStreetMap exis
   title: Filtrado
   number: "2"
   ---
-  Los cambios conformes se integran automática e inmediatamente. Las modificaciones sensibles se retienen para verificación.
+  Los cambios conformes se integran automática e inmediatamente. Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM.
   ::
 
   ::landing-step
@@ -111,7 +69,64 @@ description: Clearance se integra en su flujo de replicación OpenStreetMap exis
   title: Validación
   number: "3"
   ---
-  Un operador revisa los cambios retenidos y, si es necesario, corrige en OSM. En la siguiente verificación, las modificaciones conformes pasarán el filtro.
+  En la siguiente verificación, si todo es conforme, las modificaciones pasarán el filtro y se integrarán a la copia local. Así dispone de una versión actualizada, fiable y adaptada a sus requisitos de calidad.
+  ::
+
+::
+
+::landing-features
+---
+headline: En la práctica
+title: Todo lo necesario para asegurar su replicación OSM
+description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones, mientras continúa contribuyendo al bien común OpenStreetMap."
+---
+
+  ::landing-feature
+  ---
+  icon: i-lucide-map-pin
+  title: Territorio y colaboración
+  ---
+  Defina proyectos territoriales y temáticos en los que su equipo colabore para monitorear y mantener la calidad de los datos.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-list-checks
+  title: Reglas adaptadas a su actividad
+  ---
+  Aplique controles adaptados a su necesidad: desplazamientos, eliminaciones, adiciones prematuras, rupturas de uniones y más.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-database
+  title: Proxy de calidad
+  ---
+  Utiliza los formatos estándar del ecosistema OpenStreetMap tanto de entrada como de salida. Siga usando sus herramientas con mayor confianza en los datos.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-shield-check
+  title: Filtro de calidad
+  ---
+  Integra automáticamente los cambios conformes mientras retiene las modificaciones sospechosas para revisión humana.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-scan-search
+  title: Análisis semántico
+  ---
+  Verifica la coherencia de los tags OSM y detecta cambios potencialmente problemáticos antes de que lleguen a sus sistemas.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-code-2
+  title: Software libre
+  ---
+  Clearance es software libre bajo licencia AGPL-3.0. Despliéguelo en su infraestructura u opte por nuestra oferta SaaS.
   ::
 
 ::

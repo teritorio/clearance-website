@@ -19,72 +19,30 @@ secondaryTo: /contact
 ---
 headline: Le problème
 title: Comment réutiliser les données OpenStreetMap avec confiance ?
----
-OpenStreetMap évolue en permanence. Chaque jour, des millions de modifications sont apportées par une communauté mondiale : bénévoles, institutions publiques et entreprises. Cette dynamique est une force, mais lorsque ces données deviennent critiques pour un service, comment maîtriser leur qualité ? Les outils classiques de réplication n'intègrent pas de filtre qualité — ils interviennent sur des données déjà répliquées, ou au prix d'un blocage de la réplication.
-::
-
-::landing-features
----
-headline: Fonctionnalités
-title: Tout ce qu'il faut pour sécuriser votre réplication OSM
-description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications. Clearance ne modifie jamais OpenStreetMap : les données problématiques sont mises en attente, et les corrections sont apportées directement dans OSM, à la source."
+description: "Lorsque les données OpenStreetMap deviennent critiques pour un service, une question apparaît : comment maîtriser leur qualité ?"
 ---
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-shield-check
-  title: Filtre qualité
+  icon: i-lucide-refresh-cw
   ---
-  Intègre automatiquement les modifications conformes tout en retenant les changements suspects pour vérification humaine.
+  OpenStreetMap évolue en permanence. Chaque jour, des millions de modifications sont apportées par une communauté mondiale de contributeurs : bénévoles, institutions publiques et entreprises. Cette dynamique est une force, mais comment éviter que des erreurs, le plus souvent involontaires, n'affectent vos services ?
   ::
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-git-merge
-  title: Regroupement intelligent (LoCha)
+  icon: i-lucide-alert-triangle
   ---
-  Regroupe les modifications liées en clusters géographiques cohérents pour une revue pertinente et contextualisée.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-scan-search
-  title: Analyse sémantique
-  ---
-  Vérifie la cohérence des tags OSM et détecte les modifications potentiellement problématiques avant qu'elles n'atteignent vos systèmes.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-list-checks
-  title: Règles de validation
-  ---
-  Sept catégories de règles couvrant les retards, suppressions, doublons, géométrie, réseau, tags et listes d'utilisateurs.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-database
-  title: Proxy qualité
-  ---
-  Utilise en entrée comme en sortie les formats standard de l'écosystème OpenStreetMap. Continuez à utiliser vos outils avec un meilleur niveau de confiance.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-cloud-cog
-  title: SaaS ou auto-hébergé
-  ---
-  Disponible en service managé par Teritorio ou en déploiement autonome sur votre infrastructure.
+  Les outils classiques de réplication des données OSM n'intègrent pas de filtre qualité. Ils interviennent sur des données déjà répliquées, ou au prix d'un blocage de la réplication.
   ::
 
 ::
 
 ::landing-steps
 ---
-headline: Comment ça marche
-title: Trois étapes vers des données fiables
-description: Clearance s'intègre dans votre flux de réplication OpenStreetMap existant.
+headline: La solution
+title: "Clearance : un outil de réplication OSM doté d'un filtre qualité"
+description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont simplement mises en attente, et les corrections sont apportées directement dans OSM, à la source."
 ---
 
   ::landing-step
@@ -102,7 +60,7 @@ description: Clearance s'intègre dans votre flux de réplication OpenStreetMap 
   title: Filtrage
   number: "2"
   ---
-  Les modifications conformes sont intégrées automatiquement et immédiatement. Les modifications sensibles sont mises en attente pour vérification.
+  Les modifications conformes sont intégrées automatiquement et immédiatement. Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM.
   ::
 
   ::landing-step
@@ -111,7 +69,64 @@ description: Clearance s'intègre dans votre flux de réplication OpenStreetMap 
   title: Validation
   number: "3"
   ---
-  Un opérateur vérifie les changements retenus et, si nécessaire, corrige dans OSM. Au prochain contrôle, les modifications conformes passeront le filtre.
+  Au prochain contrôle, si tout est conforme, les modifications passeront le filtre et seront intégrées à la copie locale. Vous disposez ainsi d'une version à jour, fiable et adaptée à vos contraintes de qualité.
+  ::
+
+::
+
+::landing-features
+---
+headline: En pratique
+title: Tout ce qu'il faut pour sécuriser votre réplication OSM
+description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications, tout en continuant à contribuer au commun OpenStreetMap."
+---
+
+  ::landing-feature
+  ---
+  icon: i-lucide-map-pin
+  title: Territoire et collaboration
+  ---
+  Définissez des projets territoriaux et thématiques sur lesquels votre équipe collabore pour suivre et maintenir la qualité des données.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-list-checks
+  title: Règles adaptées à votre métier
+  ---
+  Appliquez des contrôles adaptés à votre besoin : déplacements, suppressions, ajouts prématurés, ruptures de jointures et bien plus.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-database
+  title: Proxy qualité
+  ---
+  Utilise en entrée comme en sortie les formats standard de l'écosystème OpenStreetMap. Continuez à utiliser vos outils avec un meilleur niveau de confiance.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-shield-check
+  title: Filtre qualité
+  ---
+  Intègre automatiquement les modifications conformes tout en retenant les changements suspects pour vérification humaine.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-scan-search
+  title: Analyse sémantique
+  ---
+  Vérifie la cohérence des tags OSM et détecte les modifications potentiellement problématiques avant qu'elles n'atteignent vos systèmes.
+  ::
+
+  ::landing-feature
+  ---
+  icon: i-lucide-code-2
+  title: Logiciel libre
+  ---
+  Clearance est un logiciel libre sous licence AGPL-3.0. Déployez-le sur votre infrastructure ou optez pour notre offre SaaS.
   ::
 
 ::
