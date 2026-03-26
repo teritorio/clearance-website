@@ -102,7 +102,7 @@ function onSubmit() {
       </form>
 
       <p class="mt-4 text-sm text-muted">
-        <i18n-t keypath="contact.fallback" tag="span">
+        <i18n-t keypath="contact.fallback" tag="span" scope="global">
           <template #link>
             <NuxtLink
               :to="t('contact.fallbackUrl')"
