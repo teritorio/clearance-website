@@ -35,7 +35,7 @@ defineProps<{
             type="translate"
             values="-200 0;600 0;600 0;-200 0;-200 0"
             keyTimes="0;0.55;0.80;0.81;1"
-            dur="12s"
+            dur="16s"
             repeatCount="indefinite"
           />
         </linearGradient>
@@ -58,7 +58,7 @@ defineProps<{
             type="translate"
             values="0 0;0 0;-250 0;-250 0;0 0;0 0"
             keyTimes="0;0.36;0.72;0.80;0.81;1"
-            dur="12s"
+            dur="16s"
             repeatCount="indefinite"
           />
         </linearGradient>
