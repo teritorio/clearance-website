@@ -36,7 +36,10 @@ const footerColumns = computed(() => [
     </template>
     <template #left>
       <div class="flex items-center gap-2">
-        <img src="/teritorio-icon.svg" alt="Teritorio" class="size-5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49 57" fill="currentColor" class="size-5" aria-hidden="true">
+          <path d="M39.2 0h-8.6L15.6 53.5h14.3v-38h12.2L46 6.1 48.5 0z" />
+          <path d="M0 4.3v12h12.5v40.2h.3L27.7 4.3H0z" />
+        </svg>
         <i18n-t keypath="footer.copyright" tag="p" class="text-sm text-muted">
           <template #year>
             {{ new Date().getFullYear() }}
