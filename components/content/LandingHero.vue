@@ -16,6 +16,7 @@ const resolvedSecondaryTo = useLocaleTo(computed(() => props.secondaryTo))
 <template>
   <section class="relative py-24 sm:py-32 overflow-hidden">
     <div class="hero-gradient absolute inset-0" />
+    <div class="hero-map absolute inset-0" />
     <UContainer class="relative">
       <div class="mx-auto max-w-3xl text-center">
         <p v-if="headline" class="text-sm font-semibold text-primary">
@@ -52,5 +53,14 @@ const resolvedSecondaryTo = useLocaleTo(computed(() => props.secondaryTo))
 <style scoped>
 .hero-gradient {
   background: linear-gradient(to bottom, var(--color-primary-100), transparent);
+}
+
+.hero-map {
+  background-image: url('/hero-map.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  mask-image: radial-gradient(circle at center, transparent, black);
 }
 </style>
