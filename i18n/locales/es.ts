@@ -32,14 +32,14 @@ export default defineI18nLocale(async () => ({
     messagePlaceholder: 'Describa su proyecto o pregunta...',
     fallback: 'También puede contactarnos a través de {link}.',
     fallbackLink: 'nuestro sitio web',
-    fallbackUrl: 'https://www.teritorio.fr/en/contact-en/',
+    fallbackUrl: 'https://www.teritorio.fr/es/contacto/',
   },
   docs: {
     toc: 'En esta página',
   },
   seo: {
-    description: 'Filtro de calidad open source para datos OpenStreetMap — filtre, valide y asegure su pipeline de datos OSM.',
-    ogImageAlt: 'Clearance — Filtro de calidad para datos OpenStreetMap',
+    description: 'Filtro de calidad open source para la replicación OpenStreetMap — filtre, valide y asegure su flujo de replicación OSM.',
+    ogImageAlt: 'Clearance — Filtro de calidad para la replicación OpenStreetMap',
   },
   page: {
     empty: 'Esta página aún no tiene contenido.',

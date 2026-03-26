@@ -1,0 +1,22 @@
+{
+  "name": "Clearance",
+  "short_name": "Clearance",
+  "description": "Filtre qualit\u00e9 open source pour la r\u00e9plication OpenStreetMap",
+  "lang": "fr",
+  "start_url": "/fr/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffbb00",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

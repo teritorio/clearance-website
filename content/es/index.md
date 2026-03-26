@@ -1,13 +1,13 @@
 ---
-title: "Filtro de calidad para datos de OpenStreetMap"
-description: "Controle la calidad de los datos de OpenStreetMap que utiliza o redistribuye. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
+title: "Filtro de calidad para la replicación OpenStreetMap"
+description: "Controle la calidad de su flujo de replicación OpenStreetMap. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
 ---
 
 ::landing-hero
 ---
-headline: Filtro de calidad open source
-title: Controle la calidad de sus datos OpenStreetMap
-description: "¿Utiliza OpenStreetMap en un contexto crítico? Un error puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance le ayuda a prevenirlo."
+headline: Filtro de calidad para la replicación OSM
+title: Controle la calidad de su replicación OpenStreetMap
+description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance filtra su flujo de replicación antes de que llegue a sus sistemas."
 primaryLabel: Ver en GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Solicitar una demo
@@ -18,7 +18,7 @@ secondaryTo: /contact
 ::landing-features
 ---
 headline: Funcionalidades
-title: Todo lo necesario para asegurar sus datos OSM
+title: Todo lo necesario para asegurar su replicación OSM
 description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones. Clearance nunca modifica OpenStreetMap: los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
 ---
 
@@ -153,7 +153,7 @@ description: "Estas situaciones son frecuentes cuando los datos OSM se utilizan 
 ---
 headline: Casos de uso
 title: ¿Para quién es Clearance?
-description: Cualquier organización que dependa de datos OpenStreetMap de calidad.
+description: Cualquier organización que replique datos OpenStreetMap en un contexto operativo.
 ---
 
   ::landing-use-case

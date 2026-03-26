@@ -12,6 +12,12 @@ useSeoMeta({
   ogImageAlt: () => t('seo.ogImageAlt'),
 })
 
+useHead({
+  link: [
+    { rel: 'manifest', href: () => `/site.${locale.value}.webmanifest` },
+  ],
+})
+
 useSchemaOrg([
   defineOrganization({
     name: 'Teritorio',
@@ -20,7 +26,7 @@ useSchemaOrg([
   }),
   defineSoftwareApp({
     name: 'Clearance',
-    operatingSystem: 'Linux',
+    operatingSystem: 'Any',
     applicationCategory: 'DeveloperApplication',
     offers: {
       price: '0',

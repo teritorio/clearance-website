@@ -1,0 +1,22 @@
+{
+  "name": "Clearance",
+  "short_name": "Clearance",
+  "description": "Open source quality filter for OpenStreetMap replication",
+  "lang": "en",
+  "start_url": "/en/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffbb00",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ]
+}

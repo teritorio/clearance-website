@@ -38,8 +38,8 @@ export default defineI18nLocale(async () => ({
     toc: 'Sur cette page',
   },
   seo: {
-    description: 'Filtre qualité open source pour les données OpenStreetMap — filtrez, validez et sécurisez votre pipeline de données OSM.',
-    ogImageAlt: 'Clearance — Filtre qualité pour les données OpenStreetMap',
+    description: 'Filtre qualité open source pour la réplication OpenStreetMap — filtrez, validez et sécurisez votre flux de réplication OSM.',
+    ogImageAlt: 'Clearance — Filtre qualité pour la réplication OpenStreetMap',
   },
   page: {
     empty: 'Cette page n\'a pas encore de contenu.',

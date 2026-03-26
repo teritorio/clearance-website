@@ -1,8 +1,9 @@
 {
   "name": "Clearance",
   "short_name": "Clearance",
-  "description": "Open source quality filter for OpenStreetMap data",
-  "start_url": "/",
+  "description": "Filtro de calidad open source para la replicaci\u00f3n OpenStreetMap",
+  "lang": "es",
+  "start_url": "/es/",
   "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#ffbb00",
