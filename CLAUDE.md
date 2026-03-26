@@ -26,6 +26,7 @@ Clearance Website — marketing/presentational site for Clearance, an open-sourc
 - ESLint: `@antfu/eslint-config`
 - Commits: conventional commits enforced by commitlint
 - Git hooks: simple-git-hooks + lint-staged
+- **Mobile-first**: Design and implement for mobile screens first, then enhance for larger breakpoints
 
 ## Git Commits
 
