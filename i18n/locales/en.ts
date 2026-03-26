@@ -26,6 +26,8 @@ export default defineI18nLocale(async () => ({
     organization: 'Organization',
     message: 'Message',
     send: 'Send',
+    fallback: 'You can also contact us via {link}.',
+    fallbackLink: 'our website',
     namePlaceholder: 'Your name',
     emailPlaceholder: 'your{\'@\'}email.com',
     organizationPlaceholder: 'Your organization',
