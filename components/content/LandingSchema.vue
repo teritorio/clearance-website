@@ -63,28 +63,17 @@ defineProps<{
           />
         </linearGradient>
 
-        <!-- Arrow markers for feedback (light, both ends) -->
+        <!-- Arrow marker for feedback (light, symmetrical diamond-style) -->
         <marker
-          id="schema-arrow-end"
-          viewBox="0 0 10 7"
-          refX="10"
-          refY="3.5"
-          markerWidth="7"
-          markerHeight="6"
+          id="schema-arrow"
+          viewBox="0 0 10 10"
+          refX="5"
+          refY="5"
+          markerWidth="8"
+          markerHeight="8"
           orient="auto"
         >
-          <polygon points="0 0, 10 3.5, 0 7" fill="#d4d4d8" />
-        </marker>
-        <marker
-          id="schema-arrow-start"
-          viewBox="0 0 10 7"
-          refX="0"
-          refY="3.5"
-          markerWidth="7"
-          markerHeight="6"
-          orient="auto"
-        >
-          <polygon points="10 0, 0 3.5, 10 7" fill="#d4d4d8" />
+          <polygon points="0 5, 5 0, 10 5, 5 10" fill="#d4d4d8" />
         </marker>
       </defs>
 
@@ -103,8 +92,7 @@ defineProps<{
         stroke="#d4d4d8"
         stroke-width="2"
         stroke-dasharray="6 4"
-        marker-start="url(#schema-arrow-start)"
-        marker-end="url(#schema-arrow-end)"
+        marker-end="url(#schema-arrow)"
       />
 
       <!-- Layer 2: Animated amber overlay -->
@@ -122,8 +110,7 @@ defineProps<{
         stroke="url(#feedback-flow-grad)"
         stroke-width="2"
         stroke-dasharray="6 4"
-        marker-start="url(#schema-arrow-start)"
-        marker-end="url(#schema-arrow-end)"
+        marker-end="url(#schema-arrow)"
       />
 
       <!-- Layer 3: White circle fills (hide line inside nodes) -->
