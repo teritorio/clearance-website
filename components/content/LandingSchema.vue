@@ -149,7 +149,7 @@ defineProps<{
       <!-- Layer 6: Feedback label -->
       <text
         x="280"
-        y="18"
+        y="8"
         text-anchor="middle"
         fill="#a1a1aa"
         font-size="9.5"
