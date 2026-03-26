@@ -28,7 +28,7 @@ const footerColumns = computed(() => [
 </script>
 
 <template>
-  <UFooter :ui="{ top: 'border-b border-default' }">
+  <UFooter :ui="{ top: 'border-b border-t border-default' }">
     <template #top>
       <UContainer>
         <UFooterColumns :columns="footerColumns" :ui="{ root: 'block!', left: 'hidden!', center: 'grid! grid-cols-3! gap-8' }" />
