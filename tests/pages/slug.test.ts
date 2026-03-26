@@ -3,19 +3,10 @@ import { describe, expect, it } from 'vitest'
 import SlugPage from '~/pages/[...slug].vue'
 
 describe('slug page', () => {
-  it('applies docs layout when path includes /docs', async () => {
+  it('does not show home icon in navigation on docs pages', async () => {
     const component = await mountSuspended(SlugPage, {
       route: '/fr/docs/getting-started/overview',
     })
-    // Docs layout passes showHome to AppHeader, rendering the home icon
-    expect(component.html()).toContain('i-lucide:home')
-  })
-
-  it('applies default layout for non-docs paths', async () => {
-    const component = await mountSuspended(SlugPage, {
-      route: '/fr/about',
-    })
-    // Default layout does not pass showHome, so no home icon in nav
     expect(component.html()).not.toContain('i-lucide:home')
   })
 

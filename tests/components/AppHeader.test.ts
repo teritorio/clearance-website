@@ -25,19 +25,10 @@ describe('appHeader', () => {
     expect(html).toContain('https://github.com/teritorio/clearance')
   })
 
-  it('does not show home nav item by default', async () => {
+  it('does not show home nav item in navigation menu', async () => {
     const component = await mountSuspended(AppHeader)
     const html = component.html()
-    // Home icon should not appear in nav when showHome is false
     const homeIconCount = (html.match(/i-lucide:home/g) || []).length
     expect(homeIconCount).toBe(0)
-  })
-
-  it('shows home nav item when showHome prop is true', async () => {
-    const component = await mountSuspended(AppHeader, {
-      props: { showHome: true },
-    })
-    const html = component.html()
-    expect(html).toContain('i-lucide:home')
   })
 })
