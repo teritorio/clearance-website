@@ -99,22 +99,22 @@ function onSubmit() {
         <UButton type="submit" size="lg">
           {{ t('contact.send') }}
         </UButton>
-
-        <p class="mt-4 text-sm text-muted">
-          <i18n-t keypath="contact.fallback" tag="span">
-            <template #link>
-              <NuxtLink
-                to="https://www.teritorio.fr/fr/contact/"
-                external
-                target="_blank"
-                class="text-primary underline"
-              >
-                {{ t('contact.fallbackLink') }}
-              </NuxtLink>
-            </template>
-          </i18n-t>
-        </p>
       </form>
+
+      <p class="mt-4 text-sm text-muted">
+        <i18n-t keypath="contact.fallback" tag="span">
+          <template #link>
+            <NuxtLink
+              :to="t('contact.fallbackUrl')"
+              external
+              target="_blank"
+              class="text-primary underline"
+            >
+              {{ t('contact.fallbackLink') }}
+            </NuxtLink>
+          </template>
+        </i18n-t>
+      </p>
     </div>
   </UContainer>
 </template>
