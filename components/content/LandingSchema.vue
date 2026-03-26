@@ -11,7 +11,7 @@ defineProps<{
 <template>
   <div class="mx-auto max-w-3xl">
     <svg
-      viewBox="0 0 560 155"
+      viewBox="0 -15 560 170"
       class="block w-full"
       role="img"
       :aria-label="`${changesLabel} → ${osmLabel} → ${clearanceLabel} → ${extractLabel}`"
@@ -161,7 +161,7 @@ defineProps<{
       <!-- Layer 6: Feedback label -->
       <text
         x="280"
-        y="8"
+        y="-2"
         text-anchor="middle"
         fill="#a1a1aa"
         font-size="11"
