@@ -1,13 +1,13 @@
 ---
-title: "Clearance - Quality Filter for OpenStreetMap Data"
-description: "Take control of the quality of the OpenStreetMap data you use or redistribute. Clearance automatically passes compliant changes and holds suspicious ones for review."
+title: "Clearance - Quality Filter for OpenStreetMap Replication"
+description: "Control the quality of your OpenStreetMap replication feed. Clearance automatically passes compliant changes and holds suspicious ones for review."
 ---
 
 ::landing-hero
 ---
-headline: Open source quality filter
-title: Take control of your OpenStreetMap data quality
-description: "Using OpenStreetMap in a critical context? An error can block an emergency route, distort a calculation, or engage your liability. Clearance helps you prevent that."
+headline: Quality filter for OSM replication
+title: Control the quality of your OpenStreetMap replication
+description: "Replicating OpenStreetMap data in a critical context? An unreviewed change can block an emergency route, distort a calculation, or engage your liability. Clearance filters your replication feed before it reaches your systems."
 primaryLabel: View on GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Request a demo
@@ -18,7 +18,7 @@ secondaryTo: /contact
 ::landing-features
 ---
 headline: Features
-title: Everything you need to secure your OSM data
+title: Everything you need to secure your OSM replication
 description: "A complete quality assurance pipeline between OpenStreetMap and your applications. Clearance never modifies OpenStreetMap: problematic data is simply held, and corrections are made directly in OSM at the source."
 ---
 
@@ -153,7 +153,7 @@ description: "These situations are common when OSM data is used in an operationa
 ---
 headline: Use cases
 title: Who is Clearance for?
-description: Any organization that depends on quality OpenStreetMap data.
+description: Any organization that replicates OpenStreetMap data in an operational context.
 ---
 
   ::landing-use-case

@@ -1,13 +1,13 @@
 ---
-title: "Clearance - Filtre qualité pour les données OpenStreetMap"
-description: "Maîtrisez la qualité des données OpenStreetMap que vous utilisez ou rediffusez. Clearance filtre automatiquement les modifications conformes et retient les changements suspects pour vérification."
+title: "Clearance - Filtre qualité pour la réplication OpenStreetMap"
+description: "Contrôlez la qualité de votre flux de réplication OpenStreetMap. Clearance filtre automatiquement les modifications conformes et retient les changements suspects pour vérification."
 ---
 
 ::landing-hero
 ---
-headline: Filtre qualité open source
-title: Maîtrisez la qualité de vos données OpenStreetMap
-description: "Vous utilisez OpenStreetMap dans un contexte critique ? Une erreur peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance vous aide à vous en prémunir."
+headline: Filtre qualité pour la réplication OSM
+title: Contrôlez la qualité de votre réplication OpenStreetMap
+description: "Vous répliquez des données OpenStreetMap dans un contexte critique ? Une modification non vérifiée peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance filtre votre flux de réplication avant qu'il n'atteigne vos systèmes."
 primaryLabel: Voir sur GitHub
 primaryTo: https://github.com/teritorio/clearance
 secondaryLabel: Demander une démo
@@ -18,7 +18,7 @@ secondaryTo: /contact
 ::landing-features
 ---
 headline: Fonctionnalités
-title: Tout ce qu'il faut pour sécuriser vos données OSM
+title: Tout ce qu'il faut pour sécuriser votre réplication OSM
 description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications. Clearance ne modifie jamais OpenStreetMap : les données problématiques sont mises en attente, et les corrections sont apportées directement dans OSM, à la source."
 ---
 
@@ -153,7 +153,7 @@ description: "Ces situations sont courantes lorsque les données OSM sont utilis
 ---
 headline: Cas d'usage
 title: Pour qui est Clearance ?
-description: Toute organisation qui dépend de données OpenStreetMap de qualité.
+description: Toute organisation qui réplique des données OpenStreetMap dans un contexte opérationnel.
 ---
 
   ::landing-use-case
