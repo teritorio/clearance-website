@@ -34,7 +34,7 @@ defineProps<{
             attributeName="gradientTransform"
             type="translate"
             values="-200 0;600 0;600 0;-200 0;-200 0"
-            keyTimes="0;0.55;0.80;0.81;1"
+            keyTimes="0;0.65;0.85;0.86;1"
             dur="16s"
             repeatCount="indefinite"
           />
@@ -57,7 +57,7 @@ defineProps<{
             attributeName="gradientTransform"
             type="translate"
             values="0 0;0 0;-250 0;-250 0;0 0;0 0"
-            keyTimes="0;0.36;0.72;0.80;0.81;1"
+            keyTimes="0;0.42;0.82;0.85;0.86;1"
             dur="16s"
             repeatCount="indefinite"
           />
