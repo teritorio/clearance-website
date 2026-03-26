@@ -14,23 +14,19 @@ defineProps<{
 <template>
   <section class="py-16 sm:py-24">
     <UContainer>
-      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
-          <div v-if="title">
-            <p v-if="headline" class="text-sm font-semibold text-primary">
-              {{ headline }}
-            </p>
-            <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              {{ title }}
-            </h2>
-            <p v-if="description" class="mt-4 text-lg text-muted">
-              {{ description }}
-            </p>
-          </div>
-          <div class="mt-10 flex flex-col gap-6">
-            <MDCSlot :use="$slots.default" />
-          </div>
-        </div>
+      <div v-if="title" class="mx-auto max-w-2xl text-center">
+        <p v-if="headline" class="text-sm font-semibold text-primary">
+          {{ headline }}
+        </p>
+        <h2 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+          {{ title }}
+        </h2>
+        <p v-if="description" class="mt-4 text-lg text-muted">
+          {{ description }}
+        </p>
+      </div>
+
+      <div class="mt-10">
         <LandingSchema
           v-if="changesLabel"
           :changes-label="changesLabel"
@@ -39,6 +35,10 @@ defineProps<{
           :extract-label="extractLabel"
           :feedback-label="feedbackLabel"
         />
+      </div>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <MDCSlot :use="$slots.default" />
       </div>
     </UContainer>
   </section>
