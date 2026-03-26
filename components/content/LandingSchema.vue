@@ -63,7 +63,7 @@ defineProps<{
           />
         </linearGradient>
 
-        <!-- Arrow marker for feedback (light, symmetrical diamond-style) -->
+        <!-- Arrow marker for feedback (light, symmetrical triangle) -->
         <marker
           id="schema-arrow"
           viewBox="0 0 10 10"
@@ -73,7 +73,7 @@ defineProps<{
           markerHeight="8"
           orient="auto"
         >
-          <polygon points="0 5, 5 0, 10 5, 5 10" fill="#d4d4d8" />
+          <polygon points="0 0, 10 5, 0 10" fill="#d4d4d8" />
         </marker>
       </defs>
 
