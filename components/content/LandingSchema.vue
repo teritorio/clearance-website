@@ -117,10 +117,10 @@ defineProps<{
       <circle cx="490" cy="70" r="27" fill="white" />
 
       <!-- Layer 4: Inner decorative circles -->
-      <circle cx="70" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-      <circle cx="210" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-      <circle cx="350" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-      <circle cx="490" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+      <circle cx="70" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+      <circle cx="210" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+      <circle cx="350" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
+      <circle cx="490" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
 
       <!-- Layer 5: Node icons -->
       <!-- Changes: wavy line -->
