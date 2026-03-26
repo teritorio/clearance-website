@@ -91,6 +91,7 @@ defineProps<{
         fill="none"
         stroke="#d4d4d8"
         stroke-width="2"
+        stroke-dasharray="6 4"
       />
 
       <!-- Layer 2: Animated amber overlay -->
@@ -107,6 +108,7 @@ defineProps<{
         fill="none"
         stroke="url(#feedback-flow-grad)"
         stroke-width="2"
+        stroke-dasharray="6 4"
         marker-end="url(#schema-arrow)"
       />
 
