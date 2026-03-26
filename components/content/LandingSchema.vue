@@ -83,7 +83,7 @@ defineProps<{
       <!-- Grey circle borders -->
       <circle cx="70" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <circle cx="210" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
-      <circle cx="350" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2.5" />
+      <circle cx="350" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <circle cx="490" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <!-- Grey feedback arc -->
       <path
@@ -99,7 +99,7 @@ defineProps<{
       <!-- Amber circle borders -->
       <circle cx="70" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
       <circle cx="210" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
-      <circle cx="350" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2.5" />
+      <circle cx="350" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
       <circle cx="490" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
       <!-- Amber feedback arc -->
       <path
@@ -113,13 +113,13 @@ defineProps<{
       <!-- Layer 3: White circle fills (hide line inside nodes) -->
       <circle cx="70" cy="70" r="27" fill="white" />
       <circle cx="210" cy="70" r="27" fill="white" />
-      <circle cx="350" cy="70" r="27" fill="#fffbeb" />
+      <circle cx="350" cy="70" r="27" fill="white" />
       <circle cx="490" cy="70" r="27" fill="white" />
 
       <!-- Layer 4: Inner decorative circles -->
       <circle cx="70" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
       <circle cx="210" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
-      <circle cx="350" cy="70" r="22" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
+      <circle cx="350" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
       <circle cx="490" cy="70" r="22" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
 
       <!-- Layer 5: Node icons -->
@@ -164,7 +164,7 @@ defineProps<{
       <text x="210" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
         {{ osmLabel }}
       </text>
-      <text x="350" y="115" text-anchor="middle" fill="#71717a" font-size="11" font-weight="600" font-family="system-ui, sans-serif">
+      <text x="350" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
         {{ clearanceLabel }}
       </text>
       <text x="490" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
