@@ -10,7 +10,7 @@ defineProps<{
   <section class="py-16 sm:py-24 bg-zinc-50">
     <UContainer>
       <LandingSectionHeader :headline="headline" :title="title" :description="description" />
-      <div class="mt-12 grid gap-8 sm:grid-cols-3">
+      <div class="mt-12 grid gap-y-10 pt-6 sm:grid-cols-3 sm:gap-x-12">
         <MDCSlot :use="$slots.default" />
       </div>
     </UContainer>
