@@ -15,6 +15,14 @@ secondaryTo: /contact
 ---
 ::
 
+::landing-problem
+---
+headline: El desafío
+title: ¿Cómo reutilizar los datos de OpenStreetMap con confianza?
+---
+OpenStreetMap evoluciona constantemente. Cada día, millones de modificaciones son realizadas por una comunidad global: voluntarios, instituciones públicas y empresas. Este dinamismo es una fortaleza, pero cuando estos datos se vuelven críticos para un servicio, ¿cómo garantizar su calidad? Las herramientas clásicas de replicación no incluyen un filtro de calidad — actúan sobre datos ya replicados, o al precio de bloquear la replicación por completo.
+::
+
 ::landing-features
 ---
 headline: Funcionalidades
