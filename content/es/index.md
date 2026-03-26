@@ -79,6 +79,11 @@ description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos s
 headline: En la práctica
 title: Todo lo necesario para asegurar su replicación OSM
 description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones, mientras continúa contribuyendo al bien común OpenStreetMap."
+changesLabel: Cambios
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extracto
+feedbackLabel: Correcciones en OSM
 ---
 
   ::landing-practice-item
@@ -175,12 +180,44 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 ::landing-references
 ---
 headline: Referencias
-title: Más de 40 organizaciones confían en nosotros
-description: Clearance ya se utiliza en producción por administraciones, operadores e instituciones.
+title: Más de 40 organizaciones ya utilizan Clearance
+description: "Para reutilizar los datos de OpenStreetMap con mayor control."
+ctaLabel: Ver un ejemplo de proyecto (Landes)
+ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
-**SNCF Réseau** (ferrocarriles franceses) asegura el mantenimiento de la información de vías y señalización. La **Protección Civil de Navarra** (España) garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia. **30 agencias departamentales y oficinas de turismo** (Francia continental y de ultramar) controlan la calidad en numerosas temáticas: equipamientos de ocio, salud, comercios alimentarios.
 
-[Ver un ejemplo de proyecto (Landes)](https://clearance.teritorio.xyz/france_landes_poi/changes_logs){target="_blank"}
+  ::landing-reference
+  ---
+  logo: /logos/Logo_SNCF_(2011).svg.png
+  title: SNCF Réseau
+  ---
+  El operador ferroviario francés asegura el mantenimiento de la información de vías y señalización.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  title: Protección Civil de Navarra
+  ---
+  Garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia en España. Los datos OSM sirven como referencia para el enrutamiento.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  title: 30 agencias departamentales y oficinas de turismo
+  ---
+  Controlan la calidad y siguen las contribuciones OSM en numerosas temáticas en Francia continental y de ultramar: equipamientos de ocio, salud, comercios alimentarios, etc.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/NLnet_Foundation_logo.svg.png
+  title: Fundación NLNet
+  ---
+  Financia parte de los desarrollos de Clearance a través de [fondos europeos](https://nlnet.nl/project/Clearance/){target="_blank"}.
+  ::
+
 ::
 
 ::landing-cta

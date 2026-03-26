@@ -79,6 +79,11 @@ description: "Clearance never modifies OpenStreetMap. Problematic data is simply
 headline: In practice
 title: Everything you need to secure your OSM replication
 description: "A complete quality assurance pipeline between OpenStreetMap and your applications, while continuing to contribute to the OpenStreetMap commons."
+changesLabel: Changes
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extract
+feedbackLabel: Corrections in OSM
 ---
 
   ::landing-practice-item
@@ -175,12 +180,44 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 ::landing-references
 ---
 headline: References
-title: Over 40 organizations trust us
-description: Clearance is already used in production by local authorities, operators, and institutions.
+title: Over 40 organizations already use Clearance
+description: "To reuse OpenStreetMap data with greater control."
+ctaLabel: View an example project (Landes)
+ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
-**SNCF Réseau** (French railways) ensures the maintenance of track and signaling information. **Civil Protection of Navarre** (Spain) guarantees the quality of road and addressing data used for emergency response route calculation. **30 departmental agencies and tourism offices** (mainland and overseas France) control quality across many themes: leisure facilities, health, food shops.
 
-[View an example project (Landes)](https://clearance.teritorio.xyz/france_landes_poi/changes_logs){target="_blank"}
+  ::landing-reference
+  ---
+  logo: /logos/Logo_SNCF_(2011).svg.png
+  title: SNCF Réseau
+  ---
+  The French railway operator ensures the maintenance of track and signaling information.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  title: Civil Protection of Navarre
+  ---
+  Guarantees the quality of road and addressing data used for emergency response route calculation in Spain. OSM data serves as the reference for intervention routing.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  title: 30 departmental agencies and tourism offices
+  ---
+  Control quality and monitor OSM contributions across many themes in mainland and overseas France: leisure facilities, health, food shops, and more.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/NLnet_Foundation_logo.svg.png
+  title: NLNet Foundation
+  ---
+  Funds part of Clearance development through [European grants](https://nlnet.nl/project/Clearance/){target="_blank"}.
+  ::
+
 ::
 
 ::landing-cta

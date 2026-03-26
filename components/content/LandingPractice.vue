@@ -3,6 +3,11 @@ defineProps<{
   headline?: string
   title?: string
   description?: string
+  changesLabel?: string
+  osmLabel?: string
+  clearanceLabel?: string
+  extractLabel?: string
+  feedbackLabel?: string
 }>()
 </script>
 
@@ -26,12 +31,14 @@ defineProps<{
             <MDCSlot :use="$slots.default" />
           </div>
         </div>
-        <div class="flex min-h-[300px] items-center justify-center rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-50 p-12">
-          <div class="text-center text-sm text-muted">
-            <UIcon name="i-lucide-image" class="mb-2 size-10 text-zinc-300" />
-            <p>Image</p>
-          </div>
-        </div>
+        <LandingSchema
+          v-if="changesLabel"
+          :changes-label="changesLabel"
+          :osm-label="osmLabel"
+          :clearance-label="clearanceLabel"
+          :extract-label="extractLabel"
+          :feedback-label="feedbackLabel"
+        />
       </div>
     </UContainer>
   </section>

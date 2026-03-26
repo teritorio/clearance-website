@@ -79,6 +79,11 @@ description: "Clearance ne modifie jamais OpenStreetMap. Les données problémat
 headline: En pratique
 title: Tout ce qu'il faut pour sécuriser votre réplication OSM
 description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications, tout en continuant à contribuer au commun OpenStreetMap."
+changesLabel: Changements
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extrait
+feedbackLabel: Corrections dans OSM
 ---
 
   ::landing-practice-item
@@ -175,12 +180,44 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
 ::landing-references
 ---
 headline: Références
-title: Plus de 40 organisations nous font confiance
-description: Clearance est déjà utilisé en production par des collectivités, des opérateurs et des institutions.
+title: Plus de 40 organisations utilisent déjà Clearance
+description: "Pour réutiliser les données OpenStreetMap avec davantage de maîtrise."
+ctaLabel: Voir un exemple de projet (Landes)
+ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
-**SNCF Réseau** (chemin de fer français) s'assure du maintien des informations liées aux voies et à la signalisation. La **Sécurité civile de Navarre** (Espagne) garantit la qualité des données de voirie et d'adressage utilisées pour le calcul d'itinéraire des interventions de secours. **30 agences départementales et offices de tourisme** (France hexagonale et outre-mers) contrôlent la qualité sur de nombreuses thématiques : équipements de loisirs, santé, commerces alimentaires.
 
-[Voir un exemple de projet (Landes)](https://clearance.teritorio.xyz/france_landes_poi/changes_logs){target="_blank"}
+  ::landing-reference
+  ---
+  logo: /logos/Logo_SNCF_(2011).svg.png
+  title: SNCF Réseau
+  ---
+  Le chemin de fer français s'assure du maintien des informations liées aux voies et à la signalisation.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  title: Sécurité civile de Navarre
+  ---
+  Garantir la qualité des données liées à la voirie et au système d'adressage utilisé pour l'envoi des secours en Espagne. Les données OSM sont utilisées comme référentiel pour le calcul d'itinéraire des interventions.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  title: 30 agences départementales et offices de tourisme
+  ---
+  Contrôler la qualité et suivre les contributions OSM sur de nombreuses thématiques en France hexagonale et outre-mers : équipements de loisirs, santé, commerces alimentaires, etc.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/NLnet_Foundation_logo.svg.png
+  title: Fondation NLNet
+  ---
+  Finance une partie des développements de Clearance via des [fonds européens](https://nlnet.nl/project/Clearance/){target="_blank"}.
+  ::
+
 ::
 
 ::landing-cta
