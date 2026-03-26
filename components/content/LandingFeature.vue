@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="rounded-xl border border-default bg-default/50 p-6">
+  <div class="rounded-xl border border-zinc-200 bg-zinc-50 p-6">
     <div v-if="icon" class="mb-4 flex size-10 items-center justify-center rounded-lg bg-primary/10">
       <UIcon :name="icon" class="size-5 text-primary" />
     </div>

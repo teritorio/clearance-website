@@ -4,17 +4,38 @@ const route = useRoute()
 
 const collectionName = computed(() => `content_${locale.value}` as const)
 
+const slug = computed(() => (route.params.slug as string[]) || [])
+
 const path = computed(() => {
-  const slug = (route.params.slug as string[]) || []
-  return `/${locale.value}/${slug.join('/')}`
+  return `/${locale.value}/${slug.value.join('/')}`
 })
 
 const { data: page } = await useAsyncData(
-  `slug-${route.path}`,
+  `slug-${locale.value}-${slug.value.join('/')}`,
   () => queryCollection(collectionName.value).path(path.value).first(),
+  { watch: [locale] },
 )
 
 const isDocsPage = computed(() => path.value.includes('/docs'))
+
+const sectionSlug = computed(() => {
+  const parts = slug.value
+  return isDocsPage.value && parts.length >= 3 ? parts[1] : undefined
+})
+
+const { data: docsIndex } = await useAsyncData(
+  `breadcrumb-docs-${locale.value}`,
+  () => queryCollection(collectionName.value).path(`/${locale.value}/docs`).first(),
+  { watch: [locale] },
+)
+
+const { data: sectionIndex } = await useAsyncData(
+  `breadcrumb-section-${locale.value}-${sectionSlug.value}`,
+  () => sectionSlug.value
+    ? queryCollection(collectionName.value).path(`/${locale.value}/docs/${sectionSlug.value}`).first()
+    : Promise.resolve(null),
+  { watch: [locale] },
+)
 
 useHead({
   title: () => page.value?.title,
@@ -22,6 +43,26 @@ useHead({
     { name: 'description', content: () => page.value?.description },
   ],
 })
+
+useSchemaOrg([
+  defineBreadcrumb({
+    itemListElement: computed(() => {
+      const items: Array<{ name: string, item: string }> = [
+        { name: 'Clearance', item: `/${locale.value}` },
+      ]
+      if (isDocsPage.value) {
+        const parts = slug.value
+        if (parts.length >= 2)
+          items.push({ name: docsIndex.value?.title || t('nav.docs'), item: `/${locale.value}/docs` })
+        if (parts.length >= 3 && sectionIndex.value?.title)
+          items.push({ name: sectionIndex.value.title, item: `/${locale.value}/docs/${parts[1]}` })
+        if (page.value?.title)
+          items.push({ name: page.value.title, item: `/${locale.value}/${parts.join('/')}` })
+      }
+      return items
+    }),
+  }),
+])
 
 definePageMeta({
   layout: false,

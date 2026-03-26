@@ -1,5 +1,5 @@
 ---
 title: Documentation
-description: Complete documentation for Clearance, the open source quality filter for OpenStreetMap data.
+description: Complete documentation for Clearance, the open source quality filter for your OpenStreetMap replication feed.
 navigation: false
 ---

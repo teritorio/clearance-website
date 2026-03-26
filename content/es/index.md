@@ -1,82 +1,48 @@
 ---
-title: "Clearance - Filtro de calidad para datos de OpenStreetMap"
-description: "Controle la calidad de los datos de OpenStreetMap que utiliza o redistribuye. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
+title: "Filtro de calidad para la replicación OpenStreetMap"
+description: "Controle la calidad de su flujo de replicación OpenStreetMap. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
 ---
 
 ::landing-hero
 ---
-headline: Filtro de calidad open source
-title: Controle la calidad de sus datos OpenStreetMap
-description: "¿Utiliza OpenStreetMap en un contexto crítico? Un error puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance le ayuda a prevenirlo."
-primaryLabel: Ver en GitHub
-primaryTo: https://github.com/teritorio/clearance
-secondaryLabel: Solicitar una demo
-secondaryTo: /contact
+headline: Filtro de calidad para la replicación OSM
+title: Controle la calidad de su replicación OpenStreetMap
+description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
+primaryLabel: Solicitar una demo
+primaryTo: /contact
+secondaryLabel: Ver en GitHub
+secondaryTo: https://github.com/teritorio/clearance
 ---
 ::
 
-::landing-features
+::landing-problem
 ---
-headline: Funcionalidades
-title: Todo lo necesario para asegurar sus datos OSM
-description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones. Clearance nunca modifica OpenStreetMap: los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
+headline: El problema
+title: ¿Cómo reutilizar los datos de OpenStreetMap con confianza?
+description: "Cuando los datos de OpenStreetMap se vuelven críticos para un servicio, surge una pregunta: ¿cómo garantizar su calidad?"
 ---
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-shield-check
-  title: Filtro de calidad
+  icon: i-lucide-refresh-cw
   ---
-  Integra automáticamente los cambios conformes mientras retiene las modificaciones sospechosas para revisión humana.
+  OpenStreetMap evoluciona constantemente. Cada día, millones de modificaciones son realizadas por una comunidad global de contribuidores: voluntarios, instituciones públicas y empresas. Este dinamismo es una fortaleza, pero ¿cómo evitar que errores, la mayoría involuntarios, afecten sus servicios?
   ::
 
-  ::landing-feature
+  ::landing-problem-card
   ---
-  icon: i-lucide-git-merge
-  title: Agrupación inteligente (LoCha)
+  icon: i-lucide-alert-triangle
   ---
-  Agrupa los cambios relacionados en clusters geográficos coherentes para una revisión pertinente y contextualizada.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-scan-search
-  title: Análisis semántico
-  ---
-  Verifica la coherencia de los tags OSM y detecta cambios potencialmente problemáticos antes de que lleguen a sus sistemas.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-list-checks
-  title: Reglas de validación
-  ---
-  Siete categorías de reglas que cubren retrasos, eliminaciones, duplicados, geometría, red, tags y listas de usuarios.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-database
-  title: Proxy de calidad
-  ---
-  Utiliza los formatos estándar del ecosistema OpenStreetMap tanto de entrada como de salida. Siga usando sus herramientas con mayor confianza en los datos.
-  ::
-
-  ::landing-feature
-  ---
-  icon: i-lucide-cloud-cog
-  title: SaaS o autoalojado
-  ---
-  Disponible como servicio gestionado por Teritorio o como despliegue autónomo en su infraestructura.
+  Las herramientas clásicas de replicación de datos OSM no incluyen un filtro de calidad. Actúan sobre datos ya replicados, o al precio de bloquear la replicación por completo.
   ::
 
 ::
 
 ::landing-steps
 ---
-headline: Cómo funciona
-title: Tres pasos hacia datos fiables
-description: Clearance se integra en su flujo de replicación OpenStreetMap existente.
+headline: La solución
+title: "Clearance: una herramienta de replicación OSM con filtro de calidad integrado"
+description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
 ---
 
   ::landing-step
@@ -94,7 +60,7 @@ description: Clearance se integra en su flujo de replicación OpenStreetMap exis
   title: Filtrado
   number: "2"
   ---
-  Los cambios conformes se integran automática e inmediatamente. Las modificaciones sensibles se retienen para verificación.
+  Los cambios conformes se integran automática e inmediatamente. Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM.
   ::
 
   ::landing-step
@@ -103,48 +69,45 @@ description: Clearance se integra en su flujo de replicación OpenStreetMap exis
   title: Validación
   number: "3"
   ---
-  Un operador revisa los cambios retenidos y, si es necesario, corrige en OSM. En la siguiente verificación, las modificaciones conformes pasarán el filtro.
+  En la siguiente verificación, si todo es conforme, las modificaciones pasarán el filtro y se integrarán a la copia local. Así dispone de una versión actualizada, fiable y adaptada a sus requisitos de calidad.
   ::
 
 ::
 
-::landing-use-cases
+::landing-practice
 ---
-headline: Ejemplos concretos
-title: Reglas adaptadas a su actividad
-description: "Estas situaciones son frecuentes cuando los datos OSM se utilizan en un contexto operativo."
+headline: En la práctica
+title: Todo lo necesario para asegurar su replicación OSM
+description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones, mientras continúa contribuyendo al bien común OpenStreetMap."
+changesLabel: Cambios
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extracto
+feedbackLabel: Correcciones en OSM
 ---
 
-  ::landing-use-case
+  ::landing-practice-item
   ---
-  icon: i-lucide-heart-pulse
-  title: Desfibrilador desplazado
+  icon: i-lucide-map-pin
+  title: Territorio y colaboración
   ---
-  El desplazamiento de un desfibrilador podría comprometer su responsabilidad si la información difundida es errónea.
+  Defina proyectos territoriales y temáticos en los que su equipo colabore para monitorear y mantener la calidad de los datos.
   ::
 
-  ::landing-use-case
+  ::landing-practice-item
   ---
-  icon: i-lucide-route
-  title: Red vial modificada
+  icon: i-lucide-list-checks
+  title: Reglas adaptadas a su actividad
   ---
-  La modificación de un segmento de red vial puede perturbar un calculador de rutas utilizado por sus servicios.
+  Aplique controles adaptados a su necesidad: desplazamientos, eliminaciones, adiciones prematuras, rupturas de uniones y más.
   ::
 
-  ::landing-use-case
+  ::landing-practice-item
   ---
-  icon: i-lucide-construction
-  title: Equipamiento no operativo
+  icon: i-lucide-database
+  title: Proxy de calidad
   ---
-  La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
-  ::
-
-  ::landing-use-case
-  ---
-  icon: i-lucide-link-2-off
-  title: Referencia eliminada
-  ---
-  La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
+  Utiliza los formatos estándar del ecosistema OpenStreetMap tanto de entrada como de salida. Siga usando sus herramientas con mayor confianza en los datos.
   ::
 
 ::
@@ -153,31 +116,63 @@ description: "Estas situaciones son frecuentes cuando los datos OSM se utilizan 
 ---
 headline: Casos de uso
 title: ¿Para quién es Clearance?
-description: Cualquier organización que dependa de datos OpenStreetMap de calidad.
+description: "Clearance está diseñado para organizaciones que utilizan regularmente los datos de OpenStreetMap con exigencias de calidad."
 ---
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-bus
+  title: Operadores de movilidad y transporte
+  ---
+  La modificación de un segmento de red vial puede perturbar un calculador de rutas utilizado por sus servicios.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-shield-alert
+  title: Servicios de emergencia y seguridad
+  ---
+  El desplazamiento de un desfibrilador podría comprometer su responsabilidad si la información difundida es errónea.
+  ::
 
   ::landing-use-case
   ---
   icon: i-lucide-map
   title: Administraciones locales
   ---
-  Asegure la fiabilidad de los datos cartográficos utilizados en sus servicios públicos digitales.
+  La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-bus
-  title: Operadores de transporte
+  icon: i-lucide-tree-pine
+  title: Gestores de parques naturales
   ---
-  Garantice la calidad de los datos de paradas y redes para sus aplicaciones de viajeros.
+  La eliminación o modificación de un sendero señalizado puede poner en peligro a los excursionistas que siguen sus rutas.
   ::
 
   ::landing-use-case
   ---
   icon: i-lucide-landmark
-  title: Oficinas de turismo
+  title: Organismos de gestión de destinos
   ---
-  Mantenga puntos de interés actualizados y fiables para sus visitantes.
+  Un punto de interés turístico mal referenciado puede degradar la experiencia de los visitantes de su territorio.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-database
+  title: Plataformas territoriales de datos abiertos
+  ---
+  La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
+  ::
+
+  ::landing-use-case
+  ---
+  icon: i-lucide-layers
+  title: Desarrolladores de aplicaciones cartográficas
+  ---
+  Datos fuente inconsistentes pueden generar anomalías de visualización o navegación en su aplicación.
   ::
 
 ::
@@ -185,12 +180,44 @@ description: Cualquier organización que dependa de datos OpenStreetMap de calid
 ::landing-references
 ---
 headline: Referencias
-title: Más de 40 organizaciones confían en nosotros
-description: Clearance ya se utiliza en producción por administraciones, operadores e instituciones.
+title: Más de 40 organizaciones ya utilizan Clearance
+description: "Para reutilizar los datos de OpenStreetMap con mayor control."
+ctaLabel: Ver un ejemplo de proyecto (Landes)
+ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
-**SNCF Réseau** (ferrocarriles franceses) asegura el mantenimiento de la información de vías y señalización. La **Protección Civil de Navarra** (España) garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia. **30 agencias departamentales y oficinas de turismo** (Francia continental y de ultramar) controlan la calidad en numerosas temáticas: equipamientos de ocio, salud, comercios alimentarios.
 
-[Ver un ejemplo de proyecto (Landes)](https://clearance.teritorio.xyz/france_landes_poi/changes_logs){target="_blank"}
+  ::landing-reference
+  ---
+  logo: /logos/Logo_SNCF_(2011).svg.png
+  title: SNCF Réseau
+  ---
+  El operador ferroviario francés asegura el mantenimiento de la información de vías y señalización.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  title: Protección Civil de Navarra
+  ---
+  Garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia en España. Los datos OSM sirven como referencia para el enrutamiento.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  title: 30 agencias departamentales y oficinas de turismo
+  ---
+  Controlan la calidad y siguen las contribuciones OSM en numerosas temáticas en Francia continental y de ultramar: equipamientos de ocio, salud, comercios alimentarios, etc.
+  ::
+
+  ::landing-reference
+  ---
+  logo: /logos/NLnet_Foundation_logo.svg.png
+  title: Fundación NLNet
+  ---
+  Financia parte de los desarrollos de Clearance a través de [fondos europeos](https://nlnet.nl/project/Clearance/){target="_blank"}.
+  ::
+
 ::
 
 ::landing-cta

@@ -3,9 +3,32 @@ import { en, es, fr } from '@nuxt/ui/locale'
 
 const uiLocales: Record<string, typeof en> = { en, fr, es }
 
-const { locale } = useI18n()
+const { t, locale } = useI18n()
 const route = useRoute()
 const uiLocale = computed(() => uiLocales[locale.value] || en)
+
+useSeoMeta({
+  description: () => t('seo.description'),
+  ogImageAlt: () => t('seo.ogImageAlt'),
+})
+
+useHead({
+  link: [
+    { rel: 'manifest', href: () => `/site.${locale.value}.webmanifest` },
+  ],
+})
+
+useSchemaOrg([
+  defineSoftwareApp({
+    name: 'Clearance',
+    operatingSystem: 'Any',
+    applicationCategory: 'DeveloperApplication',
+    offers: {
+      price: '0',
+      priceCurrency: 'EUR',
+    },
+  }),
+])
 </script>
 
 <template>

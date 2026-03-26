@@ -11,7 +11,7 @@ useHead({
 const collectionName = computed(() => `content_${locale.value}` as const)
 
 const { data: navigation } = await useAsyncData(
-  'docs-navigation',
+  `docs-navigation-${locale.value}`,
   () => queryCollectionNavigation(collectionName.value),
   { watch: [locale] },
 )
@@ -39,13 +39,16 @@ const docsNavigation = computed(() => {
   }
 
   const docsSection = findDocsNode(navigation.value)
-  return docsSection?.children || []
+  return (docsSection?.children || []).map(section => ({
+    ...section,
+    children: section.children?.filter(child => child.path !== section.path),
+  }))
 })
 </script>
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <AppHeader show-home />
+    <AppHeader />
 
     <UContainer class="flex-1">
       <div class="flex gap-8 py-8">

@@ -10,7 +10,8 @@ export default defineI18nLocale(async () => ({
     product: 'Product',
     resources: 'Resources',
     company: 'Company',
-    copyright: '© {year} Teritorio. Free software under AGPL-3.0 License.',
+    copyright: '© {year} {teritorio}. Free software under {license}.',
+    licenseLabel: 'AGPL-3.0 License',
   },
   contact: {
     title: 'Contact us',
@@ -30,9 +31,16 @@ export default defineI18nLocale(async () => ({
     emailPlaceholder: 'your{\'@\'}email.com',
     organizationPlaceholder: 'Your organization',
     messagePlaceholder: 'Describe your project or question...',
+    fallback: 'You can also contact us via {link}.',
+    fallbackLink: 'our website',
+    fallbackUrl: 'https://www.teritorio.fr/en/contact-en/',
   },
   docs: {
     toc: 'On this page',
+  },
+  seo: {
+    description: 'Open source quality filter for OpenStreetMap replication — filter, validate, and secure your OSM replication feed.',
+    ogImageAlt: 'Clearance — Quality filter for OpenStreetMap replication',
   },
   page: {
     empty: 'This page has no content yet.',
