@@ -22,7 +22,7 @@ useSchemaOrg([
   defineOrganization({
     name: 'Teritorio',
     url: 'https://teritorio.fr',
-    logo: 'https://clearance.teritorio.xyz/logo.svg',
+    logo: 'https://www.teritorio.fr/wp-content/themes/teritorio/assets/images/favicon/favicon-194x194.png',
   }),
   defineSoftwareApp({
     name: 'Clearance',
