@@ -17,7 +17,7 @@ secondaryTo: /contact
 
 ::landing-problem
 ---
-headline: The challenge
+headline: The problem
 title: How can you reuse OpenStreetMap data with confidence?
 ---
 OpenStreetMap is constantly evolving. Every day, millions of changes are made by a global community: volunteers, public institutions, and businesses. This dynamism is a strength, but when this data becomes critical for a service, how do you ensure its quality? Traditional replication tools don't include a quality filter — they operate on data that has already been replicated, or at the cost of blocking replication entirely.
