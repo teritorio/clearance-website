@@ -1,5 +1,5 @@
 ---
-title: "Clearance - Quality Filter for OpenStreetMap Replication"
+title: "Quality Filter for OpenStreetMap Replication"
 description: "Control the quality of your OpenStreetMap replication feed. Clearance automatically passes compliant changes and holds suspicious ones for review."
 ---
 

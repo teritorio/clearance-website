@@ -1,5 +1,5 @@
 ---
-title: "Clearance - Filtro de calidad para datos de OpenStreetMap"
+title: "Filtro de calidad para datos de OpenStreetMap"
 description: "Controle la calidad de los datos de OpenStreetMap que utiliza o redistribuye. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
 ---
 
