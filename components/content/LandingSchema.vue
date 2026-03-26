@@ -152,7 +152,7 @@ defineProps<{
         y="8"
         text-anchor="middle"
         fill="#a1a1aa"
-        font-size="9.5"
+        font-size="11"
         font-style="italic"
         font-family="system-ui, sans-serif"
       >
