@@ -128,15 +128,13 @@ defineProps<{
         <path d="M -11,0 Q -6,-7 -1,0 Q 4,7 9,0 Q 14,-7 19,0" fill="none" stroke="#3f3f46" stroke-width="2.2" stroke-linecap="round" transform="translate(-4, 0)" />
       </g>
 
-      <!-- OSM: database cylinder -->
-      <g transform="translate(210, 70)">
-        <ellipse cx="0" cy="-6" rx="10" ry="4" fill="none" stroke="#3f3f46" stroke-width="1.8" />
-        <path d="M -10,-6 L -10,6 C -10,10 10,10 10,6 L 10,-6" fill="none" stroke="#3f3f46" stroke-width="1.8" />
-      </g>
+      <!-- OSM: logo -->
+      <image href="/logos/openstreetmap.png" x="192" y="52" width="36" height="36" />
 
-      <!-- Clearance: funnel -->
+      <!-- Clearance: logo (two overlapping circles) -->
       <g transform="translate(350, 70)">
-        <path d="M -10,-9 L 10,-9 L 2,1 L 2,10 L -2,10 L -2,1 Z" fill="none" stroke="#3f3f46" stroke-width="1.8" stroke-linejoin="round" />
+        <circle cx="-4" cy="-2" r="8" fill="#ffbb00" stroke="#000" stroke-width="0.8" />
+        <circle cx="3" cy="3" r="6.5" fill="#f00" stroke="#000" stroke-width="0.8" />
       </g>
 
       <!-- Extract: database + check -->
