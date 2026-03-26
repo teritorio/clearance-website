@@ -63,9 +63,9 @@ defineProps<{
           />
         </linearGradient>
 
-        <!-- Arrow marker for feedback (light, symmetrical triangle) -->
+        <!-- Arrow markers for feedback (symmetrical triangle) -->
         <marker
-          id="schema-arrow"
+          id="schema-arrow-grey"
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
@@ -74,6 +74,17 @@ defineProps<{
           orient="auto"
         >
           <polygon points="0 0, 10 5, 0 10" fill="#d4d4d8" />
+        </marker>
+        <marker
+          id="schema-arrow-amber"
+          viewBox="0 0 10 10"
+          refX="5"
+          refY="5"
+          markerWidth="8"
+          markerHeight="8"
+          orient="auto"
+        >
+          <polygon points="0 0, 10 5, 0 10" fill="#f59e0b" />
         </marker>
       </defs>
 
@@ -87,12 +98,12 @@ defineProps<{
       <circle cx="490" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <!-- Grey feedback arc -->
       <path
-        d="M 346,44 C 330,12 230,12 214,44"
+        d="M 346,38 C 328,2 232,2 214,38"
         fill="none"
         stroke="#d4d4d8"
         stroke-width="2"
         stroke-dasharray="6 4"
-        marker-end="url(#schema-arrow)"
+        marker-end="url(#schema-arrow-grey)"
       />
 
       <!-- Layer 2: Animated amber overlay -->
@@ -105,12 +116,12 @@ defineProps<{
       <circle cx="490" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
       <!-- Amber feedback arc -->
       <path
-        d="M 346,44 C 330,12 230,12 214,44"
+        d="M 346,38 C 328,2 232,2 214,38"
         fill="none"
         stroke="url(#feedback-flow-grad)"
         stroke-width="2"
         stroke-dasharray="6 4"
-        marker-end="url(#schema-arrow)"
+        marker-end="url(#schema-arrow-amber)"
       />
 
       <!-- Layer 3: White circle fills (hide line inside nodes) -->
