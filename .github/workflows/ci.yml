@@ -71,26 +71,20 @@ jobs:
           MANIFEST="$RESULTS_PATH/manifest.json"
           if [ ! -f "$MANIFEST" ]; then exit 0; fi
 
-          COMMENT="## Lighthouse Report\n\n"
-          COMMENT+="| URL | Performance | Accessibility | Best Practices | SEO |\n"
-          COMMENT+="|-----|:-----------:|:------------:|:--------------:|:---:|\n"
-
-          for row in $(jq -c '.[]' "$MANIFEST"); do
-            URL=$(echo "$row" | jq -r '.url')
-            REPORT_URL=$(echo "$row" | jq -r '.htmlPath // .jsonPath')
-            SUMMARY=$(jq '.categories | to_entries | map({key: .key, score: (.value.score * 100 | round)}) | from_entries' "$(echo "$row" | jq -r '.jsonPath')")
-            PERF=$(echo "$SUMMARY" | jq '.performance')
-            A11Y=$(echo "$SUMMARY" | jq '.accessibility')
-            BP=$(echo "$SUMMARY" | jq '."best-practices"')
-            SEO=$(echo "$SUMMARY" | jq '.seo')
-            COMMENT+="| \`${URL}\` | ${PERF} | ${A11Y} | ${BP} | ${SEO} |\n"
-          done
+          COMMENT=$(jq -r '
+            "## Lighthouse Report\n\n| URL | Performance | Accessibility | Best Practices | SEO |\n|-----|:-----------:|:------------:|:--------------:|:---:|",
+            (
+              [ .[] | select(.isRepresentativeRun == true) ] |
+              .[] |
+              "| `\(.url | split("//")[1] | split("/")[1:] | "/" + join("/"))` | \((.summary.performance // 0) * 100 | round) | \((.summary.accessibility // 0) * 100 | round) | \((.summary["best-practices"] // 0) * 100 | round) | \((.summary.seo // 0) * 100 | round) |"
+            )
+          ' "$MANIFEST")
 
           if [ -n "$LINKS" ]; then
-            COMMENT+="\n**Report links:** ${LINKS}\n"
+            COMMENT+=$'\n\n'"**Report links:** ${LINKS}"
           fi
 
-          printf "$COMMENT" | gh pr comment "${{ github.event.pull_request.number }}" --body-file -
+          echo "$COMMENT" | gh pr comment "${{ github.event.pull_request.number }}" --body-file -
 
       - name: Create issue on Lighthouse regression
         if: always() && steps.lhci.outcome == 'failure'
