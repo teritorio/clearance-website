@@ -30,3 +30,91 @@ jobs:
 
       - name: Test
         run: pnpm test:run
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # No NUXT_APP_BASE_URL here — Lighthouse audits the site at root,
+      # unlike deploy.yml which prefixes /clearance-website/ for GitHub Pages.
+      - name: Generate static site
+        run: pnpm generate
+
+      - name: Lighthouse CI
+        id: lhci
+        uses: treosh/lighthouse-ci-action@v12
+        if: always()
+        with:
+          configPath: ./lighthouserc.cjs
+
+      - name: Comment Lighthouse results on PR
+        if: always() && github.event_name == 'pull_request' && steps.lhci.outputs.resultsPath != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESULTS_PATH: ${{ steps.lhci.outputs.resultsPath }}
+          LINKS: ${{ steps.lhci.outputs.links }}
+        run: |
+          MANIFEST="$RESULTS_PATH/manifest.json"
+          if [ ! -f "$MANIFEST" ]; then exit 0; fi
+
+          COMMENT=$(jq -r '
+            "## Lighthouse Report\n\n| URL | Performance | Accessibility | Best Practices | SEO |\n|-----|:-----------:|:------------:|:--------------:|:---:|",
+            (
+              [ .[] | select(.isRepresentativeRun == true) ] |
+              .[] |
+              "| `\(.url | split("//")[1] | split("/")[1:] | "/" + join("/"))` | \((.summary.performance // 0) * 100 | round) | \((.summary.accessibility // 0) * 100 | round) | \((.summary["best-practices"] // 0) * 100 | round) | \((.summary.seo // 0) * 100 | round) |"
+            )
+          ' "$MANIFEST")
+
+          if [ -n "$LINKS" ]; then
+            COMMENT+=$'\n\n'"**Report links:** ${LINKS}"
+          fi
+
+          echo "$COMMENT" | gh pr comment "${{ github.event.pull_request.number }}" --body-file -
+
+      - name: Create issue on Lighthouse regression
+        if: always() && steps.lhci.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESULTS_PATH: ${{ steps.lhci.outputs.resultsPath }}
+          LINKS: ${{ steps.lhci.outputs.links }}
+        run: |
+          REPORT=$(jq -r '
+            .[] | select(.level == "error" or .level == "warn") |
+            "- **\(.level)**: \(.auditId // .name) — score \(.actual) (expected ≥ \(.expected))"
+          ' "$RESULTS_PATH/assertion-results.json")
+
+          gh issue create \
+            --title "Lighthouse regression detected on $(date +%Y-%m-%d)" \
+            --label "lighthouse" \
+            --assignee wazolab \
+            --body "$(cat <<EOF
+          ## Lighthouse CI failed
+
+          **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          **Commit:** \`${{ github.sha }}\`
+          **Branch:** \`${{ github.ref_name }}\`
+
+          ### Failures
+
+          ${REPORT}
+
+          ### Report links
+
+          ${LINKS}
+          EOF
+          )"
