@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, locale, locales } = useI18n({ useScope: 'global' })
+const { t, locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 const localePath = useLocalePath()
 

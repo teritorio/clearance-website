@@ -3,7 +3,7 @@ import { en, es, fr } from '@nuxt/ui/locale'
 
 const uiLocales: Record<string, typeof en> = { en, fr, es }
 
-const { t, locale } = useI18n({ useScope: 'global' })
+const { t, locale } = useI18n()
 const route = useRoute()
 const uiLocale = computed(() => uiLocales[locale.value] || en)
 

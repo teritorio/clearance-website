@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { locale } = useI18n({ useScope: 'global' })
+const { locale } = useI18n()
 
 const head = useLocaleHead({ seo: true })
 useHead({

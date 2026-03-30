@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, locale } = useI18n({ useScope: 'global' })
+const { t, locale } = useI18n()
 
 const collectionName = computed(() => `content_${locale.value}` as const)
 
