@@ -226,7 +226,7 @@ title: Demander une démonstration
 description: "Lors d'une démonstration, nous échangeons sur votre contexte et vos besoins, vous présentons le fonctionnement de Clearance, illustrons des cas d'usage concrets et partageons notre feuille de route."
 primaryLabel: Nous contacter
 primaryTo: /contact
-secondaryLabel: Documentation
+secondaryLabel: Comment ça marche ?
 secondaryTo: /docs
 ---
 ::

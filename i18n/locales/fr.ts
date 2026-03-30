@@ -1,7 +1,7 @@
 export default defineI18nLocale(async () => ({
   nav: {
     home: 'Clearance',
-    docs: 'Documentation',
+    docs: 'Comment ça marche ?',
     contact: 'Contact',
     github: 'GitHub',
     changeLanguage: 'Changer de langue',
