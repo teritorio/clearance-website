@@ -37,6 +37,14 @@ const { data: sectionIndex } = await useAsyncData(
   { watch: [locale] },
 )
 
+const { data: surround } = await useAsyncData(
+  `surround-${locale.value}-${slug.value.join('/')}`,
+  () => isDocsPage.value
+    ? queryCollectionItemSurroundings(collectionName.value, path.value)
+    : Promise.resolve(null),
+  { watch: [locale] },
+)
+
 useHead({
   title: () => page.value?.title,
   meta: [
@@ -85,6 +93,8 @@ definePageMeta({
         {{ t('page.notFound') }}
       </p>
     </div>
+
+    <UContentSurround v-if="isDocsPage && surround" :surround="surround" />
 
     <template v-if="isDocsPage && page?.body?.toc?.links?.length" #toc>
       <UContentToc :links="page.body.toc.links" :title="t('docs.toc')" highlight />
