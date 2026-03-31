@@ -28,6 +28,10 @@ Clearance Website — marketing/presentational site for Clearance, an open-sourc
 - Git hooks: simple-git-hooks + lint-staged
 - **Mobile-first**: Design and implement for mobile screens first, then enhance for larger breakpoints
 
+## Tests
+
+- **Keep tests in sync with the codebase.** Every time an issue is resolved, verify that existing tests still match the code and update or remove tests that no longer apply. Add new tests for new functionality.
+
 ## Git Commits
 
 - Never include "Co-Authored-By: Claude" or any mention of Claude AI in commit messages.
