@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const { t, locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
+const { t } = useI18n()
 const localePath = useLocalePath()
 
 const navItems = computed(() => [
@@ -21,13 +20,6 @@ const navItems = computed(() => [
     target: '_blank',
   },
 ])
-
-const localeItems = computed(() =>
-  (locales.value as Array<{ code: string, name: string }>).map(l => ({
-    label: l.name,
-    to: switchLocalePath(l.code as typeof locale.value),
-  })),
-)
 </script>
 
 <template>
@@ -40,25 +32,11 @@ const localeItems = computed(() =>
     </template>
     <template #right>
       <UNavigationMenu class="hidden md:flex" :items="navItems" />
-      <UDropdownMenu :items="localeItems">
-        <UButton
-          variant="ghost"
-          icon="i-lucide-languages"
-          :label="locale.toUpperCase()"
-          :aria-label="t('nav.changeLanguage')"
-        />
-      </UDropdownMenu>
+      <AppLanguageSwitcher />
     </template>
     <template #body>
       <UNavigationMenu orientation="vertical" :items="navItems" />
-      <UDropdownMenu :items="localeItems">
-        <UButton
-          variant="ghost"
-          icon="i-lucide-languages"
-          :label="locale.toUpperCase()"
-          :aria-label="t('nav.changeLanguage')"
-        />
-      </UDropdownMenu>
+      <AppLanguageSwitcher />
     </template>
   </UHeader>
 </template>
