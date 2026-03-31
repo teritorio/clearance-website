@@ -188,7 +188,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logo_SNCF_(2011).svg.png
+  logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
   Le chemin de fer français s'assure du maintien des informations liées aux voies et à la signalisation.
@@ -196,7 +196,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Sécurité civile de Navarre
   ---
   Garantir la qualité des données liées à la voirie et au système d'adressage utilisé pour l'envoi des secours en Espagne. Les données OSM sont utilisées comme référentiel pour le calcul d'itinéraire des interventions.
@@ -204,7 +204,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  logo: /logos/otourisme.png
   title: 30 agences départementales et offices de tourisme
   ---
   Contrôler la qualité et suivre les contributions OSM sur de nombreuses thématiques en France hexagonale et outre-mers : équipements de loisirs, santé, commerces alimentaires, etc.
@@ -212,7 +212,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/NLnet_Foundation_logo.svg.png
+  logo: /logos/NLnet_Foundation_logo.png
   title: Fondation NLNet
   ---
   Finance une partie des développements de Clearance via des [fonds européens](https://nlnet.nl/project/Clearance/){target="_blank"}.

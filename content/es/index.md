@@ -188,7 +188,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logo_SNCF_(2011).svg.png
+  logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
   El operador ferroviario francés asegura el mantenimiento de la información de vías y señalización.
@@ -196,7 +196,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Protección Civil de Navarra
   ---
   Garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia en España. Los datos OSM sirven como referencia para el enrutamiento.
@@ -204,7 +204,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  logo: /logos/otourisme.png
   title: 30 agencias departamentales y oficinas de turismo
   ---
   Controlan la calidad y siguen las contribuciones OSM en numerosas temáticas en Francia continental y de ultramar: equipamientos de ocio, salud, comercios alimentarios, etc.
@@ -212,7 +212,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/NLnet_Foundation_logo.svg.png
+  logo: /logos/NLnet_Foundation_logo.png
   title: Fundación NLNet
   ---
   Financia parte de los desarrollos de Clearance a través de [fondos europeos](https://nlnet.nl/project/Clearance/){target="_blank"}.
