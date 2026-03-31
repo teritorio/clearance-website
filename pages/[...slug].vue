@@ -37,6 +37,23 @@ const { data: sectionIndex } = await useAsyncData(
   { watch: [locale] },
 )
 
+const { data: rawSurround } = await useAsyncData(
+  `surround-${locale.value}-${slug.value.join('/')}`,
+  () => isDocsPage.value
+    ? queryCollectionItemSurroundings(collectionName.value, path.value, { before: 2, after: 2 })
+    : Promise.resolve(null),
+  { watch: [locale] },
+)
+
+const surround = computed(() => {
+  if (!rawSurround.value)
+    return null
+  const items = rawSurround.value as Array<{ redirect?: string } | null>
+  const prev = [...items.slice(0, 2)].reverse().find(item => item && !item.redirect) ?? null
+  const next = items.slice(2).find(item => item && !item.redirect) ?? null
+  return [prev, next] as typeof rawSurround.value
+})
+
 useHead({
   title: () => page.value?.title,
   meta: [
@@ -85,6 +102,8 @@ definePageMeta({
         {{ t('page.notFound') }}
       </p>
     </div>
+
+    <UContentSurround v-if="isDocsPage && surround" :surround="surround" />
 
     <template v-if="isDocsPage && page?.body?.toc?.links?.length" #toc>
       <UContentToc :links="page.body.toc.links" :title="t('docs.toc')" highlight />
