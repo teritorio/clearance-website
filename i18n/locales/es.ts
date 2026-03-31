@@ -42,6 +42,11 @@ export default defineI18nLocale(async () => ({
     description: 'Filtro de calidad open source para la replicación OpenStreetMap — filtre, valide y asegure su flujo de replicación OSM.',
     ogImageAlt: 'Clearance — Filtro de calidad para la replicación OpenStreetMap',
   },
+  error: {
+    title: 'Página no encontrada',
+    message: 'La página que busca no existe o ha sido movida.',
+    backHome: 'Volver al inicio',
+  },
   page: {
     empty: 'Esta página aún no tiene contenido.',
     notFound: 'Página no encontrada',

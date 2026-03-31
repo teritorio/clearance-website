@@ -42,6 +42,11 @@ export default defineI18nLocale(async () => ({
     description: 'Open source quality filter for OpenStreetMap replication — filter, validate, and secure your OSM replication feed.',
     ogImageAlt: 'Clearance — Quality filter for OpenStreetMap replication',
   },
+  error: {
+    title: 'Page not found',
+    message: 'The page you\'re looking for doesn\'t exist or has been moved.',
+    backHome: 'Back to home',
+  },
   page: {
     empty: 'This page has no content yet.',
     notFound: 'Page not found',
