@@ -36,7 +36,6 @@ const navItems = computed(() => [
     </template>
     <template #body>
       <UNavigationMenu orientation="vertical" :items="navItems" />
-      <AppLanguageSwitcher />
     </template>
   </UHeader>
 </template>
