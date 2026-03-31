@@ -16,6 +16,10 @@ const { data: page } = await useAsyncData(
   { watch: [locale] },
 )
 
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found' })
+}
+
 const isDocsPage = computed(() => path.value.includes('/docs'))
 
 const sectionSlug = computed(() => {
@@ -89,19 +93,14 @@ definePageMeta({
 
 <template>
   <NuxtLayout :name="isDocsPage ? 'docs' : 'default'">
-    <div v-if="page" class="prose dark:prose-invert max-w-none">
-      <ContentRenderer :value="page">
+    <div class="prose dark:prose-invert max-w-none">
+      <ContentRenderer :value="page!">
         <template #empty>
           <p class="text-muted">
             {{ t('page.empty') }}
           </p>
         </template>
       </ContentRenderer>
-    </div>
-    <div v-else class="py-16 text-center">
-      <p class="text-muted">
-        {{ t('page.notFound') }}
-      </p>
     </div>
 
     <UContentSurround v-if="isDocsPage && surround" :surround="surround" />
