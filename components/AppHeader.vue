@@ -31,7 +31,7 @@ const localeItems = computed(() =>
 </script>
 
 <template>
-  <UHeader :to="localePath('/')">
+  <UHeader :to="localePath('/')" mode="drawer">
     <template #title>
       <div class="flex items-center gap-2">
         <NuxtImg src="/logo.svg" alt="Clearance" width="28" height="28" />
@@ -39,7 +39,18 @@ const localeItems = computed(() =>
       </div>
     </template>
     <template #right>
-      <UNavigationMenu :items="navItems" />
+      <UNavigationMenu class="hidden md:flex" :items="navItems" />
+      <UDropdownMenu :items="localeItems">
+        <UButton
+          variant="ghost"
+          icon="i-lucide-languages"
+          :label="locale.toUpperCase()"
+          :aria-label="t('nav.changeLanguage')"
+        />
+      </UDropdownMenu>
+    </template>
+    <template #body>
+      <UNavigationMenu orientation="vertical" :items="navItems" />
       <UDropdownMenu :items="localeItems">
         <UButton
           variant="ghost"
