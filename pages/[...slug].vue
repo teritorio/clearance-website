@@ -48,9 +48,10 @@ const { data: rawSurround } = await useAsyncData(
 const surround = computed(() => {
   if (!rawSurround.value)
     return null
-  const items = rawSurround.value as Array<{ redirect?: string } | null>
-  const prev = [...items.slice(0, 2)].reverse().find(item => item && !item.redirect) ?? null
-  const next = items.slice(2).find(item => item && !item.redirect) ?? null
+  const items = rawSurround.value as Array<{ path?: string, redirect?: string } | null>
+  const isDocsItem = (item: typeof items[number]) => item && !item.redirect && item.path?.includes('/docs/')
+  const prev = [...items.slice(0, 2)].reverse().find(isDocsItem) ?? null
+  const next = items.slice(2).find(isDocsItem) ?? null
   return [prev, next] as typeof rawSurround.value
 })
 
