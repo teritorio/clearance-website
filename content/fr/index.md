@@ -75,32 +75,37 @@ feedbackLabel: Corrections dans OSM
 ::landing-practice
 ---
 headline: En pratique
-title: Tout ce qu'il faut pour sécuriser votre réplication OSM
-description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications, tout en continuant à contribuer au commun OpenStreetMap."
 ---
 
   ::landing-practice-item
   ---
   icon: i-lucide-map-pin
-  title: Territoire et collaboration
+  title: Territoire, thématique et collaboration
   ---
-  Définissez des projets territoriaux et thématiques sur lesquels votre équipe collabore pour suivre et maintenir la qualité des données.
+  Clearance vous permet de définir des projets territoriaux et thématiques (tags OSM) sur lesquels votre équipe collabore pour suivre et maintenir la qualité des données.
   ::
 
   ::landing-practice-item
   ---
   icon: i-lucide-list-checks
-  title: Règles adaptées à votre métier
+  title: Des règles adaptées à votre métier
   ---
-  Appliquez des contrôles adaptés à votre besoin : déplacements, suppressions, ajouts prématurés, ruptures de jointures et bien plus.
+  Clearance permet d'appliquer des contrôles adaptés à votre besoin. Par exemple :
+
+  - déplacement d'un défibrillateur qui pourrait engager votre responsabilité
+  - modification d'un segment de réseau routier susceptible de perturber un calculateur d'itinéraire
+  - ajout d'un équipement public pas encore opérationnel, susceptible de générer un usage prématuré
+  - suppression d'une référence pouvant rompre les jointures avec une base métier
+
+  Ces situations sont courantes lorsque les données OSM sont utilisées dans un contexte opérationnel.
   ::
 
   ::landing-practice-item
   ---
   icon: i-lucide-database
-  title: Proxy qualité
+  title: Un proxy qualité
   ---
-  Utilise en entrée comme en sortie les formats standard de l'écosystème OpenStreetMap. Continuez à utiliser vos outils avec un meilleur niveau de confiance.
+  Clearance utilise en entrée comme en sortie les formats standard de l'écosystème d'OpenStreetMap. Il s'intègre de façon transparente à un processus de réutilisation des données OpenStreetMap en produisant des extraits, des diffs et une API Overpass sur la copie locale. Continuez à utiliser vos outils, ou ceux de l'écosystème OpenStreetMap, avec un meilleur niveau de confiance dans les données.
   ::
 
 ::
