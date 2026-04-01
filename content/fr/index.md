@@ -45,8 +45,8 @@ description: "Lorsque les données OpenStreetMap deviennent critiques pour un se
 headline: La solution
 title: "Clearance : un outil de réplication OSM doté d'un filtre qualité"
 description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont simplement mises en attente, et les corrections sont à apporter directement dans OSM, à la source."
-intro: "Clearance agit comme un outil d'amélioration continue de votre copie locale d'OpenStreetMap. Il surveille les changements et les classe automatiquement."
-conclusion: "Vous disposez ainsi d'une version à jour, fiable et adaptée à vos contraintes de qualité."
+intro: "Clearance agit comme un outil d'amélioration continue de votre copie locale, adapté à vos usages métier :"
+conclusion: "Vous disposez ainsi d'une version à jour des données OpenStreetMap, fiable pour vos usages et adaptée à vos contraintes de qualité, tout en continuant à contribuer au commun OpenStreetMap."
 changesLabel: Changements
 osmLabel: OpenStreetMap
 clearanceLabel: Clearance
@@ -67,7 +67,7 @@ feedbackLabel: Corrections dans OSM
   icon: i-lucide-pause-circle
   title: Modifications sensibles
   ---
-  Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM.
+  Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM. Au prochain contrôle si tout est conforme, les modifications passeront le filtre et seront intégrées à la copie locale.
   ::
 
 ::

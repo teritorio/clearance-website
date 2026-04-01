@@ -45,8 +45,8 @@ description: "When OpenStreetMap data becomes critical for a service, a question
 headline: The solution
 title: "Clearance: an OSM replication tool with a built-in quality filter"
 description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are to be made directly in OSM at the source."
-intro: "Clearance acts as a continuous improvement tool for your local copy of OpenStreetMap. It monitors changes and classifies them automatically."
-conclusion: "You get an up-to-date version, reliable and adapted to your quality requirements."
+intro: "Clearance acts as a continuous improvement tool for your local copy, adapted to your business needs:"
+conclusion: "You get an up-to-date version of OpenStreetMap data, reliable for your needs and adapted to your quality requirements, while continuing to contribute to the OpenStreetMap commons."
 changesLabel: Changes
 osmLabel: OpenStreetMap
 clearanceLabel: Clearance
@@ -67,7 +67,7 @@ feedbackLabel: Corrections in OSM
   icon: i-lucide-pause-circle
   title: Sensitive modifications
   ---
-  Sensitive modifications are held for review and, if needed, correction in OSM.
+  Sensitive modifications are held for review and, if needed, correction in OSM. On the next check, if everything is compliant, modifications will pass the filter and be integrated into the local copy.
   ::
 
 ::
