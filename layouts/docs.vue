@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { t, locale } = useI18n()
+
+const route = useRoute()
+const mobileNavOpen = ref(false)
+
+watch(() => route.path, () => {
+  mobileNavOpen.value = false
+})
 
 const head = useLocaleHead({ seo: true })
 useHead({
@@ -63,6 +70,15 @@ const docsNavigation = computed(() => {
         </aside>
 
         <main class="min-w-0 flex-1">
+          <div class="mb-4 lg:hidden">
+            <UButton
+              icon="i-lucide-menu"
+              variant="outline"
+              color="neutral"
+              :label="t('nav.docs')"
+              @click="mobileNavOpen = true"
+            />
+          </div>
           <slot />
         </main>
 
@@ -73,6 +89,16 @@ const docsNavigation = computed(() => {
         </aside>
       </div>
     </UContainer>
+
+    <USlideover v-model:open="mobileNavOpen" side="left" :title="t('nav.docs')">
+      <template #body>
+        <UContentNavigation
+          v-if="docsNavigation.length"
+          :navigation="docsNavigation"
+          highlight
+        />
+      </template>
+    </USlideover>
 
     <AppFooter />
   </div>
