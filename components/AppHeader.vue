@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const APP_URL = 'https://clearance.teritorio.xyz'
+
 const { t } = useI18n()
 const localePath = useLocalePath()
 
@@ -32,10 +34,24 @@ const navItems = computed(() => [
     </template>
     <template #right>
       <UNavigationMenu class="hidden md:flex" :items="navItems" />
+      <UButton
+        :label="t('nav.openApp')"
+        :to="APP_URL"
+        target="_blank"
+        icon="i-lucide-external-link"
+        class="hidden md:flex"
+      />
       <AppLanguageSwitcher />
     </template>
     <template #body>
       <UNavigationMenu orientation="vertical" :items="navItems" />
+      <UButton
+        :label="t('nav.openApp')"
+        :to="APP_URL"
+        target="_blank"
+        icon="i-lucide-external-link"
+        class="mt-4 w-full justify-center"
+      />
     </template>
   </UHeader>
 </template>

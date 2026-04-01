@@ -25,6 +25,13 @@ describe('appHeader', () => {
     expect(html).toContain('https://github.com/teritorio/clearance')
   })
 
+  it('renders Open App CTA button with correct URL', async () => {
+    const component = await mountSuspended(AppHeader)
+    const html = component.html()
+    expect(html).toContain('https://clearance.teritorio.xyz')
+    expect(html).toContain('Open App')
+  })
+
   it('does not show home nav item in navigation menu', async () => {
     const component = await mountSuspended(AppHeader)
     const html = component.html()
