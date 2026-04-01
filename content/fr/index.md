@@ -165,14 +165,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   La suppression d'une référence peut rompre les jointures avec une base métier et provoquer des dysfonctionnements.
   ::
 
-  ::landing-use-case
-  ---
-  icon: i-lucide-layers
-  title: Concepteurs d'applications cartographiques
-  ---
-  Une donnée source incohérente peut générer des anomalies d'affichage ou de navigation dans votre application.
-  ::
-
 ::
 
 ::landing-references
