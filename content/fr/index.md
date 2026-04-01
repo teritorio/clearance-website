@@ -181,7 +181,7 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
 ---
 headline: Références
 title: Plus de 40 organisations utilisent déjà Clearance
-description: "Pour réutiliser les données OpenStreetMap avec davantage de maîtrise."
+description: "Pour réutiliser les données OpenStreetMap avec davantage de confiance."
 ctaLabel: Voir un exemple de projet (Landes)
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
@@ -199,7 +199,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Sécurité civile de Navarre
   ---
-  Garantir la qualité des données liées à la voirie et au système d'adressage utilisé pour l'envoi des secours en Espagne. Les données OSM sont utilisées comme référentiel pour le calcul d'itinéraire des interventions.
+  Garantir la qualité des données liées à la voirie et au système d'adressage utilisé pour l'envoi des secours en Navarre, Espagne. Les données OSM sont utilisées comme référentiel pour le calcul d'itinéraire des interventions.
   ::
 
   ::landing-reference

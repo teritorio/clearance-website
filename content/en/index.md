@@ -181,7 +181,7 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 ---
 headline: References
 title: Over 40 organizations already use Clearance
-description: "To reuse OpenStreetMap data with greater control."
+description: "To reuse OpenStreetMap data with greater confidence."
 ctaLabel: View an example project (Landes)
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
@@ -199,7 +199,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Civil Protection of Navarre
   ---
-  Guarantees the quality of road and addressing data used for emergency response route calculation in Spain. OSM data serves as the reference for intervention routing.
+  Guarantees the quality of road and addressing data used for emergency response route calculation in Navarre, Spain. OSM data serves as the reference for intervention routing.
   ::
 
   ::landing-reference

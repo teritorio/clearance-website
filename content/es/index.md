@@ -181,7 +181,7 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 ---
 headline: Referencias
 title: Más de 40 organizaciones ya utilizan Clearance
-description: "Para reutilizar los datos de OpenStreetMap con mayor control."
+description: "Para reutilizar los datos de OpenStreetMap con mayor confianza."
 ctaLabel: Ver un ejemplo de proyecto (Landes)
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
@@ -199,7 +199,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Protección Civil de Navarra
   ---
-  Garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia en España. Los datos OSM sirven como referencia para el enrutamiento.
+  Garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia en Navarra, España. Los datos OSM sirven como referencia para el enrutamiento.
   ::
 
   ::landing-reference
