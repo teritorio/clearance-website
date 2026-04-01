@@ -154,7 +154,7 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   ::landing-use-case
   ---
   icon: i-lucide-landmark
-  title: Destination management organizations
+  title: Tourist destination management organizations
   ---
   A poorly referenced tourist point of interest can degrade the experience of visitors to your territory.
   ::

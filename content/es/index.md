@@ -154,7 +154,7 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   ::landing-use-case
   ---
   icon: i-lucide-landmark
-  title: Organismos de gestión de destinos
+  title: Organismos de gestión de destinos turísticos
   ---
   Un punto de interés turístico mal referenciado puede degradar la experiencia de los visitantes de su territorio.
   ::
