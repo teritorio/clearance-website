@@ -90,7 +90,16 @@ const docsNavigation = computed(() => {
       </div>
     </UContainer>
 
-    <USlideover v-model:open="mobileNavOpen" side="left" :title="t('nav.docs')">
+    <USlideover v-model:open="mobileNavOpen" side="left" title="Clearance">
+      <template #title>
+        <div class="flex items-center gap-2">
+          <NuxtImg src="/logo.svg" alt="Clearance" width="28" height="28" />
+          <span>Clearance</span>
+        </div>
+      </template>
+      <template #description>
+        <span class="sr-only">{{ t('nav.docs') }}</span>
+      </template>
       <template #body>
         <UContentNavigation
           v-if="docsNavigation.length"
