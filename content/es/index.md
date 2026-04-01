@@ -33,7 +33,9 @@ description: "Cuando los datos de OpenStreetMap se vuelven críticos para un ser
   ---
   icon: i-lucide-alert-triangle
   ---
-  Las herramientas clásicas de replicación de datos OSM no incluyen un filtro de calidad. Actúan sobre datos ya replicados, o al precio de bloquear la replicación por completo.
+  Las herramientas clásicas son incompletas:
+  - las herramientas de replicación no incluyen un filtro de calidad.
+  - las herramientas de calidad actúan sobre datos ya replicados.
   ::
 
 ::
