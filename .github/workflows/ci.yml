@@ -7,7 +7,7 @@ on:
     branches: [develop, main]
 
 concurrency:
-  group: ci-${{ github.sha }}
+  group: ci-${{ github.event.pull_request.head.sha || github.sha }}
   cancel-in-progress: true
 
 jobs:
