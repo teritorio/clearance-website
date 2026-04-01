@@ -3,11 +3,6 @@ defineProps<{
   headline?: string
   title?: string
   description?: string
-  changesLabel?: string
-  osmLabel?: string
-  clearanceLabel?: string
-  extractLabel?: string
-  feedbackLabel?: string
 }>()
 </script>
 
@@ -24,17 +19,6 @@ defineProps<{
         <p v-if="description" class="mt-4 text-lg text-muted">
           {{ description }}
         </p>
-      </div>
-
-      <div class="mt-10">
-        <LandingSchema
-          v-if="changesLabel"
-          :changes-label="changesLabel"
-          :osm-label="osmLabel"
-          :clearance-label="clearanceLabel"
-          :extract-label="extractLabel"
-          :feedback-label="feedbackLabel"
-        />
       </div>
 
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

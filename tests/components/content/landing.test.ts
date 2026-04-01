@@ -7,6 +7,7 @@ import LandingFeatures from '~/components/content/LandingFeatures.vue'
 import LandingHero from '~/components/content/LandingHero.vue'
 import LandingReferences from '~/components/content/LandingReferences.vue'
 import LandingSectionHeader from '~/components/content/LandingSectionHeader.vue'
+import LandingSolution from '~/components/content/LandingSolution.vue'
 import LandingStep from '~/components/content/LandingStep.vue'
 import LandingSteps from '~/components/content/LandingSteps.vue'
 import LandingUseCase from '~/components/content/LandingUseCase.vue'
@@ -325,6 +326,55 @@ describe('landingSteps', () => {
       },
     })
     expect(component.text()).toContain('Step Child')
+  })
+})
+
+describe('landingSolution', () => {
+  it('renders section header props', async () => {
+    const component = await mountSuspended(LandingSolution, {
+      props: {
+        headline: 'Solution Headline',
+        title: 'Solution Title',
+        description: 'Solution Description',
+      },
+    })
+    expect(component.text()).toContain('Solution Headline')
+    expect(component.text()).toContain('Solution Title')
+    expect(component.text()).toContain('Solution Description')
+  })
+
+  it('renders intro and conclusion paragraphs', async () => {
+    const component = await mountSuspended(LandingSolution, {
+      props: {
+        title: 'Solution Title',
+        intro: 'Intro paragraph text',
+        conclusion: 'Conclusion paragraph text',
+      },
+    })
+    expect(component.text()).toContain('Intro paragraph text')
+    expect(component.text()).toContain('Conclusion paragraph text')
+  })
+
+  it('hides intro and conclusion when not provided', async () => {
+    const component = await mountSuspended(LandingSolution, {
+      props: {
+        title: 'Solution Title',
+      },
+    })
+    expect(component.text()).not.toContain('Intro')
+    expect(component.text()).not.toContain('Conclusion')
+  })
+
+  it('renders slot children', async () => {
+    const component = await mountSuspended(LandingSolution, {
+      props: {
+        title: 'Solution Title',
+      },
+      slots: {
+        default: () => h('div', 'Solution Child'),
+      },
+    })
+    expect(component.text()).toContain('Solution Child')
   })
 })
 
