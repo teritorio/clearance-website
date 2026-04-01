@@ -165,14 +165,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   Deleting a reference can break joins with a business database and cause malfunctions.
   ::
 
-  ::landing-use-case
-  ---
-  icon: i-lucide-layers
-  title: Mapping application developers
-  ---
-  Inconsistent source data can cause display or navigation anomalies in your application.
-  ::
-
 ::
 
 ::landing-references

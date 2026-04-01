@@ -165,14 +165,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
   ::
 
-  ::landing-use-case
-  ---
-  icon: i-lucide-layers
-  title: Desarrolladores de aplicaciones cartográficas
-  ---
-  Datos fuente inconsistentes pueden generar anomalías de visualización o navegación en su aplicación.
-  ::
-
 ::
 
 ::landing-references
