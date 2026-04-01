@@ -7,8 +7,8 @@ import LandingFeatures from '~/components/content/LandingFeatures.vue'
 import LandingHero from '~/components/content/LandingHero.vue'
 import LandingReferences from '~/components/content/LandingReferences.vue'
 import LandingSectionHeader from '~/components/content/LandingSectionHeader.vue'
+import LandingSolution from '~/components/content/LandingSolution.vue'
 import LandingStep from '~/components/content/LandingStep.vue'
-import LandingSteps from '~/components/content/LandingSteps.vue'
 import LandingUseCase from '~/components/content/LandingUseCase.vue'
 import LandingUseCases from '~/components/content/LandingUseCases.vue'
 
@@ -255,37 +255,25 @@ describe('landingFeatures', () => {
 })
 
 describe('landingStep', () => {
-  it('renders number when provided', async () => {
-    const component = await mountSuspended(LandingStep, {
-      props: {
-        number: '1',
-        title: 'Step Title',
-      },
-    })
-    expect(component.text()).toContain('1')
-    expect(component.text()).toContain('Step Title')
-  })
-
-  it('renders icon when no number', async () => {
+  it('renders icon when provided', async () => {
     const component = await mountSuspended(LandingStep, {
       props: {
         icon: 'i-lucide-rocket',
         title: 'Step Title',
       },
     })
+    expect(component.text()).toContain('Step Title')
     expect(component.html()).toContain('i-lucide:rocket')
   })
 
-  it('prefers number over icon', async () => {
+  it('hides icon when not provided', async () => {
     const component = await mountSuspended(LandingStep, {
       props: {
-        number: '2',
-        icon: 'i-lucide-rocket',
         title: 'Step Title',
       },
     })
-    expect(component.text()).toContain('2')
-    expect(component.html()).not.toContain('i-lucide:rocket')
+    expect(component.text()).toContain('Step Title')
+    expect(component.html()).not.toContain('iconify')
   })
 
   it('renders slot content', async () => {
@@ -301,30 +289,52 @@ describe('landingStep', () => {
   })
 })
 
-describe('landingSteps', () => {
+describe('landingSolution', () => {
   it('renders section header props', async () => {
-    const component = await mountSuspended(LandingSteps, {
+    const component = await mountSuspended(LandingSolution, {
       props: {
-        headline: 'Steps Headline',
-        title: 'Steps Title',
-        description: 'Steps Description',
+        headline: 'Solution Headline',
+        title: 'Solution Title',
+        description: 'Solution Description',
       },
     })
-    expect(component.text()).toContain('Steps Headline')
-    expect(component.text()).toContain('Steps Title')
-    expect(component.text()).toContain('Steps Description')
+    expect(component.text()).toContain('Solution Headline')
+    expect(component.text()).toContain('Solution Title')
+    expect(component.text()).toContain('Solution Description')
+  })
+
+  it('renders intro and conclusion paragraphs', async () => {
+    const component = await mountSuspended(LandingSolution, {
+      props: {
+        title: 'Solution Title',
+        intro: 'Intro paragraph text',
+        conclusion: 'Conclusion paragraph text',
+      },
+    })
+    expect(component.text()).toContain('Intro paragraph text')
+    expect(component.text()).toContain('Conclusion paragraph text')
+  })
+
+  it('hides intro and conclusion when not provided', async () => {
+    const component = await mountSuspended(LandingSolution, {
+      props: {
+        title: 'Solution Title',
+      },
+    })
+    expect(component.text()).not.toContain('Intro')
+    expect(component.text()).not.toContain('Conclusion')
   })
 
   it('renders slot children', async () => {
-    const component = await mountSuspended(LandingSteps, {
+    const component = await mountSuspended(LandingSolution, {
       props: {
-        title: 'Steps Title',
+        title: 'Solution Title',
       },
       slots: {
-        default: () => h('div', 'Step Child'),
+        default: () => h('div', 'Solution Child'),
       },
     })
-    expect(component.text()).toContain('Step Child')
+    expect(component.text()).toContain('Solution Child')
   })
 })
 

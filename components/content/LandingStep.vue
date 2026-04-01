@@ -2,21 +2,13 @@
 defineProps<{
   icon?: string
   title: string
-  number?: string
 }>()
 </script>
 
 <template>
-  <div class="landing-step relative">
-    <!-- Floating step number badge -->
+  <div class="relative">
     <div
-      v-if="number"
-      class="absolute top-0 left-1/2 z-10 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-primary bg-white text-lg font-bold text-primary shadow-sm"
-    >
-      {{ number }}
-    </div>
-    <div
-      v-else-if="icon"
+      v-if="icon"
       class="absolute top-0 left-1/2 z-10 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-primary bg-white shadow-sm"
     >
       <UIcon :name="icon" class="size-5 text-primary" />
@@ -33,35 +25,3 @@ defineProps<{
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Horizontal chevron arrow between steps (desktop) */
-@media (min-width: 768px) {
-  .landing-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -1.875rem;
-    width: 12px;
-    height: 12px;
-    border-right: 2.5px solid var(--ui-primary);
-    border-top: 2.5px solid var(--ui-primary);
-    transform: translateY(-50%) rotate(45deg);
-  }
-}
-
-/* Vertical chevron arrow between steps (mobile) */
-@media (max-width: 767px) {
-  .landing-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: -1.875rem;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    border-right: 2.5px solid var(--ui-primary);
-    border-bottom: 2.5px solid var(--ui-primary);
-    transform: translateX(-50%) rotate(45deg);
-  }
-}
-</style>

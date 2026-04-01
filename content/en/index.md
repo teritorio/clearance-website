@@ -40,38 +40,34 @@ description: "When OpenStreetMap data becomes critical for a service, a question
 
 ::
 
-::landing-steps
+::landing-solution
 ---
 headline: The solution
 title: "Clearance: an OSM replication tool with a built-in quality filter"
 description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are to be made directly in OSM at the source."
+intro: "Clearance acts as a continuous improvement tool for your local copy of OpenStreetMap. It monitors changes and classifies them automatically."
+conclusion: "You get an up-to-date version, reliable and adapted to your quality requirements."
+changesLabel: Changes
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extract
+feedbackLabel: Corrections in OSM
 ---
 
   ::landing-step
   ---
-  icon: i-lucide-download
-  title: Replication
-  number: "1"
-  ---
-  Clearance fetches updates from the OpenStreetMap replication feed and analyzes them in real time.
-  ::
-
-  ::landing-step
-  ---
-  icon: i-lucide-filter
-  title: Filtering
-  number: "2"
-  ---
-  Compliant changes are integrated automatically and immediately. Sensitive modifications are held for review and, if needed, correction in OSM.
-  ::
-
-  ::landing-step
-  ---
   icon: i-lucide-check-circle
-  title: Validation
-  number: "3"
+  title: Compliant changes
   ---
-  On the next check, if everything is compliant, modifications will pass the filter and be integrated into your local copy. You get an up-to-date version, reliable and adapted to your quality requirements.
+  Compliant changes are integrated automatically and immediately.
+  ::
+
+  ::landing-step
+  ---
+  icon: i-lucide-pause-circle
+  title: Sensitive modifications
+  ---
+  Sensitive modifications are held for review and, if needed, correction in OSM.
   ::
 
 ::
@@ -81,11 +77,6 @@ description: "Clearance never modifies OpenStreetMap. Problematic data is simply
 headline: In practice
 title: Everything you need to secure your OSM replication
 description: "A complete quality assurance pipeline between OpenStreetMap and your applications, while continuing to contribute to the OpenStreetMap commons."
-changesLabel: Changes
-osmLabel: OpenStreetMap
-clearanceLabel: Clearance
-extractLabel: Extract
-feedbackLabel: Corrections in OSM
 ---
 
   ::landing-practice-item

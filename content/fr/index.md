@@ -40,38 +40,34 @@ description: "Lorsque les données OpenStreetMap deviennent critiques pour un se
 
 ::
 
-::landing-steps
+::landing-solution
 ---
 headline: La solution
 title: "Clearance : un outil de réplication OSM doté d'un filtre qualité"
 description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont simplement mises en attente, et les corrections sont à apporter directement dans OSM, à la source."
+intro: "Clearance agit comme un outil d'amélioration continue de votre copie locale d'OpenStreetMap. Il surveille les changements et les classe automatiquement."
+conclusion: "Vous disposez ainsi d'une version à jour, fiable et adaptée à vos contraintes de qualité."
+changesLabel: Changements
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extrait
+feedbackLabel: Corrections dans OSM
 ---
 
   ::landing-step
   ---
-  icon: i-lucide-download
-  title: Réplication
-  number: "1"
-  ---
-  Clearance récupère les mises à jour du flux de réplication OpenStreetMap et les analyse en temps réel.
-  ::
-
-  ::landing-step
-  ---
-  icon: i-lucide-filter
-  title: Filtrage
-  number: "2"
-  ---
-  Les modifications conformes sont intégrées automatiquement et immédiatement. Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM.
-  ::
-
-  ::landing-step
-  ---
   icon: i-lucide-check-circle
-  title: Validation
-  number: "3"
+  title: Changements conformes
   ---
-  Au prochain contrôle, si tout est conforme, les modifications passeront le filtre et seront intégrées à la copie locale. Vous disposez ainsi d'une version à jour, fiable et adaptée à vos contraintes de qualité.
+  Les changements conformes sont intégrés automatiquement et immédiatement.
+  ::
+
+  ::landing-step
+  ---
+  icon: i-lucide-pause-circle
+  title: Modifications sensibles
+  ---
+  Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM.
   ::
 
 ::
@@ -81,11 +77,6 @@ description: "Clearance ne modifie jamais OpenStreetMap. Les données problémat
 headline: En pratique
 title: Tout ce qu'il faut pour sécuriser votre réplication OSM
 description: "Un pipeline complet d'assurance qualité entre OpenStreetMap et vos applications, tout en continuant à contribuer au commun OpenStreetMap."
-changesLabel: Changements
-osmLabel: OpenStreetMap
-clearanceLabel: Clearance
-extractLabel: Extrait
-feedbackLabel: Corrections dans OSM
 ---
 
   ::landing-practice-item

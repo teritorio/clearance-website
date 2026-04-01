@@ -40,38 +40,34 @@ description: "Cuando los datos de OpenStreetMap se vuelven críticos para un ser
 
 ::
 
-::landing-steps
+::landing-solution
 ---
 headline: La solución
 title: "Clearance: una herramienta de replicación OSM con filtro de calidad integrado"
 description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se han de realizar directamente en OSM, en la fuente."
+intro: "Clearance actúa como una herramienta de mejora continua de su copia local de OpenStreetMap. Supervisa los cambios y los clasifica automáticamente."
+conclusion: "Así dispone de una versión actualizada, fiable y adaptada a sus requisitos de calidad."
+changesLabel: Cambios
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extracto
+feedbackLabel: Correcciones en OSM
 ---
 
   ::landing-step
   ---
-  icon: i-lucide-download
-  title: Replicación
-  number: "1"
-  ---
-  Clearance obtiene las actualizaciones del flujo de replicación de OpenStreetMap y las analiza en tiempo real.
-  ::
-
-  ::landing-step
-  ---
-  icon: i-lucide-filter
-  title: Filtrado
-  number: "2"
-  ---
-  Los cambios conformes se integran automática e inmediatamente. Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM.
-  ::
-
-  ::landing-step
-  ---
   icon: i-lucide-check-circle
-  title: Validación
-  number: "3"
+  title: Cambios conformes
   ---
-  En la siguiente verificación, si todo es conforme, las modificaciones pasarán el filtro y se integrarán a la copia local. Así dispone de una versión actualizada, fiable y adaptada a sus requisitos de calidad.
+  Los cambios conformes se integran automática e inmediatamente.
+  ::
+
+  ::landing-step
+  ---
+  icon: i-lucide-pause-circle
+  title: Modificaciones sensibles
+  ---
+  Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM.
   ::
 
 ::
@@ -81,11 +77,6 @@ description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos s
 headline: En la práctica
 title: Todo lo necesario para asegurar su replicación OSM
 description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones, mientras continúa contribuyendo al bien común OpenStreetMap."
-changesLabel: Cambios
-osmLabel: OpenStreetMap
-clearanceLabel: Clearance
-extractLabel: Extracto
-feedbackLabel: Correcciones en OSM
 ---
 
   ::landing-practice-item
