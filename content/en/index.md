@@ -33,7 +33,9 @@ description: "When OpenStreetMap data becomes critical for a service, a question
   ---
   icon: i-lucide-alert-triangle
   ---
-  Traditional OSM replication tools don't include a quality filter. They operate on data that has already been replicated, or at the cost of blocking replication entirely.
+  Traditional tools are incomplete:
+  - replication tools don't include a quality filter.
+  - quality tools operate on data that has already been replicated.
   ::
 
 ::

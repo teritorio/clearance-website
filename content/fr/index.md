@@ -33,7 +33,9 @@ description: "Lorsque les données OpenStreetMap deviennent critiques pour un se
   ---
   icon: i-lucide-alert-triangle
   ---
-  Les outils classiques de réplication des données OSM n'intègrent pas de filtre qualité. Ils interviennent sur des données déjà répliquées, ou au prix d'un blocage de la réplication.
+  Les outils classiques sont incomplets:
+  - les outils de réplication n'intègrent pas de filtre qualité.
+  - les outils qualité interviennent sur des données déjà répliquées.
   ::
 
 ::
