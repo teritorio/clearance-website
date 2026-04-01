@@ -3,12 +3,6 @@ name: CI
 on:
   pull_request:
     branches: [develop, main]
-  push:
-    branches: [develop, main]
-
-concurrency:
-  group: ci-${{ github.event.pull_request.head.sha || github.sha }}
-  cancel-in-progress: true
 
 jobs:
   ci:
