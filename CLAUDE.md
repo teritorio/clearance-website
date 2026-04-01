@@ -32,6 +32,10 @@ Clearance Website — marketing/presentational site for Clearance, an open-sourc
 
 - **Keep tests in sync with the codebase.** Every time an issue is resolved, verify that existing tests still match the code and update or remove tests that no longer apply. Add new tests for new functionality.
 
+## Issues
+
+- **Do not create duplicate issues.** Before creating an issue, check if one already exists for the task. When starting work on an existing issue, use it directly instead of creating a new one.
+
 ## Git Commits
 
 - Never include "Co-Authored-By: Claude" or any mention of Claude AI in commit messages.
