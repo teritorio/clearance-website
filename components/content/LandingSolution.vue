@@ -18,6 +18,17 @@ defineProps<{
     <UContainer>
       <LandingSectionHeader :headline="headline" :title="title" :description="description" />
 
+      <div class="mt-12">
+        <LandingSchema
+          v-if="changesLabel"
+          :changes-label="changesLabel"
+          :osm-label="osmLabel"
+          :clearance-label="clearanceLabel"
+          :extract-label="extractLabel"
+          :feedback-label="feedbackLabel"
+        />
+      </div>
+
       <p v-if="intro" class="mx-auto mt-8 max-w-3xl text-center text-lg text-muted">
         {{ intro }}
       </p>
@@ -29,17 +40,6 @@ defineProps<{
       <p v-if="conclusion" class="mx-auto mt-10 max-w-3xl text-center text-lg text-muted">
         {{ conclusion }}
       </p>
-
-      <div class="mt-12">
-        <LandingSchema
-          v-if="changesLabel"
-          :changes-label="changesLabel"
-          :osm-label="osmLabel"
-          :clearance-label="clearanceLabel"
-          :extract-label="extractLabel"
-          :feedback-label="feedbackLabel"
-        />
-      </div>
     </UContainer>
   </section>
 </template>
