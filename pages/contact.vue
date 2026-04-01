@@ -96,9 +96,11 @@ function onSubmit() {
           />
         </UFormField>
 
-        <UButton type="submit" size="lg">
-          {{ t('contact.send') }}
-        </UButton>
+        <div class="flex justify-end">
+          <UButton type="submit" size="lg">
+            {{ t('contact.send') }}
+          </UButton>
+        </div>
       </form>
 
       <p class="mt-4 text-sm text-muted">
