@@ -36,7 +36,7 @@ function onSubmit() {
 <template>
   <UContainer class="py-16">
     <div class="mx-auto max-w-xl">
-      <h1 class="text-3xl font-bold tracking-tight">
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">
         {{ t('contact.title') }}
       </h1>
       <p class="mt-4 text-muted">
@@ -96,7 +96,7 @@ function onSubmit() {
           />
         </UFormField>
 
-        <UButton type="submit" size="lg">
+        <UButton type="submit" size="lg" class="w-full sm:w-auto">
           {{ t('contact.send') }}
         </UButton>
       </form>
