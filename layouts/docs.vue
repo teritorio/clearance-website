@@ -51,7 +51,7 @@ const docsNavigation = computed(() => {
     <AppHeader />
 
     <UContainer class="flex-1">
-      <div class="flex gap-8 py-8">
+      <div class="flex gap-4 py-4 sm:gap-8 sm:py-8">
         <aside class="hidden lg:block w-64 shrink-0">
           <nav class="sticky top-20">
             <UContentNavigation
