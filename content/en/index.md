@@ -75,16 +75,14 @@ feedbackLabel: Corrections in OSM
 ::landing-practice
 ---
 headline: In practice
-title: Everything you need to secure your OSM replication
-description: "A complete quality assurance pipeline between OpenStreetMap and your applications, while continuing to contribute to the OpenStreetMap commons."
 ---
 
   ::landing-practice-item
   ---
   icon: i-lucide-map-pin
-  title: Territory and collaboration
+  title: Territory, theme and collaboration
   ---
-  Define territorial and thematic projects on which your team collaborates to monitor and maintain data quality.
+  Clearance lets you define territorial and thematic projects (OSM tags) on which your team collaborates to monitor and maintain data quality.
   ::
 
   ::landing-practice-item
@@ -92,15 +90,22 @@ description: "A complete quality assurance pipeline between OpenStreetMap and yo
   icon: i-lucide-list-checks
   title: Rules adapted to your business
   ---
-  Apply controls tailored to your needs: relocations, deletions, premature additions, broken joins, and more.
+  Clearance lets you apply controls adapted to your needs. For example:
+
+  - relocation of a defibrillator that could engage your liability
+  - modification of a road network segment likely to disrupt a route calculator
+  - addition of a public facility not yet operational, likely to cause premature use
+  - deletion of a reference that could break joins with a business database
+
+  These situations are common when OSM data is used in an operational context.
   ::
 
   ::landing-practice-item
   ---
   icon: i-lucide-database
-  title: Quality proxy
+  title: A quality proxy
   ---
-  Uses standard OpenStreetMap ecosystem formats for input and output. Continue using your tools with greater data confidence.
+  Clearance uses standard OpenStreetMap ecosystem formats for both input and output. It integrates seamlessly into an OpenStreetMap data reuse process by producing extracts, diffs and an Overpass API on the local copy. Continue using your tools, or those from the OpenStreetMap ecosystem, with greater data confidence.
   ::
 
 ::

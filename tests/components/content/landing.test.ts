@@ -26,13 +26,21 @@ describe('landingSectionHeader', () => {
     expect(component.text()).toContain('My Description')
   })
 
-  it('hides when no title is provided', async () => {
+  it('renders headline alone when no title is provided', async () => {
     const component = await mountSuspended(LandingSectionHeader, {
       props: {
         headline: 'My Headline',
       },
     })
-    expect(component.html()).not.toContain('My Headline')
+    expect(component.text()).toContain('My Headline')
+    expect(component.find('h2').exists()).toBe(false)
+  })
+
+  it('hides when neither title nor headline is provided', async () => {
+    const component = await mountSuspended(LandingSectionHeader, {
+      props: {},
+    })
+    expect(component.text()).toBe('')
   })
 
   it('hides headline when not provided', async () => {
