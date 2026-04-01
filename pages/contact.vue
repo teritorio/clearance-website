@@ -96,7 +96,7 @@ function onSubmit() {
           />
         </UFormField>
 
-        <UButton type="submit" size="lg" class="w-full sm:w-auto">
+        <UButton type="submit" size="lg">
           {{ t('contact.send') }}
         </UButton>
       </form>

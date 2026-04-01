@@ -103,7 +103,15 @@ definePageMeta({
       </ContentRenderer>
     </div>
 
-    <UContentSurround v-if="isDocsPage && surround" :surround="surround" />
+    <UContentSurround
+      v-if="isDocsPage && surround"
+      :surround="surround"
+      :ui="{
+        root: 'grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12',
+        link: 'px-4 py-4 sm:px-6 sm:py-8',
+        linkLeading: 'mb-2 sm:mb-4',
+      }"
+    />
 
     <template v-if="isDocsPage && page?.body?.toc?.links?.length" #toc>
       <UContentToc :links="page.body.toc.links" :title="t('docs.toc')" highlight />
