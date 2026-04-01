@@ -154,7 +154,7 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   ::landing-use-case
   ---
   icon: i-lucide-landmark
-  title: Destination management organizations
+  title: Tourist destination management organizations
   ---
   A poorly referenced tourist point of interest can degrade the experience of visitors to your territory.
   ::
@@ -181,14 +181,14 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 ---
 headline: References
 title: Over 40 organizations already use Clearance
-description: "To reuse OpenStreetMap data with greater control."
+description: "To reuse OpenStreetMap data with greater confidence."
 ctaLabel: View an example project (Landes)
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 
   ::landing-reference
   ---
-  logo: /logos/Logo_SNCF_(2011).svg.png
+  logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
   The French railway operator ensures the maintenance of track and signaling information.
@@ -196,15 +196,15 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/Logotipo_del_Gobierno_de_Navarra.svg
+  logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Civil Protection of Navarre
   ---
-  Guarantees the quality of road and addressing data used for emergency response route calculation in Spain. OSM data serves as the reference for intervention routing.
+  Guarantees the quality of road and addressing data used for emergency response route calculation in Navarre, Spain. OSM data serves as the reference for intervention routing.
   ::
 
   ::landing-reference
   ---
-  logo: /logos/Logo_Office_de_Tourisme_de_France.svg.png
+  logo: /logos/otourisme.png
   title: 30 departmental agencies and tourism offices
   ---
   Control quality and monitor OSM contributions across many themes in mainland and overseas France: leisure facilities, health, food shops, and more.
@@ -212,7 +212,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
   ::landing-reference
   ---
-  logo: /logos/NLnet_Foundation_logo.svg.png
+  logo: /logos/NLnet_Foundation_logo.png
   title: NLNet Foundation
   ---
   Funds part of Clearance development through [European grants](https://nlnet.nl/project/Clearance/){target="_blank"}.
@@ -226,7 +226,7 @@ title: Request a demonstration
 description: "During a demonstration, we discuss your context and needs, present how Clearance works, illustrate concrete use cases, and share our roadmap."
 primaryLabel: Contact us
 primaryTo: /contact
-secondaryLabel: Documentation
+secondaryLabel: How it works?
 secondaryTo: /docs
 ---
 ::

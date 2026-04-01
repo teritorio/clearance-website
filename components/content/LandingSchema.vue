@@ -10,9 +10,45 @@ defineProps<{
 
 <template>
   <div class="mx-auto max-w-3xl">
+    <!-- Mobile: simplified vertical flow -->
+    <div class="flex flex-col items-center gap-3 sm:hidden" role="img" :aria-label="`${changesLabel} → ${osmLabel} → ${clearanceLabel} → ${extractLabel}`">
+      <div class="flex w-full max-w-xs items-center gap-3 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-zinc-300 bg-white">
+          <svg viewBox="0 0 30 14" class="h-3.5 w-[30px]" aria-hidden="true"><path d="M 0,7 Q 5,0 10,7 Q 15,14 20,7 Q 25,0 30,7" fill="none" stroke="#3f3f46" stroke-width="2.2" stroke-linecap="round" /></svg>
+        </div>
+        <span class="text-sm text-muted">{{ changesLabel }}</span>
+      </div>
+      <UIcon name="i-lucide-chevron-down" class="size-5 text-primary" />
+      <div class="flex w-full max-w-xs items-center gap-3 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-zinc-300 bg-white">
+          <NuxtImg src="/logos/openstreetmap.png" alt="OpenStreetMap" class="size-6 object-contain" />
+        </div>
+        <span class="text-sm text-muted">{{ osmLabel }}</span>
+      </div>
+      <UIcon name="i-lucide-chevron-down" class="size-5 text-primary" />
+      <div class="flex w-full max-w-xs items-center gap-3 rounded-xl border-2 border-primary/30 bg-primary/5 px-4 py-3">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-white">
+          <svg viewBox="0 0 24 24" class="size-6" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#ffbb00" stroke="#000" stroke-width="0.8" /><circle cx="15" cy="15" r="6.5" fill="#f00" stroke="#000" stroke-width="0.8" /></svg>
+        </div>
+        <span class="text-sm font-medium">{{ clearanceLabel }}</span>
+      </div>
+      <UIcon name="i-lucide-chevron-down" class="size-5 text-primary" />
+      <div class="flex w-full max-w-xs items-center gap-3 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
+        <div class="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-zinc-300 bg-white">
+          <UIcon name="i-lucide-database" class="size-5 text-zinc-700" />
+        </div>
+        <span class="text-sm text-muted">{{ extractLabel }}</span>
+      </div>
+      <div class="mt-1 flex items-center gap-1 text-xs text-muted italic">
+        <UIcon name="i-lucide-rotate-ccw" class="size-3.5" />
+        <span>{{ feedbackLabel }}</span>
+      </div>
+    </div>
+
+    <!-- Desktop: full SVG diagram -->
     <svg
       viewBox="0 -15 560 170"
-      class="block w-full"
+      class="hidden w-full sm:block"
       role="img"
       :aria-label="`${changesLabel} → ${osmLabel} → ${clearanceLabel} → ${extractLabel}`"
     >

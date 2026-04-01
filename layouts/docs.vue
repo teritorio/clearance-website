@@ -1,5 +1,12 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { t, locale } = useI18n()
+
+const route = useRoute()
+const mobileNavOpen = ref(false)
+
+watch(() => route.path, () => {
+  mobileNavOpen.value = false
+})
 
 const head = useLocaleHead({ seo: true })
 useHead({
@@ -51,7 +58,7 @@ const docsNavigation = computed(() => {
     <AppHeader />
 
     <UContainer class="flex-1">
-      <div class="flex gap-8 py-8">
+      <div class="flex gap-4 py-4 sm:gap-8 sm:py-8">
         <aside class="hidden lg:block w-64 shrink-0">
           <nav class="sticky top-20">
             <UContentNavigation
@@ -63,6 +70,15 @@ const docsNavigation = computed(() => {
         </aside>
 
         <main class="min-w-0 flex-1">
+          <div class="mb-4 lg:hidden">
+            <UButton
+              icon="i-lucide-menu"
+              variant="outline"
+              color="neutral"
+              :label="t('nav.docs')"
+              @click="mobileNavOpen = true"
+            />
+          </div>
           <slot />
         </main>
 
@@ -73,6 +89,25 @@ const docsNavigation = computed(() => {
         </aside>
       </div>
     </UContainer>
+
+    <USlideover v-model:open="mobileNavOpen" side="left" title="Clearance">
+      <template #title>
+        <div class="flex items-center gap-2">
+          <NuxtImg src="/logo.svg" alt="Clearance" width="28" height="28" />
+          <span>Clearance</span>
+        </div>
+      </template>
+      <template #description>
+        <span class="sr-only">{{ t('nav.docs') }}</span>
+      </template>
+      <template #body>
+        <UContentNavigation
+          v-if="docsNavigation.length"
+          :navigation="docsNavigation"
+          highlight
+        />
+      </template>
+    </USlideover>
 
     <AppFooter />
   </div>

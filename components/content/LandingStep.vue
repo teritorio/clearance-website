@@ -23,7 +23,7 @@ defineProps<{
     </div>
 
     <!-- Card -->
-    <div class="flex h-full flex-col items-center rounded-xl border border-zinc-200 bg-white px-6 pb-6 pt-8 text-center shadow-sm">
+    <div class="flex h-full flex-col items-center rounded-xl border border-zinc-200 bg-white px-4 pb-4 sm:px-6 sm:pb-6 pt-8 text-center shadow-sm">
       <h3 class="text-lg font-semibold">
         {{ title }}
       </h3>
@@ -36,7 +36,7 @@ defineProps<{
 
 <style scoped>
 /* Horizontal chevron arrow between steps (desktop) */
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .landing-step:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -51,7 +51,7 @@ defineProps<{
 }
 
 /* Vertical chevron arrow between steps (mobile) */
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   .landing-step:not(:last-child)::after {
     content: '';
     position: absolute;

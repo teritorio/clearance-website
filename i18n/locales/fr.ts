@@ -1,9 +1,10 @@
 export default defineI18nLocale(async () => ({
   nav: {
     home: 'Clearance',
-    docs: 'Documentation',
+    docs: 'Comment ça marche ?',
     contact: 'Contact',
     github: 'GitHub',
+    openApp: 'Ouvrir l\'app',
     changeLanguage: 'Changer de langue',
   },
   footer: {
@@ -41,6 +42,11 @@ export default defineI18nLocale(async () => ({
   seo: {
     description: 'Filtre qualité open source pour la réplication OpenStreetMap — filtrez, validez et sécurisez votre flux de réplication OSM.',
     ogImageAlt: 'Clearance — Filtre qualité pour la réplication OpenStreetMap',
+  },
+  error: {
+    title: 'Page introuvable',
+    message: 'La page que vous cherchez n\'existe pas ou a été déplacée.',
+    backHome: 'Retour à l\'accueil',
   },
   page: {
     empty: 'Cette page n\'a pas encore de contenu.',

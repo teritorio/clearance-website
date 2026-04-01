@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const { t, locale, locales } = useI18n()
-const switchLocalePath = useSwitchLocalePath()
+const APP_URL = 'https://clearance.teritorio.xyz'
+
+const { t } = useI18n()
 const localePath = useLocalePath()
+const drawerOpen = ref(false)
 
 const navItems = computed(() => [
   {
@@ -21,17 +23,10 @@ const navItems = computed(() => [
     target: '_blank',
   },
 ])
-
-const localeItems = computed(() =>
-  (locales.value as Array<{ code: string, name: string }>).map(l => ({
-    label: l.name,
-    to: switchLocalePath(l.code as typeof locale.value),
-  })),
-)
 </script>
 
 <template>
-  <UHeader :to="localePath('/')">
+  <UHeader v-model:open="drawerOpen" :to="localePath('/')" mode="drawer">
     <template #title>
       <div class="flex items-center gap-2">
         <NuxtImg src="/logo.svg" alt="Clearance" width="28" height="28" />
@@ -39,15 +34,28 @@ const localeItems = computed(() =>
       </div>
     </template>
     <template #right>
-      <UNavigationMenu :items="navItems" />
-      <UDropdownMenu :items="localeItems">
-        <UButton
-          variant="ghost"
-          icon="i-lucide-languages"
-          :label="locale.toUpperCase()"
-          :aria-label="t('nav.changeLanguage')"
-        />
-      </UDropdownMenu>
+      <UNavigationMenu class="hidden md:flex" :items="navItems" />
+      <UButton
+        :label="t('nav.openApp')"
+        :to="APP_URL"
+        target="_blank"
+        rel="noopener"
+        icon="i-lucide-external-link"
+        class="hidden md:flex"
+      />
+      <AppLanguageSwitcher />
+    </template>
+    <template #body>
+      <UNavigationMenu orientation="vertical" :items="navItems" />
+      <UButton
+        :label="t('nav.openApp')"
+        :to="APP_URL"
+        target="_blank"
+        rel="noopener"
+        icon="i-lucide-external-link"
+        class="mt-4 w-full justify-center"
+        @click="drawerOpen = false"
+      />
     </template>
   </UHeader>
 </template>

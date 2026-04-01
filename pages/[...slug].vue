@@ -16,6 +16,10 @@ const { data: page } = await useAsyncData(
   { watch: [locale] },
 )
 
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found' })
+}
+
 const isDocsPage = computed(() => path.value.includes('/docs'))
 
 const sectionSlug = computed(() => {
@@ -36,6 +40,24 @@ const { data: sectionIndex } = await useAsyncData(
     : Promise.resolve(null),
   { watch: [locale] },
 )
+
+const { data: rawSurround } = await useAsyncData(
+  `surround-${locale.value}-${slug.value.join('/')}`,
+  () => isDocsPage.value
+    ? queryCollectionItemSurroundings(collectionName.value, path.value, { before: 2, after: 2 })
+    : Promise.resolve(null),
+  { watch: [locale] },
+)
+
+const surround = computed(() => {
+  if (!rawSurround.value)
+    return null
+  const items = rawSurround.value as Array<{ path?: string, redirect?: string } | null>
+  const isDocsItem = (item: typeof items[number]) => item && !item.redirect && item.path?.includes('/docs/')
+  const prev = [...items.slice(0, 2)].reverse().find(isDocsItem) ?? null
+  const next = items.slice(2).find(isDocsItem) ?? null
+  return [prev, next] as typeof rawSurround.value
+})
 
 useHead({
   title: () => page.value?.title,
@@ -71,8 +93,8 @@ definePageMeta({
 
 <template>
   <NuxtLayout :name="isDocsPage ? 'docs' : 'default'">
-    <div v-if="page" class="prose dark:prose-invert max-w-none">
-      <ContentRenderer :value="page">
+    <div class="prose dark:prose-invert max-w-none">
+      <ContentRenderer :value="page!">
         <template #empty>
           <p class="text-muted">
             {{ t('page.empty') }}
@@ -80,11 +102,16 @@ definePageMeta({
         </template>
       </ContentRenderer>
     </div>
-    <div v-else class="py-16 text-center">
-      <p class="text-muted">
-        {{ t('page.notFound') }}
-      </p>
-    </div>
+
+    <UContentSurround
+      v-if="isDocsPage && surround"
+      :surround="surround"
+      :ui="{
+        root: 'grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12',
+        link: 'px-4 py-4 sm:px-6 sm:py-8',
+        linkLeading: 'mb-2 sm:mb-4',
+      }"
+    />
 
     <template v-if="isDocsPage && page?.body?.toc?.links?.length" #toc>
       <UContentToc :links="page.body.toc.links" :title="t('docs.toc')" highlight />
