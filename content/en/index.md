@@ -44,7 +44,7 @@ description: "When OpenStreetMap data becomes critical for a service, a question
 ---
 headline: The solution
 title: "Clearance: an OSM replication tool with a built-in quality filter"
-description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are made directly in OSM at the source."
+description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are to be made directly in OSM at the source."
 ---
 
   ::landing-step

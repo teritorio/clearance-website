@@ -44,7 +44,7 @@ description: "Cuando los datos de OpenStreetMap se vuelven críticos para un ser
 ---
 headline: La solución
 title: "Clearance: una herramienta de replicación OSM con filtro de calidad integrado"
-description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
+description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se han de realizar directamente en OSM, en la fuente."
 ---
 
   ::landing-step
