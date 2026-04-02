@@ -172,7 +172,7 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 headline: Referencias
 title: Más de 40 organizaciones ya utilizan Clearance
 description: "Para reutilizar los datos de OpenStreetMap con mayor confianza."
-ctaLabel: Ver un ejemplo de proyecto (Landes)
+ctaLabel: Ejemplo de proyecto en Clearance
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 
