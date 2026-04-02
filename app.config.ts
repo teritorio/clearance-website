@@ -5,5 +5,10 @@ export default defineAppConfig({
       secondary: 'red',
       neutral: 'zinc',
     },
+    contentSurround: {
+      slots: {
+        linkTitle: 'font-medium text-[15px] text-highlighted mb-1',
+      },
+    },
   },
 })
