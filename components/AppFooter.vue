@@ -49,11 +49,6 @@ const footerColumns = computed(() => [
               Teritorio
             </NuxtLink>
           </template>
-          <template #license>
-            <NuxtLink to="https://github.com/teritorio/clearance/blob/dev/LICENSE" target="_blank" class="text-muted hover:text-default">
-              {{ t('footer.licenseLabel') }}
-            </NuxtLink>
-          </template>
         </i18n-t>
       </div>
     </template>
