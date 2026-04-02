@@ -172,7 +172,7 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 headline: References
 title: Over 40 organizations already use Clearance
 description: "To reuse OpenStreetMap data with greater confidence."
-ctaLabel: View an example project (Landes)
+ctaLabel: Example project on Clearance
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 
