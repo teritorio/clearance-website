@@ -4,7 +4,7 @@ export default defineI18nLocale(async () => ({
     docs: 'Comment ça marche ?',
     contact: 'Contact',
     github: 'GitHub',
-    openApp: 'Ouvrir l\'app',
+    seeClearance: 'Voir Clearance',
     changeLanguage: 'Changer de langue',
   },
   footer: {

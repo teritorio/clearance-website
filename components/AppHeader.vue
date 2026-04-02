@@ -36,7 +36,7 @@ const navItems = computed(() => [
     <template #right>
       <UNavigationMenu class="hidden md:flex" :items="navItems" />
       <UButton
-        :label="t('nav.openApp')"
+        :label="t('nav.seeClearance')"
         :to="APP_URL"
         target="_blank"
         rel="noopener"
@@ -48,7 +48,7 @@ const navItems = computed(() => [
     <template #body>
       <UNavigationMenu orientation="vertical" :items="navItems" />
       <UButton
-        :label="t('nav.openApp')"
+        :label="t('nav.seeClearance')"
         :to="APP_URL"
         target="_blank"
         rel="noopener"
