@@ -49,7 +49,8 @@ changesLabel: Cambios
 osmLabel: OpenStreetMap
 clearanceLabel: Clearance
 extractLabel: Extracto
-feedbackLabel: Correcciones en OSM
+anomaliesLabel: Anomalías
+correctionsLabel: Correcciones
 ---
 
   ::landing-step

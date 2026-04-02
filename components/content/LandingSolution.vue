@@ -9,7 +9,8 @@ defineProps<{
   osmLabel?: string
   clearanceLabel?: string
   extractLabel?: string
-  feedbackLabel?: string
+  anomaliesLabel?: string
+  correctionsLabel?: string
 }>()
 </script>
 
@@ -25,7 +26,8 @@ defineProps<{
           :osm-label="osmLabel"
           :clearance-label="clearanceLabel"
           :extract-label="extractLabel"
-          :feedback-label="feedbackLabel"
+          :anomalies-label="anomaliesLabel"
+          :corrections-label="correctionsLabel"
         />
       </div>
 
