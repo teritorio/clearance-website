@@ -10,8 +10,6 @@ title: Contrôlez la qualité de votre réplication OpenStreetMap
 description: "Vous répliquez des données OpenStreetMap dans un contexte critique ? Une modification non vérifiée peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance est un logiciel libre qui filtre votre flux de réplication avant qu'il n'atteigne vos systèmes."
 primaryLabel: Demander une démo
 primaryTo: /contact
-secondaryLabel: Voir sur GitHub
-secondaryTo: https://github.com/teritorio/clearance
 ---
 ::
 
