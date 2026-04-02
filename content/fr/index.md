@@ -181,7 +181,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
-  Le chemin de fer français s'assure du maintien des informations liées aux voies et à la signalisation.
+  S'assure du maintien des informations liées aux voies et à la signalisation.
   ::
 
   ::landing-reference

@@ -181,7 +181,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
-  El operador ferroviario francés asegura el mantenimiento de la información de vías y señalización.
+  Asegura el mantenimiento de la información de vías y señalización.
   ::
 
   ::landing-reference
