@@ -10,8 +10,6 @@ title: Controle la calidad de su replicación OpenStreetMap
 description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
 primaryLabel: Solicitar una demo
 primaryTo: /contact
-secondaryLabel: Ver en GitHub
-secondaryTo: https://github.com/teritorio/clearance
 ---
 ::
 
