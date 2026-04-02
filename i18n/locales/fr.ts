@@ -11,8 +11,7 @@ export default defineI18nLocale(async () => ({
     product: 'Produit',
     resources: 'Ressources',
     company: 'Entreprise',
-    copyright: '© {year} {teritorio}. Logiciel libre sous {license}.',
-    licenseLabel: 'licence AGPL-3.0',
+    copyright: '© {year} {teritorio}.',
   },
   contact: {
     title: 'Contactez-nous',
