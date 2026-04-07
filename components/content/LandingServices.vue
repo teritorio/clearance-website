@@ -2,7 +2,6 @@
 const props = defineProps<{
   headline?: string
   title?: string
-  description?: string
   ctaLabel?: string
   ctaTo?: string
 }>()
@@ -13,7 +12,7 @@ const resolvedCtaTo = useLocaleTo(computed(() => props.ctaTo))
 <template>
   <section class="py-16 sm:py-24">
     <UContainer>
-      <LandingSectionHeader :headline="headline" :title="title" :description="description" />
+      <LandingSectionHeader :headline="headline" :title="title" />
       <div v-if="$slots.default" class="mx-auto mt-8 max-w-3xl text-lg text-muted">
         <MDCSlot :use="$slots.default" />
       </div>

@@ -405,12 +405,10 @@ describe('landingServices', () => {
       props: {
         headline: 'Services Headline',
         title: 'Services Title',
-        description: 'Services Description',
       },
     })
     expect(component.text()).toContain('Services Headline')
     expect(component.text()).toContain('Services Title')
-    expect(component.text()).toContain('Services Description')
   })
 
   it('renders slot content', async () => {
