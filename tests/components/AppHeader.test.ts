@@ -15,7 +15,7 @@ describe('appHeader', () => {
   it('renders docs and contact navigation items', async () => {
     const component = await mountSuspended(AppHeader)
     const html = component.html()
-    expect(html).toContain('/en/docs')
+    expect(html).toContain('/en/how-it-works/replication')
     expect(html).toContain('/en/contact')
   })
 

@@ -107,7 +107,7 @@ describe('landingHero', () => {
         title: 'Hero Title',
         description: 'Hero Description',
         primaryLabel: 'Get Started',
-        primaryTo: '/docs',
+        primaryTo: '/how-it-works/replication',
       },
     })
     expect(component.text()).toContain('Get Started')
@@ -428,7 +428,7 @@ describe('landingServices', () => {
       props: {
         title: 'Services Title',
         ctaLabel: 'See roadmap',
-        ctaTo: '/docs/how-it-works/roadmap',
+        ctaTo: '/how-it-works/roadmap',
       },
     })
     expect(component.text()).toContain('See roadmap')

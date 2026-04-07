@@ -74,28 +74,18 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
 
-  routeRules: {
-    '/en/docs': { redirect: '/en/docs/how-it-works/replication' },
-    '/fr/docs': { redirect: '/fr/docs/how-it-works/replication' },
-    '/es/docs': { redirect: '/es/docs/how-it-works/replication' },
-    '/en/docs/getting-started/overview': { redirect: '/en/docs/how-it-works/replication' },
-    '/fr/docs/getting-started/overview': { redirect: '/fr/docs/how-it-works/replication' },
-    '/es/docs/getting-started/overview': { redirect: '/es/docs/how-it-works/replication' },
-  },
-
   nitro: {
     prerender: {
       routes: ['fr', 'en', 'es'].flatMap(locale => [
         `/${locale}`,
         `/${locale}/contact`,
-        `/${locale}/docs`,
-        `/${locale}/docs/how-it-works`,
-        `/${locale}/docs/how-it-works/replication`,
-        `/${locale}/docs/how-it-works/locha`,
-        `/${locale}/docs/how-it-works/semantic`,
-        `/${locale}/docs/how-it-works/rules`,
-        `/${locale}/docs/how-it-works/feedback-loop`,
-        `/${locale}/docs/how-it-works/roadmap`,
+        `/${locale}/how-it-works`,
+        `/${locale}/how-it-works/replication`,
+        `/${locale}/how-it-works/locha`,
+        `/${locale}/how-it-works/semantic`,
+        `/${locale}/how-it-works/rules`,
+        `/${locale}/how-it-works/feedback-loop`,
+        `/${locale}/how-it-works/roadmap`,
       ]),
     },
   },

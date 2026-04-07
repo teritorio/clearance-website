@@ -23,7 +23,7 @@ const { data: navigation } = await useAsyncData(
   { watch: [locale] },
 )
 
-const docsPathPattern = /\/docs\/?$/
+const docsPathPattern = /\/how-it-works\/?$/
 
 const docsNavigation = computed(() => {
   if (!navigation.value)

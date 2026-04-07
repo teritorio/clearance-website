@@ -208,7 +208,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 title: Open-source software
 description: "Clearance is free and open-source software licensed under AGPL-3.0."
 primaryLabel: How it works?
-primaryTo: /docs
+primaryTo: /how-it-works/replication
 secondaryLabel: View on GitHub
 secondaryTo: https://github.com/teritorio/clearance
 ---
@@ -219,7 +219,7 @@ secondaryTo: https://github.com/teritorio/clearance
 headline: Service Offerings
 title: Support tailored to your needs
 ctaLabel: See our roadmap
-ctaTo: /docs/how-it-works/roadmap
+ctaTo: /how-it-works/roadmap
 ---
 We offer Clearance hosting as a SaaS solution, as well as assistance with deployment and configuration in your own environment.
 
@@ -235,6 +235,6 @@ description: "During a demonstration, we discuss your context and needs, present
 primaryLabel: Contact us
 primaryTo: /contact
 secondaryLabel: How it works?
-secondaryTo: /docs
+secondaryTo: /how-it-works/replication
 ---
 ::
