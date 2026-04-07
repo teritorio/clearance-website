@@ -9,7 +9,7 @@ const navItems = computed(() => [
   {
     label: t('nav.docs'),
     icon: 'i-lucide-book-open',
-    to: localePath('/docs'),
+    to: localePath('/how-it-works/replication'),
   },
   {
     label: t('nav.contact'),
@@ -36,7 +36,7 @@ const navItems = computed(() => [
     <template #right>
       <UNavigationMenu class="hidden md:flex" :items="navItems" />
       <UButton
-        :label="t('nav.openApp')"
+        :label="t('nav.seeClearance')"
         :to="APP_URL"
         target="_blank"
         rel="noopener"
@@ -48,7 +48,7 @@ const navItems = computed(() => [
     <template #body>
       <UNavigationMenu orientation="vertical" :items="navItems" />
       <UButton
-        :label="t('nav.openApp')"
+        :label="t('nav.seeClearance')"
         :to="APP_URL"
         target="_blank"
         rel="noopener"

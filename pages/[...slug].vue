@@ -20,24 +20,21 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-const isDocsPage = computed(() => path.value.includes('/docs'))
+const docsSections: string[] = ['how-it-works']
+const isDocsPage = computed(() => slug.value.length > 0 && docsSections.includes(slug.value[0] as string))
 
-const sectionSlug = computed(() => {
-  const parts = slug.value
-  return isDocsPage.value && parts.length >= 3 ? parts[1] : undefined
+const sectionSlug = computed<string | undefined>(() => {
+  return isDocsPage.value ? slug.value[0] as string : undefined
 })
 
-const { data: docsIndex } = await useAsyncData(
-  `breadcrumb-docs-${locale.value}`,
-  () => queryCollection(collectionName.value).path(`/${locale.value}/docs`).first(),
-  { watch: [locale] },
-)
-
 const { data: sectionIndex } = await useAsyncData(
-  `breadcrumb-section-${locale.value}-${sectionSlug.value}`,
-  () => sectionSlug.value
-    ? queryCollection(collectionName.value).path(`/${locale.value}/docs/${sectionSlug.value}`).first()
-    : Promise.resolve(null),
+  `breadcrumb-section-${locale.value}-${sectionSlug.value ?? ''}`,
+  () => {
+    const section = sectionSlug.value
+    return section
+      ? queryCollection(collectionName.value).path(`/${locale.value}/${section}`).first()
+      : Promise.resolve(null)
+  },
   { watch: [locale] },
 )
 
@@ -53,7 +50,7 @@ const surround = computed(() => {
   if (!rawSurround.value)
     return null
   const items = rawSurround.value as Array<{ path?: string, redirect?: string } | null>
-  const isDocsItem = (item: typeof items[number]) => item && !item.redirect && item.path?.includes('/docs/')
+  const isDocsItem = (item: typeof items[number]) => item && !item.redirect && item.path?.includes('/how-it-works/')
   const prev = [...items.slice(0, 2)].reverse().find(isDocsItem) ?? null
   const next = items.slice(2).find(isDocsItem) ?? null
   return [prev, next] as typeof rawSurround.value
@@ -74,11 +71,9 @@ useSchemaOrg([
       ]
       if (isDocsPage.value) {
         const parts = slug.value
-        if (parts.length >= 2)
-          items.push({ name: docsIndex.value?.title || t('nav.docs'), item: `/${locale.value}/docs` })
-        if (parts.length >= 3 && sectionIndex.value?.title)
-          items.push({ name: sectionIndex.value.title, item: `/${locale.value}/docs/${parts[1]}` })
-        if (page.value?.title)
+        if (sectionIndex.value?.title)
+          items.push({ name: sectionIndex.value.title, item: `/${locale.value}/${parts[0]}` })
+        if (parts.length >= 2 && page.value?.title)
           items.push({ name: page.value.title, item: `/${locale.value}/${parts.join('/')}` })
       }
       return items

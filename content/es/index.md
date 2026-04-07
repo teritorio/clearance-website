@@ -10,8 +10,6 @@ title: Controle la calidad de su replicación OpenStreetMap
 description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
 primaryLabel: Solicitar una demo
 primaryTo: /contact
-secondaryLabel: Ver en GitHub
-secondaryTo: https://github.com/teritorio/clearance
 ---
 ::
 
@@ -33,43 +31,42 @@ description: "Cuando los datos de OpenStreetMap se vuelven críticos para un ser
   ---
   icon: i-lucide-alert-triangle
   ---
-  Las herramientas clásicas de replicación de datos OSM no incluyen un filtro de calidad. Actúan sobre datos ya replicados, o al precio de bloquear la replicación por completo.
+  Las herramientas clásicas son incompletas:
+  - las herramientas de replicación no incluyen un filtro de calidad.
+  - las herramientas de calidad actúan sobre datos ya replicados.
   ::
 
 ::
 
-::landing-steps
+::landing-solution
 ---
 headline: La solución
 title: "Clearance: una herramienta de replicación OSM con filtro de calidad integrado"
-description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en la fuente."
+description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se han de realizar directamente en OSM, en la fuente."
+intro: "Clearance actúa como una herramienta de mejora continua de su copia local, adaptada a sus necesidades profesionales:"
+conclusion: "Así dispone de una versión actualizada de los datos de OpenStreetMap, fiable para sus usos y adaptada a sus requisitos de calidad, mientras continúa contribuyendo al bien común OpenStreetMap."
+changesLabel: Cambios
+osmLabel: OpenStreetMap
+clearanceLabel: Clearance
+extractLabel: Extracto
+anomaliesLabel: Anomalías
+correctionsLabel: Correcciones
 ---
-
-  ::landing-step
-  ---
-  icon: i-lucide-download
-  title: Replicación
-  number: "1"
-  ---
-  Clearance obtiene las actualizaciones del flujo de replicación de OpenStreetMap y las analiza en tiempo real.
-  ::
-
-  ::landing-step
-  ---
-  icon: i-lucide-filter
-  title: Filtrado
-  number: "2"
-  ---
-  Los cambios conformes se integran automática e inmediatamente. Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM.
-  ::
 
   ::landing-step
   ---
   icon: i-lucide-check-circle
-  title: Validación
-  number: "3"
+  title: Cambios conformes
   ---
-  En la siguiente verificación, si todo es conforme, las modificaciones pasarán el filtro y se integrarán a la copia local. Así dispone de una versión actualizada, fiable y adaptada a sus requisitos de calidad.
+  Los cambios conformes se integran automática e inmediatamente.
+  ::
+
+  ::landing-step
+  ---
+  icon: i-lucide-pause-circle
+  title: Modificaciones sensibles
+  ---
+  Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM. En la siguiente verificación, si todo es conforme, las modificaciones pasarán el filtro y se integrarán a la copia local.
   ::
 
 ::
@@ -77,21 +74,14 @@ description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos s
 ::landing-practice
 ---
 headline: En la práctica
-title: Todo lo necesario para asegurar su replicación OSM
-description: "Un pipeline completo de aseguramiento de calidad entre OpenStreetMap y sus aplicaciones, mientras continúa contribuyendo al bien común OpenStreetMap."
-changesLabel: Cambios
-osmLabel: OpenStreetMap
-clearanceLabel: Clearance
-extractLabel: Extracto
-feedbackLabel: Correcciones en OSM
 ---
 
   ::landing-practice-item
   ---
   icon: i-lucide-map-pin
-  title: Territorio y colaboración
+  title: Territorio, temática y colaboración
   ---
-  Defina proyectos territoriales y temáticos en los que su equipo colabore para monitorear y mantener la calidad de los datos.
+  Clearance le permite definir proyectos territoriales y temáticos (tags OSM) en los que su equipo colabora para monitorear y mantener la calidad de los datos.
   ::
 
   ::landing-practice-item
@@ -99,15 +89,22 @@ feedbackLabel: Correcciones en OSM
   icon: i-lucide-list-checks
   title: Reglas adaptadas a su actividad
   ---
-  Aplique controles adaptados a su necesidad: desplazamientos, eliminaciones, adiciones prematuras, rupturas de uniones y más.
+  Clearance permite aplicar controles adaptados a su necesidad. Por ejemplo:
+
+  - desplazamiento de un desfibrilador que podría comprometer su responsabilidad
+  - modificación de un segmento de red vial susceptible de perturbar un calculador de rutas
+  - adición de un equipamiento público aún no operativo, susceptible de generar un uso prematuro
+  - eliminación de una referencia que podría romper las uniones con una base de datos de negocio
+
+  Estas situaciones son frecuentes cuando los datos OSM se utilizan en un contexto operativo.
   ::
 
   ::landing-practice-item
   ---
   icon: i-lucide-database
-  title: Proxy de calidad
+  title: Un proxy de calidad
   ---
-  Utiliza los formatos estándar del ecosistema OpenStreetMap tanto de entrada como de salida. Siga usando sus herramientas con mayor confianza en los datos.
+  Clearance utiliza los formatos estándar del ecosistema de OpenStreetMap tanto de entrada como de salida. Se integra de forma transparente en un proceso de reutilización de datos OpenStreetMap produciendo extractos, diffs y una API Overpass sobre la copia local. Siga usando sus herramientas, o las del ecosistema OpenStreetMap, con mayor confianza en los datos.
   ::
 
 ::
@@ -124,7 +121,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-bus
   title: Operadores de movilidad y transporte
   ---
-  La modificación de un segmento de red vial puede perturbar un calculador de rutas utilizado por sus servicios.
   ::
 
   ::landing-use-case
@@ -132,15 +128,13 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-shield-alert
   title: Servicios de emergencia y seguridad
   ---
-  El desplazamiento de un desfibrilador podría comprometer su responsabilidad si la información difundida es errónea.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-map
+  icon: i-lucide-building
   title: Administraciones locales
   ---
-  La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
   ::
 
   ::landing-use-case
@@ -148,15 +142,13 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-tree-pine
   title: Gestores de parques naturales
   ---
-  La eliminación o modificación de un sendero señalizado puede poner en peligro a los excursionistas que siguen sus rutas.
   ::
 
   ::landing-use-case
   ---
-  icon: i-lucide-landmark
+  icon: i-lucide-info
   title: Organismos de gestión de destinos turísticos
   ---
-  Un punto de interés turístico mal referenciado puede degradar la experiencia de los visitantes de su territorio.
   ::
 
   ::landing-use-case
@@ -164,15 +156,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-database
   title: Plataformas territoriales de datos abiertos
   ---
-  La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
-  ::
-
-  ::landing-use-case
-  ---
-  icon: i-lucide-layers
-  title: Desarrolladores de aplicaciones cartográficas
-  ---
-  Datos fuente inconsistentes pueden generar anomalías de visualización o navegación en su aplicación.
   ::
 
 ::
@@ -182,7 +165,7 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 headline: Referencias
 title: Más de 40 organizaciones ya utilizan Clearance
 description: "Para reutilizar los datos de OpenStreetMap con mayor confianza."
-ctaLabel: Ver un ejemplo de proyecto (Landes)
+ctaLabel: Ejemplo de proyecto en Clearance
 ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 
@@ -191,7 +174,7 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
-  El operador ferroviario francés asegura el mantenimiento de la información de vías y señalización.
+  Asegura el mantenimiento de la información de vías y señalización.
   ::
 
   ::landing-reference
@@ -222,11 +205,36 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
 ::landing-cta
 ---
+title: Software libre
+description: "Clearance es un software libre bajo licencia AGPL-3.0."
+primaryLabel: ¿Cómo funciona?
+primaryTo: /how-it-works/replication
+secondaryLabel: Ver en GitHub
+secondaryTo: https://github.com/teritorio/clearance
+---
+::
+
+::landing-services
+---
+headline: Ofertas de servicios
+title: Un acompañamiento adaptado a sus necesidades
+ctaLabel: Ver nuestra hoja de ruta
+ctaTo: /how-it-works/roadmap
+---
+Ofrecemos el alojamiento de Clearance en modo SaaS, así como asistencia para el despliegue y la configuración en su propio entorno.
+
+En ambos casos, le acompañamos en la implementación de la herramienta según sus necesidades profesionales y sus restricciones técnicas.
+
+También podemos hacer evolucionar el proyecto desarrollando o mejorando funcionalidades, en función de sus necesidades específicas.
+::
+
+::landing-cta
+---
 title: Solicitar una demostración
 description: "Durante una demostración, intercambiamos sobre su contexto y necesidades, presentamos el funcionamiento de Clearance, ilustramos casos de uso concretos y compartimos nuestra hoja de ruta."
 primaryLabel: Contáctenos
 primaryTo: /contact
 secondaryLabel: ¿Cómo funciona?
-secondaryTo: /docs
+secondaryTo: /how-it-works/replication
 ---
 ::

@@ -23,7 +23,7 @@ const { data: navigation } = await useAsyncData(
   { watch: [locale] },
 )
 
-const docsPathPattern = /\/docs\/?$/
+const docsPathPattern = /\/how-it-works\/?$/
 
 const docsNavigation = computed(() => {
   if (!navigation.value)
@@ -46,10 +46,12 @@ const docsNavigation = computed(() => {
   }
 
   const docsSection = findDocsNode(navigation.value)
-  return (docsSection?.children || []).map(section => ({
-    ...section,
-    children: section.children?.filter(child => child.path !== section.path),
-  }))
+  if (!docsSection)
+    return []
+  return [{
+    ...docsSection,
+    children: docsSection.children?.filter(child => child.path !== docsSection.path),
+  }]
 })
 </script>
 

@@ -6,7 +6,7 @@ const footerColumns = computed(() => [
   {
     label: t('footer.product'),
     children: [
-      { label: t('nav.docs'), to: localePath('/docs') },
+      { label: t('nav.docs'), to: localePath('/how-it-works/replication') },
       { label: t('nav.contact'), to: localePath('/contact') },
     ],
   },
@@ -47,11 +47,6 @@ const footerColumns = computed(() => [
           <template #teritorio>
             <NuxtLink to="https://teritorio.fr" target="_blank" class="text-muted hover:text-default">
               Teritorio
-            </NuxtLink>
-          </template>
-          <template #license>
-            <NuxtLink to="https://github.com/teritorio/clearance/blob/dev/LICENSE" target="_blank" class="text-muted hover:text-default">
-              {{ t('footer.licenseLabel') }}
             </NuxtLink>
           </template>
         </i18n-t>

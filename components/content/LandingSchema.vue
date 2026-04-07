@@ -4,7 +4,8 @@ defineProps<{
   osmLabel?: string
   clearanceLabel?: string
   extractLabel?: string
-  feedbackLabel?: string
+  anomaliesLabel?: string
+  correctionsLabel?: string
 }>()
 </script>
 
@@ -23,14 +24,20 @@ defineProps<{
         <div class="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-zinc-300 bg-white">
           <NuxtImg src="/logos/openstreetmap.png" alt="OpenStreetMap" class="size-6 object-contain" />
         </div>
-        <span class="text-sm text-muted">{{ osmLabel }}</span>
+        <div class="flex flex-col">
+          <span class="text-sm text-muted">{{ osmLabel }}</span>
+          <span v-if="correctionsLabel" class="text-xs text-muted italic">↑ {{ correctionsLabel }}</span>
+        </div>
       </div>
       <UIcon name="i-lucide-chevron-down" class="size-5 text-primary" />
       <div class="flex w-full max-w-xs items-center gap-3 rounded-xl border-2 border-primary/30 bg-primary/5 px-4 py-3">
         <div class="flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-white">
           <svg viewBox="0 0 24 24" class="size-6" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="#ffbb00" stroke="#000" stroke-width="0.8" /><circle cx="15" cy="15" r="6.5" fill="#f00" stroke="#000" stroke-width="0.8" /></svg>
         </div>
-        <span class="text-sm font-medium">{{ clearanceLabel }}</span>
+        <div class="flex flex-col">
+          <span class="text-sm font-medium">{{ clearanceLabel }}</span>
+          <span v-if="anomaliesLabel" class="text-xs text-muted italic">→ {{ anomaliesLabel }}</span>
+        </div>
       </div>
       <UIcon name="i-lucide-chevron-down" class="size-5 text-primary" />
       <div class="flex w-full max-w-xs items-center gap-3 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3">
@@ -39,69 +46,19 @@ defineProps<{
         </div>
         <span class="text-sm text-muted">{{ extractLabel }}</span>
       </div>
-      <div class="mt-1 flex items-center gap-1 text-xs text-muted italic">
-        <UIcon name="i-lucide-rotate-ccw" class="size-3.5" />
-        <span>{{ feedbackLabel }}</span>
-      </div>
     </div>
 
     <!-- Desktop: full SVG diagram -->
     <svg
-      viewBox="0 -15 560 170"
+      viewBox="0 -40 560 195"
       class="hidden w-full sm:block"
       role="img"
       :aria-label="`${changesLabel} → ${osmLabel} → ${clearanceLabel} → ${extractLabel}`"
     >
       <defs>
-        <!-- Main flow gradient: sweeps left-to-right across entire SVG -->
-        <linearGradient
-          id="main-flow-grad"
-          gradientUnits="userSpaceOnUse"
-          x1="0"
-          y1="0"
-          x2="200"
-          y2="0"
-          spreadMethod="pad"
-        >
-          <stop offset="0%" stop-color="#f59e0b" />
-          <stop offset="60%" stop-color="#fbbf24" />
-          <stop offset="100%" stop-color="#d4d4d8" />
-          <animateTransform
-            attributeName="gradientTransform"
-            type="translate"
-            values="-200 0;600 0;600 0;-200 0;-200 0"
-            keyTimes="0;0.65;0.85;0.86;1"
-            dur="16s"
-            repeatCount="indefinite"
-          />
-        </linearGradient>
-
-        <!-- Feedback flow gradient: sweeps right-to-left along the arc -->
-        <linearGradient
-          id="feedback-flow-grad"
-          gradientUnits="userSpaceOnUse"
-          x1="350"
-          y1="0"
-          x2="150"
-          y2="0"
-          spreadMethod="pad"
-        >
-          <stop offset="0%" stop-color="#f59e0b" />
-          <stop offset="60%" stop-color="#fbbf24" />
-          <stop offset="100%" stop-color="#d4d4d8" />
-          <animateTransform
-            attributeName="gradientTransform"
-            type="translate"
-            values="0 0;0 0;-250 0;-250 0;0 0;0 0"
-            keyTimes="0;0.42;0.82;0.85;0.86;1"
-            dur="16s"
-            repeatCount="indefinite"
-          />
-        </linearGradient>
-
-        <!-- Arrow markers for feedback (symmetrical triangle) -->
+        <!-- Arrow marker for main flow -->
         <marker
-          id="schema-arrow-grey"
+          id="schema-arrow-flow"
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
@@ -111,8 +68,9 @@ defineProps<{
         >
           <polygon points="0 0, 10 5, 0 10" fill="#d4d4d8" />
         </marker>
+        <!-- Arrow marker for anomalies (going out of Clearance) -->
         <marker
-          id="schema-arrow-amber"
+          id="schema-arrow-anomalies"
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
@@ -120,59 +78,52 @@ defineProps<{
           markerHeight="8"
           orient="auto"
         >
-          <polygon points="0 0, 10 5, 0 10" fill="#f59e0b" />
+          <polygon points="0 0, 10 5, 0 10" fill="#a1a1aa" />
+        </marker>
+        <!-- Arrow marker for corrections (going into OSM) -->
+        <marker
+          id="schema-arrow-corrections"
+          viewBox="0 0 10 10"
+          refX="5"
+          refY="5"
+          markerWidth="8"
+          markerHeight="8"
+          orient="auto"
+        >
+          <polygon points="0 0, 10 5, 0 10" fill="#a1a1aa" />
         </marker>
       </defs>
 
-      <!-- Layer 1: Grey base lines -->
-      <!-- Main horizontal line -->
-      <line x1="42" y1="70" x2="518" y2="70" stroke="#d4d4d8" stroke-width="2" />
-      <!-- Grey circle borders -->
+      <!-- Main horizontal line segments with arrows -->
+      <line x1="98" y1="70" x2="178" y2="70" stroke="#d4d4d8" stroke-width="2" marker-end="url(#schema-arrow-flow)" />
+      <line x1="238" y1="70" x2="318" y2="70" stroke="#d4d4d8" stroke-width="2" marker-end="url(#schema-arrow-flow)" />
+      <line x1="378" y1="70" x2="458" y2="70" stroke="#d4d4d8" stroke-width="2" marker-end="url(#schema-arrow-flow)" />
+
+      <!-- Anomalies: arrow going up from Clearance -->
+      <line x1="350" y1="42" x2="350" y2="-5" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#schema-arrow-anomalies)" />
+
+      <!-- Corrections: arrow going down into OSM -->
+      <line x1="210" y1="-5" x2="210" y2="38" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#schema-arrow-corrections)" />
+
+      <!-- Circle borders -->
       <circle cx="70" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <circle cx="210" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <circle cx="350" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
       <circle cx="490" cy="70" r="28" fill="none" stroke="#d4d4d8" stroke-width="2" />
-      <!-- Grey feedback arc -->
-      <path
-        d="M 346,38 C 328,2 232,2 214,38"
-        fill="none"
-        stroke="#d4d4d8"
-        stroke-width="2"
-        stroke-dasharray="6 4"
-        marker-end="url(#schema-arrow-grey)"
-      />
 
-      <!-- Layer 2: Animated amber overlay -->
-      <!-- Main horizontal line -->
-      <line x1="42" y1="70" x2="518" y2="70" stroke="url(#main-flow-grad)" stroke-width="2" />
-      <!-- Amber circle borders -->
-      <circle cx="70" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
-      <circle cx="210" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
-      <circle cx="350" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
-      <circle cx="490" cy="70" r="28" fill="none" stroke="url(#main-flow-grad)" stroke-width="2" />
-      <!-- Amber feedback arc -->
-      <path
-        d="M 346,38 C 328,2 232,2 214,38"
-        fill="none"
-        stroke="url(#feedback-flow-grad)"
-        stroke-width="2"
-        stroke-dasharray="6 4"
-        marker-end="url(#schema-arrow-amber)"
-      />
-
-      <!-- Layer 3: White circle fills (hide line inside nodes) -->
+      <!-- White circle fills (hide line inside nodes) -->
       <circle cx="70" cy="70" r="27" fill="white" />
       <circle cx="210" cy="70" r="27" fill="white" />
       <circle cx="350" cy="70" r="27" fill="white" />
       <circle cx="490" cy="70" r="27" fill="white" />
 
-      <!-- Layer 4: Inner decorative circles -->
+      <!-- Inner decorative circles -->
       <circle cx="70" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
       <circle cx="210" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
       <circle cx="350" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
       <circle cx="490" cy="70" r="27" fill="#fafafa" stroke="#f4f4f5" stroke-width="1" />
 
-      <!-- Layer 5: Node icons -->
+      <!-- Node icons -->
       <!-- Changes: wavy line -->
       <g transform="translate(70, 70)">
         <path d="M -11,0 Q -6,-7 -1,0 Q 4,7 9,0 Q 14,-7 19,0" fill="none" stroke="#3f3f46" stroke-width="2.2" stroke-linecap="round" transform="translate(-4, 0)" />
@@ -187,27 +138,40 @@ defineProps<{
         <circle cx="3" cy="3" r="6.5" fill="#f00" stroke="#000" stroke-width="0.8" />
       </g>
 
-      <!-- Extract: database + check -->
+      <!-- Extract: database + green check -->
       <g transform="translate(490, 70)">
         <ellipse cx="-2" cy="-5" rx="8" ry="3.5" fill="none" stroke="#3f3f46" stroke-width="1.8" />
         <path d="M -10,-5 L -10,5 C -10,8.5 6,8.5 6,5 L 6,-5" fill="none" stroke="#3f3f46" stroke-width="1.8" />
-        <path d="M 5,-1 L 8,3 L 14,-5" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M 5,-1 L 8,3 L 14,-5" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
       </g>
 
-      <!-- Layer 6: Feedback label -->
+      <!-- Anomalies label (above Clearance) -->
       <text
-        x="280"
-        y="-2"
+        x="350"
+        y="-22"
         text-anchor="middle"
         fill="#a1a1aa"
         font-size="11"
         font-style="italic"
         font-family="system-ui, sans-serif"
       >
-        {{ feedbackLabel }}
+        {{ anomaliesLabel }}
       </text>
 
-      <!-- Layer 7: Node labels (TresJS-style small captions) -->
+      <!-- Corrections label (above OSM) -->
+      <text
+        x="210"
+        y="-22"
+        text-anchor="middle"
+        fill="#a1a1aa"
+        font-size="11"
+        font-style="italic"
+        font-family="system-ui, sans-serif"
+      >
+        {{ correctionsLabel }}
+      </text>
+
+      <!-- Node labels -->
       <text x="70" y="115" text-anchor="middle" fill="#a1a1aa" font-size="11" font-family="system-ui, sans-serif">
         {{ changesLabel }}
       </text>
