@@ -7,6 +7,7 @@ import LandingFeatures from '~/components/content/LandingFeatures.vue'
 import LandingHero from '~/components/content/LandingHero.vue'
 import LandingReferences from '~/components/content/LandingReferences.vue'
 import LandingSectionHeader from '~/components/content/LandingSectionHeader.vue'
+import LandingServices from '~/components/content/LandingServices.vue'
 import LandingSolution from '~/components/content/LandingSolution.vue'
 import LandingStep from '~/components/content/LandingStep.vue'
 import LandingUseCase from '~/components/content/LandingUseCase.vue'
@@ -395,6 +396,60 @@ describe('landingUseCases', () => {
       },
     })
     expect(component.text()).toContain('UseCase Child')
+  })
+})
+
+describe('landingServices', () => {
+  it('renders section header props', async () => {
+    const component = await mountSuspended(LandingServices, {
+      props: {
+        headline: 'Services Headline',
+        title: 'Services Title',
+      },
+    })
+    expect(component.text()).toContain('Services Headline')
+    expect(component.text()).toContain('Services Title')
+  })
+
+  it('renders slot content', async () => {
+    const component = await mountSuspended(LandingServices, {
+      props: {
+        title: 'Services Title',
+      },
+      slots: {
+        default: () => h('span', 'Service details'),
+      },
+    })
+    expect(component.text()).toContain('Service details')
+  })
+
+  it('renders CTA button when label and link are provided', async () => {
+    const component = await mountSuspended(LandingServices, {
+      props: {
+        title: 'Services Title',
+        ctaLabel: 'See roadmap',
+        ctaTo: '/docs/how-it-works/roadmap',
+      },
+    })
+    expect(component.text()).toContain('See roadmap')
+  })
+
+  it('hides CTA button when no label', async () => {
+    const component = await mountSuspended(LandingServices, {
+      props: {
+        title: 'Services Title',
+      },
+    })
+    expect(component.text()).not.toContain('See roadmap')
+  })
+
+  it('uses white background for visual alternation with References', async () => {
+    const component = await mountSuspended(LandingServices, {
+      props: {
+        title: 'Services Title',
+      },
+    })
+    expect(component.find('section').classes()).not.toContain('bg-zinc-100')
   })
 })
 

@@ -209,6 +209,20 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
 ::
 
+::landing-services
+---
+headline: Service Offerings
+title: Support tailored to your needs
+ctaLabel: See our roadmap
+ctaTo: /docs/how-it-works/roadmap
+---
+We offer Clearance hosting as a SaaS solution, as well as assistance with deployment and configuration in your own environment.
+
+In both cases, we support you in implementing the tool according to your business needs and technical constraints.
+
+We can also evolve the project by developing or improving features based on your specific requirements.
+::
+
 ::landing-cta
 ---
 title: Request a demonstration
