@@ -134,7 +134,7 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 
   ::landing-use-case
   ---
-  icon: i-lucide-map
+  icon: i-lucide-building
   title: Administraciones locales
   ---
   La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
@@ -150,7 +150,7 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 
   ::landing-use-case
   ---
-  icon: i-lucide-landmark
+  icon: i-lucide-info
   title: Organismos de gestión de destinos turísticos
   ---
   Un punto de interés turístico mal referenciado puede degradar la experiencia de los visitantes de su territorio.

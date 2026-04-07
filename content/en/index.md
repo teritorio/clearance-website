@@ -134,7 +134,7 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 
   ::landing-use-case
   ---
-  icon: i-lucide-map
+  icon: i-lucide-building
   title: Local authorities
   ---
   Adding a public facility that is not yet operational can lead to premature public use.
@@ -150,7 +150,7 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 
   ::landing-use-case
   ---
-  icon: i-lucide-landmark
+  icon: i-lucide-info
   title: Tourist destination management organizations
   ---
   A poorly referenced tourist point of interest can degrade the experience of visitors to your territory.

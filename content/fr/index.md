@@ -134,7 +134,7 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
 
   ::landing-use-case
   ---
-  icon: i-lucide-map
+  icon: i-lucide-building
   title: Collectivités territoriales
   ---
   L'ajout d'un équipement public pas encore opérationnel peut générer un usage prématuré par le public.
@@ -150,7 +150,7 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
 
   ::landing-use-case
   ---
-  icon: i-lucide-landmark
+  icon: i-lucide-info
   title: Organismes de gestion de destination touristique
   ---
   Un point d'intérêt touristique mal référencé peut dégrader l'expérience des visiteurs de votre territoire.
