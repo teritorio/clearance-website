@@ -213,11 +213,10 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 headline: Ofertas de servicios
 title: Un acompañamiento adaptado a sus necesidades
+description: "Ofrecemos el alojamiento de Clearance en modo SaaS, así como asistencia para el despliegue y la configuración en su propio entorno."
 ctaLabel: Ver nuestra hoja de ruta
 ctaTo: /docs/how-it-works/roadmap
 ---
-Ofrecemos el alojamiento de Clearance en modo SaaS, así como asistencia para el despliegue y la configuración en su propio entorno.
-
 En ambos casos, le acompañamos en la implementación de la herramienta según sus necesidades profesionales y sus restricciones técnicas.
 
 También podemos hacer evolucionar el proyecto desarrollando o mejorando funcionalidades, en función de sus necesidades específicas.

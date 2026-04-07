@@ -213,11 +213,10 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 headline: Service Offerings
 title: Support tailored to your needs
+description: "We offer Clearance hosting as a SaaS solution, as well as assistance with deployment and configuration in your own environment."
 ctaLabel: See our roadmap
 ctaTo: /docs/how-it-works/roadmap
 ---
-We offer Clearance hosting as a SaaS solution, as well as assistance with deployment and configuration in your own environment.
-
 In both cases, we support you in implementing the tool according to your business needs and technical constraints.
 
 We can also evolve the project by developing or improving features based on your specific requirements.
