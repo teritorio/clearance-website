@@ -23,15 +23,18 @@ if (!page.value) {
 const docsSections: string[] = ['how-it-works']
 const isDocsPage = computed(() => slug.value.length > 0 && docsSections.includes(slug.value[0] as string))
 
-const sectionSlug = computed(() => {
-  return isDocsPage.value ? slug.value[0] : undefined
+const sectionSlug = computed<string | undefined>(() => {
+  return isDocsPage.value ? slug.value[0] as string : undefined
 })
 
 const { data: sectionIndex } = await useAsyncData(
   `breadcrumb-section-${locale.value}-${sectionSlug.value ?? ''}`,
-  () => sectionSlug.value
-    ? queryCollection(collectionName.value).path(`/${locale.value}/${sectionSlug.value!}`).first()
-    : Promise.resolve(null),
+  () => {
+    const section = sectionSlug.value
+    return section
+      ? queryCollection(collectionName.value).path(`/${locale.value}/${section}`).first()
+      : Promise.resolve(null)
+  },
   { watch: [locale] },
 )
 

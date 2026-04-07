@@ -74,15 +74,6 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
 
-  routeRules: {
-    '/en/docs': { redirect: '/en/how-it-works/replication' },
-    '/fr/docs': { redirect: '/fr/how-it-works/replication' },
-    '/es/docs': { redirect: '/es/how-it-works/replication' },
-    '/en/docs/getting-started/overview': { redirect: '/en/how-it-works/replication' },
-    '/fr/docs/getting-started/overview': { redirect: '/fr/how-it-works/replication' },
-    '/es/docs/getting-started/overview': { redirect: '/es/how-it-works/replication' },
-  },
-
   nitro: {
     prerender: {
       routes: ['fr', 'en', 'es'].flatMap(locale => [
