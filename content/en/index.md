@@ -121,7 +121,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   icon: i-lucide-bus
   title: Mobility and transport operators
   ---
-  A road segment modification can disrupt a route calculator used by your services.
   ::
 
   ::landing-use-case
@@ -129,7 +128,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   icon: i-lucide-shield-alert
   title: Emergency and security services
   ---
-  A defibrillator relocation could engage your liability if the published information is incorrect.
   ::
 
   ::landing-use-case
@@ -137,7 +135,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   icon: i-lucide-building
   title: Local authorities
   ---
-  Adding a public facility that is not yet operational can lead to premature public use.
   ::
 
   ::landing-use-case
@@ -145,7 +142,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   icon: i-lucide-tree-pine
   title: Natural park managers
   ---
-  The removal or modification of a marked trail can endanger hikers following your routes.
   ::
 
   ::landing-use-case
@@ -153,7 +149,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   icon: i-lucide-info
   title: Tourist destination management organizations
   ---
-  A poorly referenced tourist point of interest can degrade the experience of visitors to your territory.
   ::
 
   ::landing-use-case
@@ -161,7 +156,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
   icon: i-lucide-database
   title: Territorial open data platforms
   ---
-  Deleting a reference can break joins with a business database and cause malfunctions.
   ::
 
 ::

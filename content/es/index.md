@@ -121,7 +121,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-bus
   title: Operadores de movilidad y transporte
   ---
-  La modificación de un segmento de red vial puede perturbar un calculador de rutas utilizado por sus servicios.
   ::
 
   ::landing-use-case
@@ -129,7 +128,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-shield-alert
   title: Servicios de emergencia y seguridad
   ---
-  El desplazamiento de un desfibrilador podría comprometer su responsabilidad si la información difundida es errónea.
   ::
 
   ::landing-use-case
@@ -137,7 +135,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-building
   title: Administraciones locales
   ---
-  La adición de un equipamiento público aún no operativo puede generar un uso prematuro por parte del público.
   ::
 
   ::landing-use-case
@@ -145,7 +142,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-tree-pine
   title: Gestores de parques naturales
   ---
-  La eliminación o modificación de un sendero señalizado puede poner en peligro a los excursionistas que siguen sus rutas.
   ::
 
   ::landing-use-case
@@ -153,7 +149,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-info
   title: Organismos de gestión de destinos turísticos
   ---
-  Un punto de interés turístico mal referenciado puede degradar la experiencia de los visitantes de su territorio.
   ::
 
   ::landing-use-case
@@ -161,7 +156,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
   icon: i-lucide-database
   title: Plataformas territoriales de datos abiertos
   ---
-  La eliminación de una referencia puede romper las uniones con una base de datos de negocio y provocar disfunciones.
   ::
 
 ::

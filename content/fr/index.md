@@ -121,7 +121,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   icon: i-lucide-bus
   title: Opérateurs de mobilité et de transport
   ---
-  La modification d'un segment de réseau routier peut perturber un calculateur d'itinéraire utilisé par vos services.
   ::
 
   ::landing-use-case
@@ -129,7 +128,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   icon: i-lucide-shield-alert
   title: Services de secours et de sécurité
   ---
-  Un déplacement d'un défibrillateur pourrait engager votre responsabilité si l'information diffusée est erronée.
   ::
 
   ::landing-use-case
@@ -137,7 +135,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   icon: i-lucide-building
   title: Collectivités territoriales
   ---
-  L'ajout d'un équipement public pas encore opérationnel peut générer un usage prématuré par le public.
   ::
 
   ::landing-use-case
@@ -145,7 +142,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   icon: i-lucide-tree-pine
   title: Gestionnaires de parcs naturels
   ---
-  La suppression ou la modification d'un sentier balisé peut mettre en danger les randonneurs qui suivent vos itinéraires.
   ::
 
   ::landing-use-case
@@ -153,7 +149,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   icon: i-lucide-info
   title: Organismes de gestion de destination touristique
   ---
-  Un point d'intérêt touristique mal référencé peut dégrader l'expérience des visiteurs de votre territoire.
   ::
 
   ::landing-use-case
@@ -161,7 +156,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
   icon: i-lucide-database
   title: Plateformes territoriales de données open data
   ---
-  La suppression d'une référence peut rompre les jointures avec une base métier et provoquer des dysfonctionnements.
   ::
 
 ::
