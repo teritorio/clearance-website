@@ -445,13 +445,13 @@ describe('landingServices', () => {
     expect(component.text()).not.toContain('See roadmap')
   })
 
-  it('has alternating background', async () => {
+  it('uses white background for visual alternation with References', async () => {
     const component = await mountSuspended(LandingServices, {
       props: {
         title: 'Services Title',
       },
     })
-    expect(component.find('section').classes()).toContain('bg-zinc-100')
+    expect(component.find('section').classes()).not.toContain('bg-zinc-100')
   })
 })
 
