@@ -13,7 +13,7 @@ const resolvedSecondaryTo = useLocaleTo(computed(() => props.secondaryTo))
 </script>
 
 <template>
-  <section class="bg-zinc-100 py-16 sm:py-24">
+  <section class="py-16 sm:py-24">
     <UContainer>
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">

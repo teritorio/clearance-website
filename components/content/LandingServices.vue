@@ -10,7 +10,7 @@ const resolvedCtaTo = useLocaleTo(computed(() => props.ctaTo))
 </script>
 
 <template>
-  <section class="py-16 sm:py-24">
+  <section class="bg-zinc-100 py-16 sm:py-24">
     <UContainer>
       <LandingSectionHeader :headline="headline" :title="title" />
       <div v-if="$slots.default" class="mx-auto mt-8 max-w-3xl text-lg text-muted">

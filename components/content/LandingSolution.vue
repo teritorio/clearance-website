@@ -15,7 +15,7 @@ defineProps<{
 </script>
 
 <template>
-  <section class="py-16 sm:py-24 bg-zinc-50">
+  <section class="py-16 sm:py-24">
     <UContainer>
       <LandingSectionHeader :headline="headline" :title="title" :description="description" />
 

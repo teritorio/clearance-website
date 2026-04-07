@@ -209,6 +209,17 @@ ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
 
 ::
 
+::landing-cta
+---
+title: Un logiciel libre
+description: "Clearance est un logiciel libre sous licence AGPL-3.0."
+primaryLabel: Comment ça marche ?
+primaryTo: /docs
+secondaryLabel: Voir sur GitHub
+secondaryTo: https://github.com/teritorio/clearance
+---
+::
+
 ::landing-services
 ---
 headline: Offres de services
