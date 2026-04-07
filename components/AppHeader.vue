@@ -9,7 +9,7 @@ const navItems = computed(() => [
   {
     label: t('nav.docs'),
     icon: 'i-lucide-book-open',
-    to: localePath('/docs'),
+    to: localePath('/how-it-works/replication'),
   },
   {
     label: t('nav.contact'),
