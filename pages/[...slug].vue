@@ -13,7 +13,6 @@ const path = computed(() => {
 const { data: page } = await useAsyncData(
   `slug-${locale.value}-${slug.value.join('/')}`,
   () => queryCollection(collectionName.value).path(path.value).first(),
-  { watch: [locale] },
 )
 
 if (!page.value) {
@@ -35,7 +34,6 @@ const { data: sectionIndex } = await useAsyncData(
       ? queryCollection(collectionName.value).path(`/${locale.value}/${section}`).first()
       : Promise.resolve(null)
   },
-  { watch: [locale] },
 )
 
 const { data: rawSurround } = await useAsyncData(
@@ -43,7 +41,6 @@ const { data: rawSurround } = await useAsyncData(
   () => isDocsPage.value
     ? queryCollectionItemSurroundings(collectionName.value, path.value, { before: 2, after: 2 })
     : Promise.resolve(null),
-  { watch: [locale] },
 )
 
 const surround = computed(() => {
