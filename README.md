@@ -1,7 +1,6 @@
 # Clearance Website
 
-Marketing website for [Clearance](https://github.com/teritorio/clearance) — an open-source quality gate for OpenStreetMap data.
-
+Website for [Clearance](https://github.com/teritorio/clearance) — a quality filter for OSM replication.
 ## Setup
 
 ```bash
