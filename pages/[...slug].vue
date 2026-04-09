@@ -20,8 +20,15 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-const docsSections: string[] = ['how-it-works']
-const isDocsPage = computed(() => slug.value.length > 0 && docsSections.includes(slug.value[0] as string))
+const { data: navigation } = await useAsyncData(
+  `navigation-${locale.value}`,
+  () => queryCollectionNavigation(collectionName.value),
+  { watch: [locale] },
+)
+
+const docsSections = computed(() => extractDocsSections(navigation.value ?? []))
+
+const isDocsPage = computed(() => slug.value.length > 0 && docsSections.value.includes(slug.value[0] as string))
 
 const sectionSlug = computed<string | undefined>(() => {
   return isDocsPage.value ? slug.value[0] as string : undefined
@@ -50,7 +57,8 @@ const surround = computed(() => {
   if (!rawSurround.value)
     return null
   const items = rawSurround.value as Array<{ path?: string, redirect?: string } | null>
-  const isDocsItem = (item: typeof items[number]) => item && !item.redirect && item.path?.includes('/how-it-works/')
+  const section = sectionSlug.value
+  const isDocsItem = (item: typeof items[number]) => item && !item.redirect && section && item.path?.includes(`/${section}/`)
   const prev = [...items.slice(0, 2)].reverse().find(isDocsItem) ?? null
   const next = items.slice(2).find(isDocsItem) ?? null
   return [prev, next] as typeof rawSurround.value
