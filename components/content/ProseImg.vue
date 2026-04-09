@@ -1,3 +1,8 @@
+<!--
+  Override MDC's default ProseImg to use a native <img> instead of <NuxtImg>.
+  Workaround for https://github.com/nuxt/image/issues/1394: ipxStatic fails
+  with custom baseURL during SSG. Remove this file once the upstream bug is fixed.
+-->
 <script setup lang="ts">
 import { joinURL, withLeadingSlash, withTrailingSlash } from 'ufo'
 
