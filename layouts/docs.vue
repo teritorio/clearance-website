@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { withoutBase } from 'ufo'
+
 const { t, locale } = useI18n()
 
 const route = useRoute()
@@ -23,7 +25,8 @@ const { data: navigation } = await useAsyncData(
 )
 
 const sectionSlug = computed(() => {
-  const segments = route.path.split('/').filter(Boolean)
+  const path = withoutBase(route.path, useRuntimeConfig().app.baseURL)
+  const segments = path.split('/').filter(Boolean)
   // segments: [locale, section, ...rest]
   return segments[1] ?? ''
 })
