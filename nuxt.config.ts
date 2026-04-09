@@ -49,6 +49,10 @@ export default defineNuxtConfig({
     failOnError: true,
   },
 
+  image: {
+    provider: 'none',
+  },
+
   ogImage: {
     enabled: false,
   },
