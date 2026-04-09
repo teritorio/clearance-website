@@ -4,7 +4,9 @@ export interface NavigationNode {
 }
 
 export function extractDocsSections(navigation: NavigationNode[]): string[] {
-  return navigation
+  // Navigation tree has a locale root node (e.g. /fr) with sections as children
+  const sections = navigation.flatMap(node => node.children ?? [])
+  return sections
     .filter(node => node.children?.length)
     .map(node => node.path.split('/').pop()!)
 }

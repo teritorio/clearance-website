@@ -2,27 +2,42 @@ import { describe, expect, it } from 'vitest'
 import { extractDocsSections, findNavigationNode } from '~/utils/docs-sections'
 
 describe('extractDocsSections', () => {
-  it('returns slugs of nodes that have children', () => {
+  it('returns slugs of sections that have children under locale root', () => {
     const navigation = [
-      { path: '/fr/how-it-works', children: [{ path: '/fr/how-it-works/replication' }] },
-      { path: '/fr/contact' },
+      {
+        path: '/fr',
+        children: [
+          { path: '/fr/how-it-works', children: [{ path: '/fr/how-it-works/replication' }] },
+          { path: '/fr/contact' },
+        ],
+      },
     ]
     expect(extractDocsSections(navigation)).toEqual(['how-it-works'])
   })
 
   it('returns multiple sections when several have children', () => {
     const navigation = [
-      { path: '/fr/how-it-works', children: [{ path: '/fr/how-it-works/replication' }] },
-      { path: '/fr/guides', children: [{ path: '/fr/guides/setup' }] },
-      { path: '/fr/contact' },
+      {
+        path: '/fr',
+        children: [
+          { path: '/fr/how-it-works', children: [{ path: '/fr/how-it-works/replication' }] },
+          { path: '/fr/guides', children: [{ path: '/fr/guides/setup' }] },
+          { path: '/fr/contact' },
+        ],
+      },
     ]
     expect(extractDocsSections(navigation)).toEqual(['how-it-works', 'guides'])
   })
 
-  it('returns an empty array when no nodes have children', () => {
+  it('returns an empty array when no sections have children', () => {
     const navigation = [
-      { path: '/fr/contact' },
-      { path: '/fr/about' },
+      {
+        path: '/fr',
+        children: [
+          { path: '/fr/contact' },
+          { path: '/fr/about' },
+        ],
+      },
     ]
     expect(extractDocsSections(navigation)).toEqual([])
   })
@@ -31,10 +46,15 @@ describe('extractDocsSections', () => {
     expect(extractDocsSections([])).toEqual([])
   })
 
-  it('ignores nodes with empty children arrays', () => {
+  it('ignores sections with empty children arrays', () => {
     const navigation = [
-      { path: '/fr/how-it-works', children: [] },
-      { path: '/fr/contact' },
+      {
+        path: '/fr',
+        children: [
+          { path: '/fr/how-it-works', children: [] },
+          { path: '/fr/contact' },
+        ],
+      },
     ]
     expect(extractDocsSections(navigation)).toEqual([])
   })
