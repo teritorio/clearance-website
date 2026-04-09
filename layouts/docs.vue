@@ -20,7 +20,6 @@ const collectionName = computed(() => `content_${locale.value}` as const)
 const { data: navigation } = await useAsyncData(
   `docs-navigation-${locale.value}`,
   () => queryCollectionNavigation(collectionName.value),
-  { watch: [locale] },
 )
 
 const sectionSlug = computed(() => {

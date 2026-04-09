@@ -6,7 +6,6 @@ const collectionName = computed(() => `content_${locale.value}` as const)
 const { data: page } = await useAsyncData(
   `contact-${locale.value}`,
   () => queryCollection(collectionName.value).path(`/${locale.value}/contact`).first(),
-  { watch: [locale] },
 )
 
 useHead({
