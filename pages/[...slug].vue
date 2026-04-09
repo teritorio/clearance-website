@@ -26,11 +26,7 @@ const { data: navigation } = await useAsyncData(
   { watch: [locale] },
 )
 
-const docsSections = computed(() =>
-  (navigation.value ?? [])
-    .filter(node => node.children?.length)
-    .map(node => node.path.split('/').pop()!),
-)
+const docsSections = computed(() => extractDocsSections(navigation.value ?? []))
 
 const isDocsPage = computed(() => slug.value.length > 0 && docsSections.value.includes(slug.value[0] as string))
 
