@@ -166,7 +166,7 @@ headline: References
 title: Over 40 organizations already use Clearance
 description: "To reuse OpenStreetMap data with greater confidence."
 ctaLabel: Example project on Clearance
-ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
+ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 
   ::landing-reference
