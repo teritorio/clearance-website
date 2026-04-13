@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const APP_URL = 'https://clearance.teritorio.xyz'
+const APP_URL = 'https://app.clearance.teritorio.xyz'
 
 const { t } = useI18n()
 const localePath = useLocalePath()

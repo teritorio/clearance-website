@@ -28,7 +28,7 @@ describe('appHeader', () => {
   it('renders See Clearance CTA button with correct URL', async () => {
     const component = await mountSuspended(AppHeader)
     const html = component.html()
-    expect(html).toContain('https://clearance.teritorio.xyz')
+    expect(html).toContain('https://app.clearance.teritorio.xyz')
     expect(html).toContain('See Clearance')
   })
 

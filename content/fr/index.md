@@ -166,7 +166,7 @@ headline: Références
 title: Plus de 40 organisations utilisent déjà Clearance
 description: "Pour réutiliser les données OpenStreetMap avec davantage de confiance."
 ctaLabel: Exemple de projet sur Clearance
-ctaTo: https://clearance.teritorio.xyz/france_landes_poi/changes_logs
+ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
 ---
 
   ::landing-reference
