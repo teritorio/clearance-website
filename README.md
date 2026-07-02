@@ -1,6 +1,7 @@
 # Clearance Website
 
 Website for [Clearance](https://github.com/teritorio/clearance) — a quality filter for OSM replication.
+
 ## Setup
 
 ```bash
