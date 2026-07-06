@@ -11,7 +11,7 @@ export default defineI18nLocale(async () => ({
     product: 'Producto',
     resources: 'Recursos',
     company: 'Empresa',
-    copyright: '© {year} {teritorio}.',
+    copyright: '© {year} {teritorio}, CC BY-SA 4.0.',
   },
   contact: {
     title: 'Contáctenos',
