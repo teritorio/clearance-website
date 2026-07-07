@@ -15,12 +15,12 @@ export default defineI18nLocale(async () => ({
   },
   contact: {
     title: 'Contáctenos',
-    description: '¿Tiene alguna pregunta sobre Clearance? ¿Necesita una demo o asistencia?',
+    description: '¿Tiene alguna duda sobre Clearance? ¿Necesita una demo o asistencia?',
     demoTitle: 'Solicitar una demostración',
-    demoDescription: 'Durante una demostración, nos tomamos el tiempo para:',
+    demoDescription: 'Durante una demostración, tomamos el tiempo de:',
     demoItem1: 'intercambiar sobre su contexto y necesidades',
     demoItem2: 'presentar los conceptos y el funcionamiento de Clearance',
-    demoItem3: 'ilustrar casos de uso concretos',
+    demoItem3: 'mostrar casos de uso concretos',
     demoItem4: 'compartir nuestra hoja de ruta',
     ctaLabel: 'Contáctenos',
     externalUrl: 'https://www.teritorio.fr/es/contacto/',
@@ -35,7 +35,7 @@ export default defineI18nLocale(async () => ({
   },
   error: {
     title: 'Página no encontrada',
-    message: 'La página que busca no existe o ha sido movida.',
+    message: 'La página que busca no existe o se mudó.',
     backHome: 'Volver al inicio',
   },
   page: {
