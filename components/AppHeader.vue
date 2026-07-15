@@ -21,12 +21,6 @@ const navItems = computed(() => [
     icon: 'i-lucide-mail',
     to: localePath('/contact'),
   },
-  {
-    label: t('nav.github'),
-    icon: 'i-lucide-github',
-    to: 'https://github.com/teritorio/clearance',
-    target: '_blank',
-  },
 ])
 </script>
 
