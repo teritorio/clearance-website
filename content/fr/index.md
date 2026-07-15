@@ -203,6 +203,13 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
 
 ::
 
+::landing-news
+---
+headline: Actualités
+title: Dernières nouvelles
+---
+::
+
 ::landing-cta
 ---
 title: Un logiciel libre

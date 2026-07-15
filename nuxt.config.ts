@@ -88,6 +88,7 @@ export default defineNuxtConfig({
       routes: ['fr', 'en', 'es'].flatMap(locale => [
         `/${locale}`,
         `/${locale}/contact`,
+        `/${locale}/news`,
         `/${locale}/how-it-works`,
         `/${locale}/how-it-works/replication`,
         `/${locale}/how-it-works/locha`,

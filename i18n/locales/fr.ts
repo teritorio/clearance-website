@@ -41,4 +41,17 @@ export default defineI18nLocale(async () => ({
     empty: 'Cette page n\'a pas encore de contenu.',
     notFound: 'Page introuvable',
   },
+  news: {
+    headline: 'Actualités',
+    pageTitle: 'Dernières nouvelles',
+    pageDescription: 'Suivez l\'évolution de Clearance : nouvelles versions, articles et annonces.',
+    seeAll: 'Toutes les actualités',
+    readMore: 'Lire l\'article',
+    empty: 'Aucune actualité pour le moment.',
+    types: {
+      release: 'Version',
+      post: 'Article',
+      announcement: 'Annonce',
+    },
+  },
 }))
