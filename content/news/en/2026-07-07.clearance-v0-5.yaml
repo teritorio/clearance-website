@@ -1,5 +1,5 @@
 title: 'Clearance v0.5: a key milestone for demanding OSM data reuse'
 date: 2026-07-07
 description: 'Clearance v0.5 introduces a redesigned LoCha engine, new validators (delayed changes, invalid geometries) and filterable Atom feeds. A significant step forward for securing OpenStreetMap replication in critical contexts: emergency services, mobility operators, local authorities.'
-url: 'https://www.teritorio.fr/en/blogs/clearance-v0-5-une-etape-importante-pour-fiabiliser-les-reutilisations-les-plus-exigeantes-des-donnees-openstreetmap/'
+url: 'https://www.teritorio.fr/en/blogs/clearance-v0-5-making-the-most-demanding-reuse-of-openstreetmap-data-more-reliable/'
 type: release
