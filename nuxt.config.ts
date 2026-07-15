@@ -51,6 +51,7 @@ export default defineNuxtConfig({
 
   sitemap: {
     autoLastmod: true,
+    exclude: ['/fr/how-it-works', '/en/how-it-works', '/es/how-it-works'],
   },
 
   linkChecker: {
