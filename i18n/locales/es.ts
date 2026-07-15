@@ -3,6 +3,7 @@ export default defineI18nLocale(async () => ({
     home: 'Clearance',
     docs: '¿Cómo funciona?',
     contact: 'Contacto',
+    news: 'Noticias',
     github: 'GitHub',
     seeClearance: 'Ver Clearance',
     changeLanguage: 'Cambiar idioma',

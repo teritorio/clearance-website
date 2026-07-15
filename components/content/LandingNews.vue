@@ -5,6 +5,7 @@ defineProps<{
 }>()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
+const { typeColor, formatDate } = useNewsFormatting()
 
 const collectionName = computed(() => `news_${locale.value}` as 'news_fr' | 'news_en' | 'news_es')
 
@@ -17,23 +18,6 @@ const { data: news } = await useAsyncData(
       .slice(0, 3)
   },
 )
-
-function typeColor(type: string | undefined) {
-  const map: Record<string, 'primary' | 'success' | 'info'> = {
-    release: 'primary',
-    post: 'info',
-    announcement: 'success',
-  }
-  return map[type ?? 'announcement'] ?? 'primary'
-}
-
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString(locale.value, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  })
-}
 </script>
 
 <template>

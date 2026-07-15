@@ -14,7 +14,7 @@ function defineLocaleCollection(locale: typeof locales[number]) {
 
 const newsSchema = z.object({
   title: z.string(),
-  date: z.string(),
+  date: z.preprocess(v => v instanceof Date ? v.toISOString().split('T')[0] : v, z.string()),
   description: z.string(),
   url: z.string().optional(),
   type: z.enum(['release', 'post', 'announcement']).default('announcement'),
