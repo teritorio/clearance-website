@@ -15,7 +15,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "prepare": "nuxi prepare && simple-git-hooks",
-    "postinstall": "nuxi prepare"
+    "postinstall": "nuxi prepare && pnpm rebuild better-sqlite3"
   },
   "dependencies": {
     "@nuxt/content": "^3.12.0",
