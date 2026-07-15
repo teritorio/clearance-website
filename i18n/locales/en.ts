@@ -3,6 +3,7 @@ export default defineI18nLocale(async () => ({
     home: 'Clearance',
     docs: 'How it works?',
     contact: 'Contact',
+    news: 'News',
     github: 'GitHub',
     seeClearance: 'See Clearance',
     changeLanguage: 'Change language',
@@ -40,5 +41,18 @@ export default defineI18nLocale(async () => ({
   page: {
     empty: 'This page has no content yet.',
     notFound: 'Page not found',
+  },
+  news: {
+    headline: 'News',
+    pageTitle: 'Latest news',
+    pageDescription: 'Follow Clearance updates: new releases, articles and announcements.',
+    seeAll: 'All news',
+    readMore: 'Read article',
+    empty: 'No news yet.',
+    types: {
+      release: 'Release',
+      post: 'Article',
+      announcement: 'Announcement',
+    },
   },
 }))
