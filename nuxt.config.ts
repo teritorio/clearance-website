@@ -40,6 +40,15 @@ export default defineNuxtConfig({
     },
   },
 
+  robots: {
+    groups: [
+      {
+        userAgent: ['*'],
+        disallow: ['/api/', '/*/validators', '/*/changes_logs'],
+      },
+    ],
+  },
+
   sitemap: {
     autoLastmod: true,
   },
