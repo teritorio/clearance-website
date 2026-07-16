@@ -1,11 +1,15 @@
 <script setup lang="ts">
 const { t, tm } = useI18n()
 
-const items = computed(() =>
-  (tm('faq.items') as { question: string, answer: string }[]).map(
+const raw = computed(() => tm('faq.items'))
+const items = computed(() => {
+  const list = raw.value
+  if (!Array.isArray(list))
+    return []
+  return (list as { question: string, answer: string }[]).map(
     item => ({ label: item.question, content: item.answer }),
-  ),
-)
+  )
+})
 </script>
 
 <template>

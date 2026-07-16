@@ -15,7 +15,10 @@ useHead({
   ],
 })
 
-const faqItems = computed(() => tm('faq.items') as { question: string, answer: string }[])
+const faqItems = computed(() => {
+  const raw = tm('faq.items')
+  return Array.isArray(raw) ? raw as { question: string, answer: string }[] : []
+})
 
 useSchemaOrg([
   defineWebPage(),
