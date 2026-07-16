@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { t, locale } = useI18n()
+const { t, tm, locale } = useI18n()
 
 const collectionName = computed(() => `content_${locale.value}` as const)
 
@@ -9,11 +9,31 @@ const { data: page } = await useAsyncData(
 )
 
 useHead({
-  title: () => page.value?.title,
+  title: () => page.value?.seoTitle ?? page.value?.title,
   meta: [
     { name: 'description', content: () => page.value?.description },
   ],
 })
+
+const faqItems = computed(() => {
+  const raw = tm('faq.items') as unknown
+  return Array.isArray(raw) ? raw as { question: string, answer: string }[] : []
+})
+
+useSchemaOrg([
+  defineWebPage(),
+  {
+    '@type': 'FAQPage',
+    'mainEntity': faqItems.value.map(item => ({
+      '@type': 'Question',
+      'name': item.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': item.answer,
+      },
+    })),
+  },
+])
 </script>
 
 <template>

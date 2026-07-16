@@ -12,17 +12,18 @@ describe('appHeader', () => {
     expect(localeButton.text()).toContain('EN')
   })
 
-  it('renders docs and contact navigation items', async () => {
+  it('renders docs, news and contact navigation items', async () => {
     const component = await mountSuspended(AppHeader)
     const html = component.html()
     expect(html).toContain('/en/how-it-works/replication')
+    expect(html).toContain('/en/news')
     expect(html).toContain('/en/contact')
   })
 
-  it('renders GitHub link', async () => {
+  it('does not render GitHub link in header navigation', async () => {
     const component = await mountSuspended(AppHeader)
     const html = component.html()
-    expect(html).toContain('https://github.com/teritorio/clearance')
+    expect(html).not.toContain('https://github.com/teritorio/clearance')
   })
 
   it('renders See Clearance CTA button with correct URL', async () => {

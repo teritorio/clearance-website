@@ -1,6 +1,6 @@
 ---
 title: "Filtre qualité pour la réplication OpenStreetMap"
-description: "Contrôlez la qualité de votre flux de réplication OpenStreetMap. Clearance filtre automatiquement les modifications conformes et retient les changements suspects pour vérification."
+description: "Contrôlez la qualité de votre flux de réplication OpenStreetMap. Clearance filtre automatiquement les modifications valides et retient les changements suspects pour vérification."
 ---
 
 ::landing-hero
@@ -17,7 +17,7 @@ primaryTo: /contact
 ---
 headline: Le problème
 title: Comment réutiliser les données OpenStreetMap avec confiance ?
-description: "Lorsque les données OpenStreetMap deviennent critiques pour un service, une question apparaît : comment maîtriser leur qualité ?"
+description: "Lorsque la réutilisation des données OpenStreetMap devient critique pour un service, une question apparaît : comment maîtriser leur qualité ?"
 ---
 
   ::landing-problem-card
@@ -31,7 +31,7 @@ description: "Lorsque les données OpenStreetMap deviennent critiques pour un se
   ---
   icon: i-lucide-alert-triangle
   ---
-  Les outils classiques sont incomplets:
+  Les outils existants sont incomplets:
   - les outils de réplication n'intègrent pas de filtre qualité.
   - les outils qualité interviennent sur des données déjà répliquées.
   ::
@@ -56,9 +56,9 @@ correctionsLabel: Corrections
   ::landing-step
   ---
   icon: i-lucide-check-circle
-  title: Changements conformes
+  title: Changements valides
   ---
-  Les changements conformes sont intégrés automatiquement et immédiatement.
+  Les changements valides sont intégrés automatiquement et immédiatement.
   ::
 
   ::landing-step
@@ -66,7 +66,7 @@ correctionsLabel: Corrections
   icon: i-lucide-pause-circle
   title: Modifications sensibles
   ---
-  Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM. Au prochain contrôle si tout est conforme, les modifications passeront le filtre et seront intégrées à la copie locale.
+  Les modifications sensibles sont mises en attente pour vérification et, si nécessaire, correction dans OSM. Au prochain contrôle si tout est valide, les modifications passeront le filtre et seront intégrées à la copie locale.
   ::
 
 ::
@@ -81,7 +81,7 @@ headline: En pratique
   icon: i-lucide-map-pin
   title: Territoire, thématique et collaboration
   ---
-  Clearance vous permet de définir des projets territoriaux et thématiques (tags OSM) sur lesquels votre équipe collabore pour suivre et maintenir la qualité des données.
+  Clearance vous permet de définir des projets territoriaux et thématiques (ensemble de tags OSM) sur lesquels votre équipe collabore pour suivre et maintenir la qualité des données.
   ::
 
   ::landing-practice-item
@@ -93,7 +93,7 @@ headline: En pratique
 
   - déplacement d'un défibrillateur qui pourrait engager votre responsabilité
   - modification d'un segment de réseau routier susceptible de perturber un calculateur d'itinéraire
-  - ajout d'un équipement public pas encore opérationnel, susceptible de générer un usage prématuré
+  - ajout d'un équipement public non encore opérationnel, susceptible de générer un usage prématuré
   - suppression d'une référence pouvant rompre les jointures avec une base métier
 
   Ces situations sont courantes lorsque les données OSM sont utilisées dans un contexte opérationnel.
@@ -174,7 +174,7 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
-  S'assure du maintien des informations liées aux voies et à la signalisation.
+  S'assure du maintien des informations liées aux voies et à la signalisation en France.
   ::
 
   ::landing-reference
@@ -182,7 +182,7 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Sécurité civile de Navarre
   ---
-  Garantir la qualité des données liées à la voirie et au système d'adressage utilisé pour l'envoi des secours en Navarre, Espagne. Les données OSM sont utilisées comme référentiel pour le calcul d'itinéraire des interventions.
+  Garantir la qualité des données liées au réseau de voirie et au système d'adressage utilisé pour l'envoi des secours en Navarre, Espagne. Les données OSM sont utilisées comme référentiel pour le calcul d'itinéraire des interventions.
   ::
 
   ::landing-reference
@@ -190,7 +190,7 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/otourisme.png
   title: 30 agences départementales et offices de tourisme
   ---
-  Contrôler la qualité et suivre les contributions OSM sur de nombreuses thématiques en France hexagonale et outre-mers : équipements de loisirs, santé, commerces alimentaires, etc.
+  Contrôler la qualité et suivre les contributions OSM sur de nombreuses thématiques en France hexagonale et outre-mer : équipements de loisirs, santé, commerces alimentaires, etc.
   ::
 
   ::landing-reference
@@ -218,10 +218,10 @@ secondaryTo: https://github.com/teritorio/clearance
 ---
 headline: Offres de services
 title: Un accompagnement adapté à vos besoins
-ctaLabel: Voir notre roadmap
+ctaLabel: Voir notre feuille de route
 ctaTo: /how-it-works/roadmap
 ---
-Nous proposons l'hébergement de Clearance en mode SaaS, ainsi qu'une assistance au déploiement et à la configuration dans votre propre environnement.
+Nous proposons l'hébergement de Clearance en mode SaaS, ainsi qu'une assistance au déploiement et à la configuration dans votre propre infrastructure.
 
 Dans les deux cas, nous vous accompagnons dans la mise en œuvre de l'outil selon vos besoins métier et vos contraintes techniques.
 
@@ -231,10 +231,13 @@ Nous pouvons également faire évoluer le projet en développant ou en améliora
 ::landing-cta
 ---
 title: Demander une démonstration
-description: "Lors d'une démonstration, nous échangeons sur votre contexte et vos besoins, vous présentons le fonctionnement de Clearance, illustrons des cas d'usage concrets et partageons notre feuille de route."
+description: "Lors d'une démonstration, nous échangeons sur votre contexte et vos besoins, nous vous présentons le fonctionnement de Clearance, illustrons des cas d'usage concrets et partageons notre feuille de route."
 primaryLabel: Nous contacter
 primaryTo: /contact
 secondaryLabel: Comment ça marche ?
 secondaryTo: /how-it-works/replication
 ---
+::
+
+::landing-faq
 ::

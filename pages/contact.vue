@@ -9,7 +9,7 @@ const { data: page } = await useAsyncData(
 )
 
 useHead({
-  title: () => page.value?.title,
+  title: () => page.value?.seoTitle ?? page.value?.title,
   meta: [
     { name: 'description', content: () => page.value?.description },
   ],

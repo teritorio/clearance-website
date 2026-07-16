@@ -11,22 +11,6 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      script: [
-        {
-          innerHTML: `
-            var _paq = window._paq = window._paq || [];
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function() {
-              var u="https://matomo.teritorio.xyz/";
-              _paq.push(['setTrackerUrl', u+'matomo.php']);
-              _paq.push(['setSiteId', '32']);
-              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-            })();
-          `,
-        },
-      ],
       link: [
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       ],
@@ -56,8 +40,18 @@ export default defineNuxtConfig({
     },
   },
 
+  robots: {
+    groups: [
+      {
+        userAgent: ['*'],
+        disallow: ['/api/', '/*/validators', '/*/changes_logs'],
+      },
+    ],
+  },
+
   sitemap: {
     autoLastmod: true,
+    exclude: ['/fr/how-it-works', '/en/how-it-works', '/es/how-it-works'],
   },
 
   linkChecker: {
@@ -95,6 +89,7 @@ export default defineNuxtConfig({
       routes: ['fr', 'en', 'es'].flatMap(locale => [
         `/${locale}`,
         `/${locale}/contact`,
+        `/${locale}/news`,
         `/${locale}/how-it-works`,
         `/${locale}/how-it-works/replication`,
         `/${locale}/how-it-works/locha`,

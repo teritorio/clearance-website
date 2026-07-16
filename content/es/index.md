@@ -1,13 +1,13 @@
 ---
 title: "Filtro de calidad para la replicación OpenStreetMap"
-description: "Controle la calidad de su flujo de replicación OpenStreetMap. Clearance filtra automáticamente los cambios conformes y retiene los sospechosos para verificación."
+description: "Controle la calidad de su flujo de replicación OpenStreetMap. Clearance filtra automáticamente los cambios válidos y retiene los sospechosos para verificación."
 ---
 
 ::landing-hero
 ---
 headline: Filtro de calidad para la replicación OSM
 title: Controle la calidad de su replicación OpenStreetMap
-description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, falsear un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
+description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, alterar un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
 primaryLabel: Solicitar una demo
 primaryTo: /contact
 ---
@@ -17,7 +17,7 @@ primaryTo: /contact
 ---
 headline: El problema
 title: ¿Cómo reutilizar los datos de OpenStreetMap con confianza?
-description: "Cuando los datos de OpenStreetMap se vuelven críticos para un servicio, surge una pregunta: ¿cómo garantizar su calidad?"
+description: "Cuando reutilizar los datos de OpenStreetMap se vuelve crítico para un servicio, surge una pregunta: ¿cómo garantizar su calidad?"
 ---
 
   ::landing-problem-card
@@ -31,7 +31,7 @@ description: "Cuando los datos de OpenStreetMap se vuelven críticos para un ser
   ---
   icon: i-lucide-alert-triangle
   ---
-  Las herramientas clásicas son incompletas:
+  Las herramientas que existen son incompletas:
   - las herramientas de replicación no incluyen un filtro de calidad.
   - las herramientas de calidad actúan sobre datos ya replicados.
   ::
@@ -56,9 +56,9 @@ correctionsLabel: Correcciones
   ::landing-step
   ---
   icon: i-lucide-check-circle
-  title: Cambios conformes
+  title: Cambios válidos
   ---
-  Los cambios conformes se integran automática e inmediatamente.
+  Los cambios válidos se integran automática e inmediatamente.
   ::
 
   ::landing-step
@@ -66,7 +66,7 @@ correctionsLabel: Correcciones
   icon: i-lucide-pause-circle
   title: Modificaciones sensibles
   ---
-  Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM. En la siguiente verificación, si todo es conforme, las modificaciones pasarán el filtro y se integrarán a la copia local.
+  Las modificaciones sensibles se retienen para verificación y, si es necesario, corrección en OSM. En la siguiente verificación, si todo es válido, las modificaciones pasarán el filtro y se integrarán a la copia local.
   ::
 
 ::
@@ -81,7 +81,7 @@ headline: En la práctica
   icon: i-lucide-map-pin
   title: Territorio, temática y colaboración
   ---
-  Clearance le permite definir proyectos territoriales y temáticos (tags OSM) en los que su equipo colabora para monitorear y mantener la calidad de los datos.
+  Clearance le permite definir proyectos territoriales y temáticos (conjunto de tags OSM) en los que su equipo colabora para monitorear y mantener la calidad de los datos.
   ::
 
   ::landing-practice-item
@@ -89,7 +89,7 @@ headline: En la práctica
   icon: i-lucide-list-checks
   title: Reglas adaptadas a su actividad
   ---
-  Clearance permite aplicar controles adaptados a su necesidad. Por ejemplo:
+  Clearance permite aplicar controles adaptados a sus requerimientos. Por ejemplo:
 
   - desplazamiento de un desfibrilador que podría comprometer su responsabilidad
   - modificación de un segmento de red vial susceptible de perturbar un calculador de rutas
@@ -174,7 +174,7 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
-  Asegura el mantenimiento de la información de vías y señalización.
+  Asegura el mantenimiento de la información de vías y señalización en Francia.
   ::
 
   ::landing-reference
@@ -182,13 +182,13 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Protección Civil de Navarra
   ---
-  Garantiza la calidad de los datos viales y de direccionamiento utilizados para el cálculo de rutas de intervención de emergencia en Navarra, España. Los datos OSM sirven como referencia para el enrutamiento.
+  Garantiza la calidad de los datos de la red vial y de direcciones utilizados para el cálculo de rutas de intervención de emergencia en Navarra, España. Los datos OSM sirven como referencia para el enrutamiento.
   ::
 
   ::landing-reference
   ---
   logo: /logos/otourisme.png
-  title: 30 agencias departamentales y oficinas de turismo
+  title: 30 agencias provinciales y oficinas de turismo
   ---
   Controlan la calidad y siguen las contribuciones OSM en numerosas temáticas en Francia continental y de ultramar: equipamientos de ocio, salud, comercios alimentarios, etc.
   ::
@@ -221,7 +221,7 @@ title: Un acompañamiento adaptado a sus necesidades
 ctaLabel: Ver nuestra hoja de ruta
 ctaTo: /how-it-works/roadmap
 ---
-Ofrecemos el alojamiento de Clearance en modo SaaS, así como asistencia para el despliegue y la configuración en su propio entorno.
+Ofrecemos el alojamiento de Clearance en modo SaaS, así como asistencia para el despliegue y la configuración en su propia infraestructura.
 
 En ambos casos, le acompañamos en la implementación de la herramienta según sus necesidades profesionales y sus restricciones técnicas.
 
@@ -237,4 +237,7 @@ primaryTo: /contact
 secondaryLabel: ¿Cómo funciona?
 secondaryTo: /how-it-works/replication
 ---
+::
+
+::landing-faq
 ::

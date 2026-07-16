@@ -1,6 +1,6 @@
 ---
 title: "Quality Filter for OpenStreetMap Replication"
-description: "Control the quality of your OpenStreetMap replication feed. Clearance automatically passes compliant changes and holds suspicious ones for review."
+description: "Control the quality of your OpenStreetMap replication feed. Clearance automatically passes valid changes and holds suspicious ones for review."
 ---
 
 ::landing-hero
@@ -17,21 +17,21 @@ primaryTo: /contact
 ---
 headline: The problem
 title: How can you reuse OpenStreetMap data with confidence?
-description: "When OpenStreetMap data becomes critical for a service, a question arises: how do you ensure its quality?"
+description: "When reusing OpenStreetMap data becomes critical for a service, a question arises: how do you ensure its quality?"
 ---
 
   ::landing-problem-card
   ---
   icon: i-lucide-refresh-cw
   ---
-  OpenStreetMap is constantly evolving. Every day, millions of changes are made by a global community of contributors: volunteers, public institutions, and businesses. This dynamism is a strength, but how do you prevent errors — most often unintentional — from affecting your services?
+  OpenStreetMap is constantly evolving. Every day, millions of changes are made by a global community of contributors: volunteers, public institutions, and businesses. This dynamism is a strength, but how do you prevent errors, most often unintentional, from affecting your services?
   ::
 
   ::landing-problem-card
   ---
   icon: i-lucide-alert-triangle
   ---
-  Traditional tools are incomplete:
+  Existing tools are incomplete:
   - replication tools don't include a quality filter.
   - quality tools operate on data that has already been replicated.
   ::
@@ -42,7 +42,7 @@ description: "When OpenStreetMap data becomes critical for a service, a question
 ---
 headline: The solution
 title: "Clearance: an OSM replication tool with a built-in quality filter"
-description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are to be made directly in OSM at the source."
+description: "Clearance never modifies OpenStreetMap. Problematic data is simply held, and corrections are to be made directly in OSM, at the source."
 intro: "Clearance acts as a continuous improvement tool for your local copy, adapted to your business needs:"
 conclusion: "You get an up-to-date version of OpenStreetMap data, reliable for your needs and adapted to your quality requirements, while continuing to contribute to the OpenStreetMap commons."
 changesLabel: Changes
@@ -56,9 +56,9 @@ correctionsLabel: Corrections
   ::landing-step
   ---
   icon: i-lucide-check-circle
-  title: Compliant changes
+  title: Valid changes
   ---
-  Compliant changes are integrated automatically and immediately.
+  Valid changes are integrated automatically and immediately.
   ::
 
   ::landing-step
@@ -66,7 +66,7 @@ correctionsLabel: Corrections
   icon: i-lucide-pause-circle
   title: Sensitive modifications
   ---
-  Sensitive modifications are held for review and, if needed, correction in OSM. On the next check, if everything is compliant, modifications will pass the filter and be integrated into the local copy.
+  Sensitive modifications are held for review and, if needed, correction in OSM. On the next check, if everything is valid, modifications will pass the filter and be integrated into the local copy.
   ::
 
 ::
@@ -81,7 +81,7 @@ headline: In practice
   icon: i-lucide-map-pin
   title: Territory, theme and collaboration
   ---
-  Clearance lets you define territorial and thematic projects (OSM tags) on which your team collaborates to monitor and maintain data quality.
+  Clearance lets you define territorial and thematic projects (OSM tags set) on which your team collaborates to monitor and maintain data quality.
   ::
 
   ::landing-practice-item
@@ -104,7 +104,7 @@ headline: In practice
   icon: i-lucide-database
   title: A quality proxy
   ---
-  Clearance uses standard OpenStreetMap ecosystem formats for both input and output. It integrates seamlessly into an OpenStreetMap data reuse process by producing extracts, diffs and an Overpass API on the local copy. Continue using your tools, or those from the OpenStreetMap ecosystem, with greater data confidence.
+  Clearance uses standard OpenStreetMap ecosystem formats for both input and output. It integrates seamlessly into an OpenStreetMap data reuse process by producing extracts, diffs and an Overpass API on the local copy. Continue to use your tools, or those from the OpenStreetMap ecosystem, with greater data confidence.
   ::
 
 ::
@@ -174,7 +174,7 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logo_SNCF.png
   title: SNCF Réseau
   ---
-  Ensures the maintenance of track and signaling information.
+  Ensures the maintenance of track and signaling information in France.
   ::
 
   ::landing-reference
@@ -182,15 +182,15 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
   logo: /logos/Logotipo_del_Gobierno_de_Navarra.png
   title: Civil Protection of Navarre
   ---
-  Guarantees the quality of road and addressing data used for emergency response route calculation in Navarre, Spain. OSM data serves as the reference for intervention routing.
+  Guarantees the quality of road network and addressing data used for emergency response route calculation in Navarre, Spain. OSM data serves as the reference for intervention routing.
   ::
 
   ::landing-reference
   ---
   logo: /logos/otourisme.png
-  title: 30 departmental agencies and tourism offices
+  title: 30 tourism county agencies and offices
   ---
-  Control quality and monitor OSM contributions across many themes in mainland and overseas France: leisure facilities, health, food shops, and more.
+  Control quality and monitor OSM contributions across many themes in mainland France and overseas : leisure facilities, health, food shops, and more.
   ::
 
   ::landing-reference
@@ -221,7 +221,7 @@ title: Support tailored to your needs
 ctaLabel: See our roadmap
 ctaTo: /how-it-works/roadmap
 ---
-We offer Clearance hosting as a SaaS solution, as well as assistance with deployment and configuration in your own environment.
+We offer Clearance hosting as a SaaS solution, as well as assistance for deployment and configuration in your own environment.
 
 In both cases, we support you in implementing the tool according to your business needs and technical constraints.
 
@@ -237,4 +237,7 @@ primaryTo: /contact
 secondaryLabel: How it works?
 secondaryTo: /how-it-works/replication
 ---
+::
+
+::landing-faq
 ::

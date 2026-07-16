@@ -12,15 +12,14 @@ const navItems = computed(() => [
     to: localePath('/how-it-works/replication'),
   },
   {
+    label: t('nav.news'),
+    icon: 'i-lucide-newspaper',
+    to: localePath('/news'),
+  },
+  {
     label: t('nav.contact'),
     icon: 'i-lucide-mail',
     to: localePath('/contact'),
-  },
-  {
-    label: t('nav.github'),
-    icon: 'i-lucide-github',
-    to: 'https://github.com/teritorio/clearance',
-    target: '_blank',
   },
 ])
 </script>

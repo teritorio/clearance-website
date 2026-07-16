@@ -3,6 +3,7 @@ export default defineI18nLocale(async () => ({
     home: 'Clearance',
     docs: 'How it works?',
     contact: 'Contact',
+    news: 'News',
     github: 'GitHub',
     seeClearance: 'See Clearance',
     changeLanguage: 'Change language',
@@ -11,7 +12,6 @@ export default defineI18nLocale(async () => ({
     product: 'Product',
     resources: 'Resources',
     company: 'Company',
-    copyright: '© {year} {teritorio}.',
   },
   contact: {
     title: 'Contact us',
@@ -41,5 +41,45 @@ export default defineI18nLocale(async () => ({
   page: {
     empty: 'This page has no content yet.',
     notFound: 'Page not found',
+  },
+  news: {
+    headline: 'News',
+    pageTitle: 'Latest news',
+    seoTitle: 'News — Releases, Articles and Announcements',
+    pageDescription: 'Follow Clearance updates: new releases, articles and announcements.',
+    seeAll: 'All news',
+    readMore: 'Read article',
+    empty: 'No news yet.',
+    types: {
+      release: 'Release',
+      post: 'Article',
+      announcement: 'Announcement',
+    },
+  },
+  faq: {
+    headline: 'FAQ',
+    title: 'Frequently asked questions',
+    items: [
+      {
+        question: 'What is Clearance?',
+        answer: 'Clearance is an open-source tool that filters OpenStreetMap data before it reaches your systems. It automatically validates valid changes and holds suspicious ones for review, ensuring the quality of your local OSM data copy.',
+      },
+      {
+        question: 'Is Clearance free and open source?',
+        answer: 'Yes, Clearance is free software released under the AGPL-3.0 license. The source code is available on GitHub. Teritorio also offers SaaS hosting and support services for organisations that need professional assistance.',
+      },
+      {
+        question: 'What types of OSM changes does Clearance filter?',
+        answer: 'Clearance detects suspicious geometric changes (object displacement, deletions, invalid geometries), delayed changes on sensitive data, and any modification that could affect your business use cases according to rules you define per project.',
+      },
+      {
+        question: 'Who is Clearance for?',
+        answer: 'Clearance is designed for organisations that use OpenStreetMap in critical contexts: mobility and transport operators, emergency services, local authorities, nature park managers, tourism offices, and territorial data platforms.',
+      },
+      {
+        question: 'How does Clearance differ from a simple OSM mirror or replication tool?',
+        answer: 'Traditional replication tools (osmosis, osm2pgsql, etc.) integrate changes without quality control. Clearance adds an intelligent filtering layer: valid data passes through immediately, while problematic changes are held until they are validated or corrected in OpenStreetMap at the source.',
+      },
+    ],
   },
 }))
