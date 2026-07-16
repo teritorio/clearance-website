@@ -9,6 +9,9 @@ function defineLocaleCollection(locale: typeof locales[number]) {
       include: `${locale}/**`,
       prefix: `/${locale}`,
     },
+    schema: z.object({
+      seoTitle: z.string().optional(),
+    }),
   })
 }
 
