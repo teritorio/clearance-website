@@ -13,7 +13,7 @@ const { data: news } = await useAsyncData(
 )
 
 useHead({
-  title: () => t('news.pageTitle'),
+  title: () => t('news.seoTitle'),
   meta: [{ name: 'description', content: () => t('news.pageDescription') }],
 })
 </script>

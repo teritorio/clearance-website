@@ -45,6 +45,7 @@ export default defineI18nLocale(async () => ({
   news: {
     headline: 'Actualités',
     pageTitle: 'Dernières nouvelles',
+    seoTitle: 'Actualités Clearance — Versions, articles et annonces',
     pageDescription: 'Suivez l\'évolution de Clearance : nouvelles versions, articles et annonces.',
     seeAll: 'Toutes les actualités',
     readMore: 'Lire l\'article',
