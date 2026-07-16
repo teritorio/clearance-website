@@ -16,7 +16,7 @@ useHead({
 })
 
 const faqItems = computed(() => {
-  const raw = tm('faq.items')
+  const raw = tm('faq.items') as unknown
   return Array.isArray(raw) ? raw as { question: string, answer: string }[] : []
 })
 

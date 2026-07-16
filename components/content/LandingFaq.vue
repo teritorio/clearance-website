@@ -2,7 +2,7 @@
 const { t, tm } = useI18n()
 
 const items = computed(() => {
-  const list = tm('faq.items')
+  const list = tm('faq.items') as unknown
   if (!Array.isArray(list))
     return []
   return (list as { question: string, answer: string }[]).map(
