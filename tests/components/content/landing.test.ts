@@ -29,6 +29,11 @@ describe('landingFaq', () => {
     expect(component.text()).toContain('Who is Clearance for?')
     expect(component.text()).toContain('How does Clearance differ from a simple OSM mirror or replication tool?')
   })
+
+  it('has gray background for color alternation', async () => {
+    const component = await mountSuspended(LandingFaq)
+    expect(component.find('section').classes()).toContain('bg-zinc-100')
+  })
 })
 
 describe('landingSectionHeader', () => {

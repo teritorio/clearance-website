@@ -12,7 +12,7 @@ const items = computed(() => {
 </script>
 
 <template>
-  <section class="py-16 sm:py-24">
+  <section class="bg-zinc-100 py-16 sm:py-24">
     <UContainer>
       <LandingSectionHeader :headline="t('faq.headline')" :title="t('faq.title')" />
       <UAccordion
