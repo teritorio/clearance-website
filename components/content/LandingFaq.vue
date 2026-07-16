@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const { t, tm } = useI18n()
 
-const raw = computed(() => tm('faq.items'))
 const items = computed(() => {
-  const list = raw.value
+  const list = tm('faq.items')
   if (!Array.isArray(list))
     return []
   return (list as { question: string, answer: string }[]).map(
