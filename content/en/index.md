@@ -160,9 +160,6 @@ description: "Clearance is designed for organizations that regularly use OpenStr
 
 ::
 
-::landing-faq
-::
-
 ::landing-references
 ---
 headline: References
@@ -206,13 +203,6 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
 
 ::
 
-::landing-news
----
-headline: News
-title: Latest news
----
-::
-
 ::landing-cta
 ---
 title: Open-source software
@@ -247,4 +237,7 @@ primaryTo: /contact
 secondaryLabel: How it works?
 secondaryTo: /how-it-works/replication
 ---
+::
+
+::landing-faq
 ::

@@ -160,9 +160,6 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
 
 ::
 
-::landing-faq
-::
-
 ::landing-references
 ---
 headline: Références
@@ -206,13 +203,6 @@ ctaTo: https://app.clearance.teritorio.xyz/france_landes_poi/changes_logs
 
 ::
 
-::landing-news
----
-headline: Actualités
-title: Dernières nouvelles
----
-::
-
 ::landing-cta
 ---
 title: Un logiciel libre
@@ -247,4 +237,7 @@ primaryTo: /contact
 secondaryLabel: Comment ça marche ?
 secondaryTo: /how-it-works/replication
 ---
+::
+
+::landing-faq
 ::

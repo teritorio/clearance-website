@@ -160,9 +160,6 @@ description: "Clearance está diseñado para organizaciones que utilizan regular
 
 ::
 
-::landing-faq
-::
-
 ::landing-references
 ---
 headline: Referencias
@@ -240,4 +237,7 @@ primaryTo: /contact
 secondaryLabel: ¿Cómo funciona?
 secondaryTo: /how-it-works/replication
 ---
+::
+
+::landing-faq
 ::
