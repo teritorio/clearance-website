@@ -45,7 +45,7 @@ export default defineI18nLocale(async () => ({
   news: {
     headline: 'News',
     pageTitle: 'Latest news',
-    seoTitle: 'Clearance News — Releases, Articles and Announcements',
+    seoTitle: 'News — Releases, Articles and Announcements',
     pageDescription: 'Follow Clearance updates: new releases, articles and announcements.',
     seeAll: 'All news',
     readMore: 'Read article',
