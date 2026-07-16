@@ -55,4 +55,30 @@ export default defineI18nLocale(async () => ({
       announcement: 'Annonce',
     },
   },
+  faq: {
+    headline: 'FAQ',
+    title: 'Questions fréquentes',
+    items: [
+      {
+        question: 'Qu\'est-ce que Clearance ?',
+        answer: 'Clearance est un logiciel libre qui filtre les données OpenStreetMap avant qu\'elles n\'intègrent vos systèmes. Il valide automatiquement les modifications valides et met en attente les changements suspects pour vérification, garantissant ainsi la qualité de votre copie locale des données OSM.',
+      },
+      {
+        question: 'Clearance est-il gratuit et open source ?',
+        answer: 'Oui, Clearance est un logiciel libre publié sous licence AGPL-3.0. Le code source est disponible sur GitHub. Teritorio propose également des services d\'hébergement SaaS et d\'accompagnement pour les organisations qui souhaitent un support professionnel.',
+      },
+      {
+        question: 'Quels types de modifications OSM Clearance filtre-t-il ?',
+        answer: 'Clearance détecte les modifications géométriques suspectes (déplacements d\'objets, suppressions, géométries invalides), les changements tardifs sur des données sensibles, ainsi que toute modification susceptible d\'affecter vos usages métier selon des règles que vous définissez par projet.',
+      },
+      {
+        question: 'À qui s\'adresse Clearance ?',
+        answer: 'Clearance s\'adresse aux organisations qui utilisent OpenStreetMap dans un contexte critique : opérateurs de mobilité et de transport, services de secours, collectivités territoriales, gestionnaires de parcs naturels, offices de tourisme et plateformes de données territoriales.',
+      },
+      {
+        question: 'En quoi Clearance diffère-t-il d\'un simple miroir ou outil de réplication OSM ?',
+        answer: 'Les outils de réplication classiques (osmosis, osm2pgsql, etc.) intègrent les modifications sans contrôle de qualité. Clearance ajoute une couche de filtrage intelligente : les données valides passent immédiatement, les changements problématiques sont retenus jusqu\'à validation ou correction dans OpenStreetMap à la source.',
+      },
+    ],
+  },
 }))

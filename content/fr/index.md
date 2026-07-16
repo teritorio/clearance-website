@@ -160,6 +160,9 @@ description: "Clearance s'adresse aux organisations qui utilisent régulièremen
 
 ::
 
+::landing-faq
+::
+
 ::landing-references
 ---
 headline: Références
