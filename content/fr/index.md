@@ -7,7 +7,7 @@ description: "Contrôlez la qualité de votre flux de réplication OpenStreetMap
 ---
 headline: Filtre qualité pour la réplication OSM
 title: Contrôlez la qualité de votre réplication OpenStreetMap
-description: "Vous répliquez des données OpenStreetMap dans un contexte critique ? Une modification non vérifiée peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance est un logiciel libre qui filtre votre flux de réplication avant qu'il n'atteigne vos systèmes."
+description: "Vous répliquez des données OpenStreetMap dans un contexte opérationnel ? Une modification non vérifiée peut bloquer un itinéraire de secours, fausser un calcul ou engager votre responsabilité. Clearance est un logiciel libre qui filtre votre flux de réplication avant qu'il n'atteigne vos systèmes."
 primaryLabel: Demander une démo
 primaryTo: /contact
 ---
@@ -17,7 +17,7 @@ primaryTo: /contact
 ---
 headline: Le problème
 title: Comment réutiliser les données OpenStreetMap avec confiance ?
-description: "Lorsque la réutilisation des données OpenStreetMap devient critique pour un service, une question apparaît : comment maîtriser leur qualité ?"
+description: "Lorsque les données OpenStreetMap deviennent importantes pour un service, une question se pose : comment en garantir la qualité ?"
 ---
 
   ::landing-problem-card
@@ -42,7 +42,7 @@ description: "Lorsque la réutilisation des données OpenStreetMap devient criti
 ---
 headline: La solution
 title: "Clearance : un outil de réplication OSM doté d'un filtre qualité"
-description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont simplement mises en attente, et les corrections sont à apporter directement dans OSM, à la source."
+description: "Clearance ne modifie jamais OpenStreetMap. Les données problématiques sont simplement mises en attente, et les corrections sont apportées directement dans OSM, à la source."
 intro: "Clearance agit comme un outil d'amélioration continue de votre copie locale, adapté à vos usages métier :"
 conclusion: "Vous disposez ainsi d'une version à jour des données OpenStreetMap, fiable pour vos usages et adaptée à vos contraintes de qualité, tout en continuant à contribuer au commun OpenStreetMap."
 changesLabel: Changements
@@ -104,7 +104,7 @@ headline: En pratique
   icon: i-lucide-database
   title: Un proxy qualité
   ---
-  Clearance utilise en entrée comme en sortie les formats standard de l'écosystème d'OpenStreetMap. Il s'intègre de façon transparente à un processus de réutilisation des données OpenStreetMap en produisant des extraits, des diffs et une API Overpass sur la copie locale. Continuez à utiliser vos outils, ou ceux de l'écosystème OpenStreetMap, avec un meilleur niveau de confiance dans les données.
+  Clearance utilise en entrée comme en sortie les formats standard de l'écosystème d'OpenStreetMap. Il s'intègre de façon transparente à un processus de réutilisation des données OpenStreetMap en produisant des extraits, des diffs et une API Overpass sur la copie locale. Continuez à utiliser vos outils existants, ou ceux de l'écosystème OpenStreetMap, avec davantage de confiance dans vos données.
   ::
 
 ::
@@ -221,7 +221,7 @@ title: Un accompagnement adapté à vos besoins
 ctaLabel: Voir notre feuille de route
 ctaTo: /how-it-works/roadmap
 ---
-Nous proposons l'hébergement de Clearance en mode SaaS, ainsi qu'une assistance au déploiement et à la configuration dans votre propre infrastructure.
+Nous proposons Clearance en mode SaaS, ainsi qu'un accompagnement au déploiement et à la configuration dans votre propre infrastructure.
 
 Dans les deux cas, nous vous accompagnons dans la mise en œuvre de l'outil selon vos besoins métier et vos contraintes techniques.
 
