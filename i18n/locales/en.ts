@@ -50,11 +50,6 @@ export default defineI18nLocale(async () => ({
     seeAll: 'All news',
     readMore: 'Read article',
     empty: 'No news yet.',
-    types: {
-      release: 'Release',
-      post: 'Article',
-      announcement: 'Announcement',
-    },
   },
   faq: {
     headline: 'FAQ',

@@ -5,7 +5,7 @@ defineProps<{
 }>()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
-const { typeColor, formatDate } = useNewsFormatting()
+const { formatDate } = useNewsFormatting()
 
 const collectionName = computed(() => `news_${locale.value}` as 'news_fr' | 'news_en' | 'news_es')
 
@@ -30,14 +30,9 @@ const { data: news } = await useAsyncData(
           :key="item.id"
           class="flex flex-col gap-4 rounded-xl border border-default bg-default p-6"
         >
-          <div class="flex items-center justify-between gap-2">
-            <UBadge :color="typeColor(item.type)" variant="subtle" size="sm">
-              {{ t(`news.types.${item.type}`) }}
-            </UBadge>
-            <time :datetime="item.date" class="text-sm text-muted">
-              {{ formatDate(item.date) }}
-            </time>
-          </div>
+          <time :datetime="item.date" class="text-sm text-muted">
+            {{ formatDate(item.date) }}
+          </time>
           <h3 class="font-semibold leading-snug">
             {{ item.title }}
           </h3>
