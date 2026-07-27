@@ -234,8 +234,6 @@ title: Solicitar una demostración
 description: "Durante una demostración, intercambiamos sobre su contexto y necesidades, presentamos el funcionamiento de Clearance, ilustramos casos de uso concretos y compartimos nuestra hoja de ruta."
 primaryLabel: Contáctenos
 primaryTo: /contact
-secondaryLabel: ¿Cómo funciona?
-secondaryTo: /how-it-works/replication
 ---
 ::
 

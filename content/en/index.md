@@ -234,8 +234,6 @@ title: Request a demonstration
 description: "During a demonstration, we discuss your context and needs, present how Clearance works, illustrate concrete use cases, and share our roadmap."
 primaryLabel: Contact us
 primaryTo: /contact
-secondaryLabel: How it works?
-secondaryTo: /how-it-works/replication
 ---
 ::
 
