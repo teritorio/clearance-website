@@ -67,6 +67,7 @@ export default defineNuxtConfig({
     baseUrl: 'https://clearance.teritorio.xyz',
     strategy: 'prefix',
     defaultLocale: 'fr',
+    rootRedirect: 'fr',
     langDir: 'locales',
     locales: [
       { code: 'en', name: 'English', language: 'en-US', file: 'en.ts' },
