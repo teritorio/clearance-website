@@ -11,7 +11,7 @@ const path = computed(() => {
 })
 
 const { data: page } = await useAsyncData(
-  `slug-${locale.value}-${slug.value.join('/')}`,
+  () => `slug-${locale.value}-${slug.value.join('/')}`,
   () => queryCollection(collectionName.value).path(path.value).first(),
 )
 
@@ -20,9 +20,8 @@ if (!page.value) {
 }
 
 const { data: navigation } = await useAsyncData(
-  `navigation-${locale.value}`,
+  () => `navigation-${locale.value}`,
   () => queryCollectionNavigation(collectionName.value),
-  { watch: [locale] },
 )
 
 const docsSections = computed(() => extractDocsSections(navigation.value ?? []))
@@ -34,7 +33,7 @@ const sectionSlug = computed<string | undefined>(() => {
 })
 
 const { data: sectionIndex } = await useAsyncData(
-  `breadcrumb-section-${locale.value}-${sectionSlug.value ?? ''}`,
+  () => `breadcrumb-section-${locale.value}-${sectionSlug.value ?? ''}`,
   () => {
     const section = sectionSlug.value
     return section
@@ -44,7 +43,7 @@ const { data: sectionIndex } = await useAsyncData(
 )
 
 const { data: rawSurround } = await useAsyncData(
-  `surround-${locale.value}-${slug.value.join('/')}`,
+  () => `surround-${locale.value}-${slug.value.join('/')}`,
   () => isDocsPage.value
     ? queryCollectionItemSurroundings(collectionName.value, path.value, { before: 2, after: 2 })
     : Promise.resolve(null),
