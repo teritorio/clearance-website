@@ -10,7 +10,7 @@ const path = computed(() => {
   return `/${locale.value}/${slug.value.join('/')}`
 })
 
-const { data: page } = await useAsyncData(
+const { data: page, status: pageStatus } = await useAsyncData(
   () => `slug-${locale.value}-${slug.value.join('/')}`,
   () => queryCollection(collectionName.value).path(path.value).first(),
 )
@@ -18,6 +18,12 @@ const { data: page } = await useAsyncData(
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
+
+watch(pageStatus, (status) => {
+  if (status === 'success' && !page.value) {
+    showError({ statusCode: 404, statusMessage: 'Page not found' })
+  }
+})
 
 const { data: navigation } = await useAsyncData(
   () => `navigation-${locale.value}`,
