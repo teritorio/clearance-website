@@ -4,7 +4,6 @@ import { en, es, fr } from '@nuxt/ui/locale'
 const uiLocales: Record<string, typeof en> = { en, fr, es }
 
 const { t, locale } = useI18n()
-const route = useRoute()
 const uiLocale = computed(() => uiLocales[locale.value] || en)
 
 useSeoMeta({
@@ -34,7 +33,7 @@ useSchemaOrg([
 <template>
   <UApp :locale="uiLocale">
     <NuxtLayout>
-      <NuxtPage :page-key="route.path" />
+      <NuxtPage :page-key="locale" />
     </NuxtLayout>
   </UApp>
 </template>
