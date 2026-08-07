@@ -7,7 +7,7 @@ description: "Controle la calidad de su flujo de replicación OpenStreetMap. Cle
 ---
 headline: Filtro de calidad para la replicación OSM
 title: Controle la calidad de su replicación OpenStreetMap
-description: "¿Replica datos OpenStreetMap en un contexto crítico? Un cambio no verificado puede bloquear una ruta de emergencia, alterar un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
+description: "¿Replica datos de OpenStreetMap en un contexto operativo? Un cambio no verificado puede bloquear una ruta de emergencia, alterar un cálculo o comprometer su responsabilidad. Clearance es un software libre que filtra su flujo de replicación antes de que llegue a sus sistemas."
 primaryLabel: Solicitar una demo
 primaryTo: /contact
 ---
@@ -17,7 +17,7 @@ primaryTo: /contact
 ---
 headline: El problema
 title: ¿Cómo reutilizar los datos de OpenStreetMap con confianza?
-description: "Cuando reutilizar los datos de OpenStreetMap se vuelve crítico para un servicio, surge una pregunta: ¿cómo garantizar su calidad?"
+description: "Cuando los datos de OpenStreetMap pasan a ser importantes para un servicio, surge una pregunta: ¿cómo garantizar su calidad?"
 ---
 
   ::landing-problem-card
@@ -42,7 +42,7 @@ description: "Cuando reutilizar los datos de OpenStreetMap se vuelve crítico pa
 ---
 headline: La solución
 title: "Clearance: una herramienta de replicación OSM con filtro de calidad integrado"
-description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se han de realizar directamente en OSM, en la fuente."
+description: "Clearance nunca modifica OpenStreetMap. Los datos problemáticos simplemente se retienen, y las correcciones se realizan directamente en OSM, en el origen."
 intro: "Clearance actúa como una herramienta de mejora continua de su copia local, adaptada a sus necesidades profesionales:"
 conclusion: "Así dispone de una versión actualizada de los datos de OpenStreetMap, fiable para sus usos y adaptada a sus requisitos de calidad, mientras continúa contribuyendo al bien común OpenStreetMap."
 changesLabel: Cambios
@@ -104,7 +104,7 @@ headline: En la práctica
   icon: i-lucide-database
   title: Un proxy de calidad
   ---
-  Clearance utiliza los formatos estándar del ecosistema de OpenStreetMap tanto de entrada como de salida. Se integra de forma transparente en un proceso de reutilización de datos OpenStreetMap produciendo extractos, diffs y una API Overpass sobre la copia local. Siga usando sus herramientas, o las del ecosistema OpenStreetMap, con mayor confianza en los datos.
+  Clearance utiliza los formatos estándar del ecosistema de OpenStreetMap tanto de entrada como de salida. Se integra de forma transparente en un flujo de reutilización de datos de OpenStreetMap, produciendo extractos, diffs y una API Overpass sobre la copia local. Siga utilizando sus herramientas habituales, o las del ecosistema OpenStreetMap, con mayor confianza en sus datos.
   ::
 
 ::
@@ -221,7 +221,7 @@ title: Un acompañamiento adaptado a sus necesidades
 ctaLabel: Ver nuestra hoja de ruta
 ctaTo: /how-it-works/roadmap
 ---
-Ofrecemos el alojamiento de Clearance en modo SaaS, así como asistencia para el despliegue y la configuración en su propia infraestructura.
+Ofrecemos Clearance como servicio SaaS, así como acompañamiento para el despliegue y la configuración en su propia infraestructura.
 
 En ambos casos, le acompañamos en la implementación de la herramienta según sus necesidades profesionales y sus restricciones técnicas.
 
@@ -231,7 +231,7 @@ También podemos hacer evolucionar el proyecto desarrollando o mejorando funcion
 ::landing-cta
 ---
 title: Solicitar una demostración
-description: "Durante una demostración, intercambiamos sobre su contexto y necesidades, presentamos el funcionamiento de Clearance, ilustramos casos de uso concretos y compartimos nuestra hoja de ruta."
+description: "Durante una demostración, hablaremos de su contexto y sus necesidades, presentaremos el funcionamiento de Clearance, mostraremos casos de uso concretos y compartiremos nuestra hoja de ruta."
 primaryLabel: Contáctenos
 primaryTo: /contact
 ---

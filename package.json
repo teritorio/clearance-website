@@ -1,7 +1,7 @@
 {
   "name": "clearance-website",
   "type": "module",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "private": true,
   "packageManager": "pnpm@10.30.3",
   "scripts": {
@@ -57,6 +57,6 @@
     "commit-msg": "pnpm commitlint --edit $1"
   },
   "lint-staged": {
-    "*.{js,ts,vue,css,md,json}": "eslint --fix"
+    "*": "eslint --fix --no-warn-ignored"
   }
 }
