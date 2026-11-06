@@ -49,6 +49,7 @@ export default defineI18nLocale(async () => ({
     pageDescription: 'Follow Clearance updates: new releases, articles and announcements.',
     seeAll: 'All news',
     readMore: 'Read article',
+    learnMore: 'Learn more',
     empty: 'No news yet.',
   },
   faq: {

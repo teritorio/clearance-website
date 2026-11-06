@@ -1,7 +1,7 @@
 {
   "name": "clearance-website",
   "type": "module",
-  "version": "1.5.7",
+  "version": "1.6.0",
   "private": true,
   "packageManager": "pnpm@10.30.3",
   "scripts": {
@@ -20,12 +20,12 @@
   "dependencies": {
     "@nuxt/content": "^3.15.2",
     "@nuxt/image": "^2.0.0",
-    "@nuxt/ui": "^4.10.0",
+    "@nuxt/ui": "^4.12.0",
     "@nuxtjs/i18n": "^10.5.0",
     "@nuxtjs/seo": "^4.0.2",
     "@takumi-rs/core": "^0.73.1",
     "better-sqlite3": "^12.11.1",
-    "nuxt": "^4.5.0"
+    "nuxt": "^4.6.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.7.3",
@@ -50,7 +50,12 @@
       "sharp",
       "simple-git-hooks",
       "vue-demi"
-    ]
+    ],
+    "overrides": {
+      "@vue/reactivity": "^3.5.45",
+      "@vue/runtime-core": "^3.5.45",
+      "vue": "^3.5.45"
+    }
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged",

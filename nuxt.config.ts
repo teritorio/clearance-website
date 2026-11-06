@@ -106,6 +106,12 @@ export default defineNuxtConfig({
     preference: 'light',
   },
 
+  vite: {
+    optimizeDeps: {
+      exclude: ['@tiptap/core', '@tiptap/pm', '@tiptap/extension-list'],
+    },
+  },
+
   compatibilityDate: '2025-03-24',
   devtools: { enabled: true },
 })

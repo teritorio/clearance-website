@@ -55,7 +55,7 @@ useHead({
             trailing-icon="i-lucide-arrow-up-right"
             class="self-start"
           >
-            {{ t('news.readMore') }}
+            {{ item.type === 'post' ? t('news.readMore') : t('news.learnMore') }}
           </UButton>
         </article>
       </div>
