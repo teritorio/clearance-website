@@ -49,6 +49,7 @@ export default defineI18nLocale(async () => ({
     pageDescription: 'Siga la evolución de Clearance: nuevas versiones, artículos y anuncios.',
     seeAll: 'Todas las noticias',
     readMore: 'Leer artículo',
+    learnMore: 'Más información',
     empty: 'Sin noticias por el momento.',
   },
   faq: {
